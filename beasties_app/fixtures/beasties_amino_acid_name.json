@@ -1,0 +1,162 @@
+[
+    {
+        "pk": 1, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Bwy", 
+            "name": "Bwycine"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Den", 
+            "name": "Dentine"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Elp", 
+            "name": "Elphine"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Hig", 
+            "name": "Higgonine"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Ixa", 
+            "name": "Ixanine"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Jor", 
+            "name": "Jorganine"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Kru", 
+            "name": "Kruzosine"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Lon", 
+            "name": "Lonkidine"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Mew", 
+            "name": "Mewsamine"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Nif", 
+            "name": "Niffagine"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Orz", 
+            "name": "Orzine"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Pef", 
+            "name": "Peffaline"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Qua", 
+            "name": "Quarbline"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Raj", 
+            "name": "Rajormine"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Sly", 
+            "name": "Slyctein"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Tor", 
+            "name": "Torkanine"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Vla", 
+            "name": "Vladine"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Wor", 
+            "name": "Worbamine"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Yaf", 
+            "name": "Yaffline"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "beasties_app.amino_acid_name", 
+        "fields": {
+            "symbol": "Zun", 
+            "name": "Zunganine"
+        }
+    }
+]

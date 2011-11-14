@@ -1,0 +1,634 @@
+[
+    {
+        "pk": 1, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Fiery Fists", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [
+                4
+            ], 
+            "pretty_name": "Fiery Fists", 
+            "amino_acid_name_2": 15, 
+            "amino_acid_name_3": 16, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/fire-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Flame Tail", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                4
+            ], 
+            "pretty_name": "Flame Tail", 
+            "amino_acid_name_2": 15, 
+            "amino_acid_name_3": 3, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/fire-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Flaming Horns", 
+            "amino_acid_name_1": 14, 
+            "strong_against": [
+                4
+            ], 
+            "pretty_name": "Flaming Horns", 
+            "amino_acid_name_2": 19, 
+            "amino_acid_name_3": 12, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/fire-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Fire Tounge", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [
+                4
+            ], 
+            "pretty_name": "Fire Tounge", 
+            "amino_acid_name_2": 16, 
+            "amino_acid_name_3": 8, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/fire-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Poblano Pepper Fists", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                5
+            ], 
+            "pretty_name": "Poblano Pepper Fists", 
+            "amino_acid_name_2": 11, 
+            "amino_acid_name_3": 3, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/spicy-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Thai Chile Tail", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                5
+            ], 
+            "pretty_name": "Thai Chile Tail", 
+            "amino_acid_name_2": 11, 
+            "amino_acid_name_3": 12, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/spicy-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Habanero Horns", 
+            "amino_acid_name_1": 3, 
+            "strong_against": [
+                5
+            ], 
+            "pretty_name": "Habenero Horns", 
+            "amino_acid_name_2": 16, 
+            "amino_acid_name_3": 18, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/spicy-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Tabasco Spit", 
+            "amino_acid_name_1": 13, 
+            "strong_against": [
+                5
+            ], 
+            "pretty_name": "Tabasco Spit", 
+            "amino_acid_name_2": 18, 
+            "amino_acid_name_3": 11, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/spicy-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Sweaty Palms", 
+            "amino_acid_name_1": 12, 
+            "strong_against": [
+                1
+            ], 
+            "pretty_name": "Sweaty Palms", 
+            "amino_acid_name_2": 3, 
+            "amino_acid_name_3": 16, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/water-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Spraying Tail", 
+            "amino_acid_name_1": 3, 
+            "strong_against": [
+                1
+            ], 
+            "pretty_name": "Spraying Tail", 
+            "amino_acid_name_2": 12, 
+            "amino_acid_name_3": 18, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/water-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Hydrant Horns", 
+            "amino_acid_name_1": 3, 
+            "strong_against": [
+                1
+            ], 
+            "pretty_name": "Hydrant Horns", 
+            "amino_acid_name_2": 13, 
+            "amino_acid_name_3": 14, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/water-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Spitting Mouth", 
+            "amino_acid_name_1": 18, 
+            "strong_against": [
+                1
+            ], 
+            "pretty_name": "Spitting Mouth", 
+            "amino_acid_name_2": 11, 
+            "amino_acid_name_3": 19, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/water-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Shocking Palms", 
+            "amino_acid_name_1": 19, 
+            "strong_against": [
+                6
+            ], 
+            "pretty_name": "Shocking Palms", 
+            "amino_acid_name_2": 12, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/elec-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Extension Cord Tail", 
+            "amino_acid_name_1": 11, 
+            "strong_against": [
+                6
+            ], 
+            "pretty_name": "Extension Cord Tail", 
+            "amino_acid_name_2": 8, 
+            "amino_acid_name_3": 15, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/elec-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "High Voltage Horns", 
+            "amino_acid_name_1": 18, 
+            "strong_against": [
+                6
+            ], 
+            "pretty_name": "High Voltage Horns", 
+            "amino_acid_name_2": 13, 
+            "amino_acid_name_3": 19, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/elec-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Charged Chomp", 
+            "amino_acid_name_1": 18, 
+            "strong_against": [
+                6
+            ], 
+            "pretty_name": "Charged Chomp", 
+            "amino_acid_name_2": 14, 
+            "amino_acid_name_3": 13, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/elec-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Cyclone Fists", 
+            "amino_acid_name_1": 19, 
+            "strong_against": [
+                7
+            ], 
+            "pretty_name": "Cyclone Fists", 
+            "amino_acid_name_2": 12, 
+            "amino_acid_name_3": 11, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/wind-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Propeller Tail", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                7
+            ], 
+            "pretty_name": "Propeller Tail", 
+            "amino_acid_name_2": 13, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/wind-tail"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Tornado Horns", 
+            "amino_acid_name_1": 16, 
+            "strong_against": [
+                7
+            ], 
+            "pretty_name": "Tornado Horns", 
+            "amino_acid_name_2": 1, 
+            "amino_acid_name_3": 14, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/wind-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Whirlwind Mouth", 
+            "amino_acid_name_1": 19, 
+            "strong_against": [
+                7
+            ], 
+            "pretty_name": "Whirlwind Mouth", 
+            "amino_acid_name_2": 14, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/wind-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Thunder Clap", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [
+                8
+            ], 
+            "pretty_name": "Thunder Clap", 
+            "amino_acid_name_2": 15, 
+            "amino_acid_name_3": 8, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/noisy-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Thumping Tail", 
+            "amino_acid_name_1": 18, 
+            "strong_against": [
+                8
+            ], 
+            "pretty_name": "Thumping Tail", 
+            "amino_acid_name_2": 16, 
+            "amino_acid_name_3": 15, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/noisy-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Vuvuzela Horns", 
+            "amino_acid_name_1": 3, 
+            "strong_against": [
+                8
+            ], 
+            "pretty_name": "Vuvuzela Horns", 
+            "amino_acid_name_2": 14, 
+            "amino_acid_name_3": 8, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/noisy-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Caveman Roar", 
+            "amino_acid_name_1": 13, 
+            "strong_against": [
+                8
+            ], 
+            "pretty_name": "Caveman Roar", 
+            "amino_acid_name_2": 19, 
+            "amino_acid_name_3": 12, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/noisy-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Mirror Palms", 
+            "amino_acid_name_1": 12, 
+            "strong_against": [
+                9
+            ], 
+            "pretty_name": "Mirror Palms", 
+            "amino_acid_name_2": 18, 
+            "amino_acid_name_3": 11, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/reflect-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Disco Ball Tail", 
+            "amino_acid_name_1": 18, 
+            "strong_against": [
+                9
+            ], 
+            "pretty_name": "Disco Ball Tail", 
+            "amino_acid_name_2": 11, 
+            "amino_acid_name_3": 8, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/reflect-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Reflective Horns", 
+            "amino_acid_name_1": 3, 
+            "strong_against": [
+                9
+            ], 
+            "pretty_name": "Reflective Horns", 
+            "amino_acid_name_2": 12, 
+            "amino_acid_name_3": 11, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/reflect-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Gleaming Grillz", 
+            "amino_acid_name_1": 18, 
+            "strong_against": [
+                9
+            ], 
+            "pretty_name": "Gleaming Grillz", 
+            "amino_acid_name_2": 13, 
+            "amino_acid_name_3": 3, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/reflect-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Razor Claws", 
+            "amino_acid_name_1": 19, 
+            "strong_against": [
+                10
+            ], 
+            "pretty_name": "Razor Claws", 
+            "amino_acid_name_2": 12, 
+            "amino_acid_name_3": 18, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/sharp-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Serrated Tail", 
+            "amino_acid_name_1": 11, 
+            "strong_against": [
+                10
+            ], 
+            "pretty_name": "Serrated Tail", 
+            "amino_acid_name_2": 3, 
+            "amino_acid_name_3": 16, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/sharp-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Cleaver Horns", 
+            "amino_acid_name_1": 3, 
+            "strong_against": [
+                10
+            ], 
+            "pretty_name": "Cleaver Horns", 
+            "amino_acid_name_2": 13, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/sharp-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Saw Teeth", 
+            "amino_acid_name_1": 14, 
+            "strong_against": [
+                10
+            ], 
+            "pretty_name": "Saw Teeth", 
+            "amino_acid_name_2": 8, 
+            "amino_acid_name_3": 13, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/sharp-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Frozen Fists", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                11
+            ], 
+            "pretty_name": "Frozen Fists", 
+            "amino_acid_name_2": 16, 
+            "amino_acid_name_3": 14, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/cold-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Icewhip Tail", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                11
+            ], 
+            "pretty_name": "Icewhip Tail", 
+            "amino_acid_name_2": 11, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/cold-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Hypothermia Horns", 
+            "amino_acid_name_1": 16, 
+            "strong_against": [
+                11
+            ], 
+            "pretty_name": "Hypothermia Horns", 
+            "amino_acid_name_2": 8, 
+            "amino_acid_name_3": 15, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/cold-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Sub-Zero Spit", 
+            "amino_acid_name_1": 8, 
+            "strong_against": [
+                11
+            ], 
+            "pretty_name": "Sub-Zero Spit", 
+            "amino_acid_name_2": 14, 
+            "amino_acid_name_3": 19, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/cold-mouth.jpg"
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Normal Hands", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [], 
+            "pretty_name": "Normal Hands", 
+            "amino_acid_name_2": 1, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 1, 
+            "image_filename": "/static/images/phenotypes/normal-hands.jpg"
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Normal Tail", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [], 
+            "pretty_name": "Normal Tail", 
+            "amino_acid_name_2": 1, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 4, 
+            "image_filename": "/static/images/phenotypes/normal-tail.jpg"
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Normal Horns", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [], 
+            "pretty_name": "Normal Horns", 
+            "amino_acid_name_2": 1, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 2, 
+            "image_filename": "/static/images/phenotypes/normal-horns.jpg"
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "beasties_app.phenotype", 
+        "fields": {
+            "name": "Normal Mouth", 
+            "amino_acid_name_1": 1, 
+            "strong_against": [], 
+            "pretty_name": "Normal Mouth", 
+            "amino_acid_name_2": 1, 
+            "amino_acid_name_3": 1, 
+            "bodypart": 3, 
+            "image_filename": "/static/images/phenotypes/normal-mouth.jpg"
+        }
+    }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "pk": 1, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Water", 
+            "name": "Water"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Fire", 
+            "name": "Fire"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Grass", 
+            "name": "Grass"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Heat", 
+            "name": "Heat"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Spicy", 
+            "name": "Spicy"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Electricity", 
+            "name": "Electricity"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Wind", 
+            "name": "Wind"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Noise", 
+            "name": "Noise"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Reflections", 
+            "name": "Reflections"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Sharp", 
+            "name": "Sharp"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "beasties_app.weakness", 
+        "fields": {
+            "pretty_name": "Cold", 
+            "name": "Cold"
+        }
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "pk": 1, 
+        "model": "beasties_app.level", 
+        "fields": {
+            "pretty_name": "Level 0", 
+            "num_enemies": 1, 
+            "number": 0
+        }
+    }
+]

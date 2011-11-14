@@ -1,0 +1,11 @@
+[
+    {
+        "pk": 1, 
+        "model": "beasties_app.game", 
+        "fields": {
+            "status": "active", 
+            "code": "0", 
+            "name": "Game 0"
+        }
+    }
+]
