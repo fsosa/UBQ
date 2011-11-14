@@ -1,0 +1,69 @@
+
+/*
+	root element for the scrollable.
+	when scrolling occurs this element stays still.
+*/
+.pheno_scroll {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 130px;
+	height:130px;
+
+	/* custom decorations */
+	background:#FFF repeat-x;
+	font-weight:bold;
+	font-size: medium;
+	float:left;
+}
+
+/*
+	root element for scrollable items. Must be absolutely positioned
+	and it should have a extremely large width to accomodate scrollable items.
+	it's enough that you set the width and height for the root element and
+	not for this element.
+*/
+.pheno_scroll .pheno_items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+
+.pheno_items div {
+	float:left;
+	width:130px;
+	font-weight:bold;
+	font-size: large;
+}
+
+.pheno_item div {
+	font-weight:bold;
+	font-size: large;
+}
+
+/* single scrollable item 
+.pheno_scroll img {
+	float:left;
+	margin:20px 5px 20px 21px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:20px;
+	height:75px;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}*/
+
+/* active item */
+.pheno_scroll .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default;
+	font-weight:bold;
+	font-size: large;
+}
+
+

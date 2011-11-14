@@ -1,0 +1,103 @@
+/* root element for scrollable */
+.vertical {  
+	
+	/* required settings */
+	position:relative;
+	overflow:hidden;	
+
+	/* vertical scrollers have typically larger height than width */
+		
+	height: 35px;	 
+	width: 100px;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;	
+}
+
+/* root element for scrollable items */
+.items {	
+	position:absolute;
+	/*overflow:hidden;*/
+	
+	/* this time we have very large space for height */	
+	height:25px;	
+	margin: 0px;
+}
+
+/* single scrollable item */
+.item {
+
+	margin:0px 0px;
+	padding:0px;
+	font-size:20px;
+	height:25px;
+}
+
+/* elements inside single item */
+.item img {
+	float:left;
+	margin-right:20px;
+	height:180px;
+	width:240px;
+}
+
+.item h3 {
+	margin:0 0 5px 0;
+	font-size:16px;
+	color:#456;
+	font-weight:normal;
+}
+
+/* the action buttons above the scrollable */
+.actions {
+	width:100px;
+	margin:0px 0 10px 0;	
+}
+
+.actions a {
+	font-size:11px;		
+	cursor:pointer;
+	color:#666;
+}
+
+.actions a:hover {
+	text-decoration:underline;
+	color:#000;
+}
+
+a.browse {
+	background:url(/static/images/vert_large.png) no-repeat;
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	margin:40px 10px;
+	cursor:pointer;
+	font-size:1px;
+}
+
+/* up and down */
+a.up, a.down		{ 
+	background:url(/static/images/vert_large.png) no-repeat; 
+	float: none;
+	margin: 10px 40px;
+}
+
+/* up */
+a.up:hover  		{ background-position:-30px 0; }
+a.up:active  		{ background-position:-60px 0; }
+
+/* down */
+a.down 				{ background-position: 0 -30px; }
+a.down:hover  		{ background-position:-30px -30px; }
+a.down:active  	{ background-position:-60px -30px; } 
+
+.disabled {
+	visibility:hidden;		
+}
+
+.next {
+	float:right;
+}	
+

@@ -1,0 +1,28 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+<script>
+function refresh(){
+    $.ajax({
+        type: 'GET', 
+        url: '../test', 
+        success: function(data){
+            console.log(data.message);
+            $('#num').text(data.num_cards);
+            $('#msg').text(data.message);
+            }
+    })
+    console.log('sent')
+}
+$(document).ready(function(){
+    setInterval("refresh()", 5000);
+})
+</script>
+
+
+<body>
+<h1>Number of Cards</h1>
+
+Cards: <span id="num">{{num_cards}}</span> 
+<br/>
+Method: <span id="msg">{{message}}</span>
+</body>

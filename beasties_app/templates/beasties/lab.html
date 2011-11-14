@@ -1,0 +1,262 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<title>The Lab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" src="/static/jquery/jquery.tools.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/tabs-slideshow.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-pheno.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
+	<style>
+.ui-btn-text {
+white-space: normal;
+}
+	</style>
+</head> 
+
+<body> 
+
+<!--LAB-->
+<div data-role="page" id="lab">
+
+	<div data-role="header">
+		<table width=100%>
+		<tr>
+			<td width=50%>                <span style="font-size: xx-large; font-weight: bold;">                The Lab                </span>            </td>
+			<td width=50% style="text-align: right">                <span>                <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="40px" height="40px" style="margin: 0px 5px;"/>                Weakness: {% for weakness in enemy.weakness.all %} {{weakness}} <br />{% endfor %}                <a href="#" data-role="button" data-inline="true" data-theme="b">Fight!</a>                </span>            </td>
+		</tr>
+		</table>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+    <div style="text-align: center;">		        <!-- Carosel of Body Parts -->        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">			<tr>				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>			</tr>			<tr>				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>				<td id="pheno_text_horns" style="font-weight:bold"></td>				<td id="pheno_text_mouth" style="font-weight:bold"></td>				<td id="pheno_text_tail" style="font-weight:bold"></td>			</tr>		</table>
+    </div>        
+        {% for bodypart in bodyparts %}
+            <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->                  <div class="ui-grid-b" style="text-align:center">                
+                {% for i in template_mapping %}
+                    <div class="ui-block-{{ i|last }}">
+                                    <div class="actions">                        <a class="next browse up"></a>                    </div>                   
+                   <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}">
+                   <div class="items">                        {% for aa_name in amino_acid_names %}
+                            <div>
+                            <div class="item" title="{{aa_name}}">{{aa_name}}</div>
+                            </div>
+                        {% endfor %}                   </div>                   </div>
+                                       <div class="actions">                        <a class="prev browse down"></a>                    </div>                </div>
+                {% endfor %}
+                
+                <div id="amino_sequences_{{bodypart}}">
+                {% for i in template_mapping %}
+                    <div class="ui-block-{{i|last}}" id="amino_{{ i|first }}_{{bodypart}}" style="text-align:center"><h1>UUU</h1></div>
+                {% endfor %}
+                
+                </div><!--/{{bodypart}}-->
+                        </div>
+            </div>
+        {% endfor %}    
+        <div class="ui-grid-a">
+            <div class="ui-block-a"><a href="#genetic_codes" data-role="button" data-transition="slide" data-icon="info">Genetic Codes</a></div>
+            <div class="ui-block-b"><a href="#phenotypes" data-role="button" data-transition="slide" data-icon="info">Phenotypes</a></div>
+        </div>
+    
+    </div>
+    </div><!-- /content -->
+
+	<div data-role="footer">
+	</div><!-- /footer -->
+</div><!--/lab-->
+
+<script>
+
+    var blah = new Array()
+    {% for bodypart in bodyparts %}
+    blah.push("{{bodypart}}")
+    {% endfor %}
+    
+var amino_sequences = {"Bwycine": "UUU", "Dentine": "CUA", "Elphine": "AUU", "Higgonine": "UCU", "Ixanine": "CCU", "Jorganine": "ACU", "Kruzosine": "GCU", "Lonkidine": "GCA", "Mewsamine": "CAU", "Niffagine": "CAA", "Orzine": "AAU",
+"Peffaline": "AAA", "Quarbline": "GAU", "Rajormine": "GAA", "Slyctein": "UGU", "Torkanine": "UGA", "Valdine": "CGU", "Worbamine": "CGA", "Yaffline": "AGA", "Zunganine": "GGA" };
+
+var pheno_seq = {"Mirror Palms": "PefWorOrz", "Poblano Pepper Fists": "LonOrzElp", "Cyclone Fists": "YafPefOrz", "Razor Claws": "YafPefWor", "Thunder Clap": "BwySlyLon", "Fiery Fists": "BwySlyTor", "Schocking Palms": "YafPefBwy", "Frozen Fists": "LonTorRaj", "Sweaty Palms": "PefElpTor"};
+
+var pheno_pics = {"Mirror Palms": "/static/images/phenotypes/reflect-hands.jpg", "Poblano Pepper Fists": "/static/images/phenotypes/spicy-hands.jpg", "Cyclone Fists": "/static/images/phenotypes/wind-hands.jpg", "Razor Claws": "/static/images/phenotypes/sharp-hands.jpg", "Thunder Clap": "/static/images/phenotypes/elec-hands.jpg", "Fiery Fists": "/static/images/phenotypes/fire-hands.jpg", "Shocking Palms": "/static/images/phenotypes/noisy-hands.jpg", "Frozen Fists": "/static/images/phenotypes/cold-hands.jpg", "Sweaty Palms": "/static/images/phenotypes/water-hands.jpg", "Normal Hands": "/static/images/phenotypes/normal-hands.jpg", "Normal Horns": "/static/images/phenotypes/normal-horns.jpg", "Normal Mouth": "/static/images/phenotypes/normal-mouth.jpg", "Normal Tail": "/static/images/phenotypes/normal-tail.jpg"};
+
+var current_phenotype = "hands";
+
+$('#lab').live('pageinit',function(event){
+	$("#lab_horns").hide();
+	$("#lab_mouth").hide();
+	$("#lab_tail").hide();	
+
+	$("#pheno_img_hands").bind('click', function(){imageOnClick("#pheno_img_hands")});
+	$("#pheno_img_horns").bind('click', function(){imageOnClick("#pheno_img_horns")});
+	$("#pheno_img_mouth").bind('click', function(){imageOnClick("#pheno_img_mouth")});
+	$("#pheno_img_tail").bind('click', function(){imageOnClick("#pheno_img_tail")});
+
+	$("#amino_select_1_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_hands', 'prev')});
+	$("#amino_select_2_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_hands', 'prev')});
+	$("#amino_select_3_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_hands', 'prev')});
+
+	$("#amino_select_1_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_horns', 'prev')});
+	$("#amino_select_2_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_horns', 'prev')});
+	$("#amino_select_3_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_horns', 'prev')});
+
+	$("#amino_select_1_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_mouth', 'prev')});
+	$("#amino_select_2_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_mouth', 'prev')});
+	$("#amino_select_3_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_mouth', 'prev')});
+
+	$("#amino_select_1_tail").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_tail', 'prev')});
+	$("#amino_select_2_tail").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_tail', 'prev')});
+	$("#amino_select_3_tail").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_tail', 'prev')});
+
+	$(function() {		
+		
+	// initialize scrollable with mousewheel support
+	$(".scrollable").scrollable({ vertical: true, circular: true});	
+	
+	});
+})
+
+function amino_select_mouseover(event, select_id, type){
+	console.log("SCROLL!");
+	var scroll = "#" + select_id;
+	var api = $(scroll).data("scrollable")
+	var index = api.getIndex();
+	var amino_acid = api.getItems()[index].childNodes[1].childNodes[0].nodeValue;//options[amino_acid_seq];
+	console.log(amino_acid);
+	var sequence = amino_sequences[amino_acid];
+	var amino_id = select_id
+	if (amino_id == 'amino_select_1_' + current_phenotype) {
+		$("#amino_1_" + current_phenotype +' >h1').text(sequence);
+		sync(current_phenotype);
+	}
+	else if (amino_id == 'amino_select_2_' + current_phenotype) {
+		$('#amino_2_' + current_phenotype + ' >h1').text(sequence);
+		sync(current_phenotype);
+	}
+	else if (amino_id == 'amino_select_3_' + current_phenotype) {
+		$('#amino_3_'+current_phenotype+ ' >h1').text(sequence);
+		sync(current_phenotype);
+	}
+	//$('amino_' + amino_id > h1)
+}
+
+function sync(body_part) {
+	var text = $('#amino_sequences_' + current_phenotype).text().replace(/\s+/gm,'');
+	//var text1 = $('#amino_1').text().replace(/\s+/gm,'');
+	var seq_1 = text.substring(0,3);
+	var seq_2 = text.substring(3,6);
+	var seq_3 = text.substring(6,9);
+	var phenotype_seq = "";
+	for (var i in amino_sequences) {
+	if (amino_sequences[i] == seq_1)
+	    phenotype_seq += (i.substring(0,3));
+	}
+	for (var i in amino_sequences) {
+        if (amino_sequences[i] == seq_2)
+             phenotype_seq += (i.substring(0,3));
+	}
+	for (var i in amino_sequences) {
+        if (amino_sequences[i] == seq_3)
+             phenotype_seq += (i.substring(0,3));
+	}
+	console.log(phenotype_seq);
+    
+    var match_found = false;
+	for (var i in pheno_pics) {
+		//console.log(pheno_seq[i]);
+		if (pheno_seq[i] == phenotype_seq){
+			//console.log(pheno_pics[i]);
+			UpdatePic(pheno_pics[i],i,body_part);
+            match_found = true;
+		}
+	}
+    // TODO Refactor
+	if(!match_found)
+    {
+        if (body_part == 'hands') {
+            UpdatePic("/static/images/phenotypes/normal-hands.jpg", "Normal Hands", body_part)		   
+        }
+        else if (body_part == 'horns') {
+            UpdatePic("/static/images/phenotypes/normal-horns.jpg", "Normal Horns", body_part)		
+        }
+        else if (body_part == 'mouth') {
+            UpdatePic("/static/images/phenotypes/normal-mouth.jpg", "Normal Mouth", body_part)		
+        }
+        else if (body_part == 'tail') {
+            UpdatePic("/static/images/phenotypes/normal-tail.jpg", "Normal Tail", body_part)		
+        }
+
+    }
+    
+}
+
+function UpdatePic(phenotype, descr,body_part){
+	if (body_part == 'hands') {
+		$('#pheno_img_hands').attr('src', phenotype);
+		console.log($('#current_Hands > img').attr('src'));
+		$('#pheno_text_hands').text(descr);
+	}
+	else if (body_part == 'horns') {
+		$('#pheno_img_horns').attr('src', phenotype);
+		$('#pheno_text_horns').text(descr);
+	}
+	else if (body_part == 'mouth') {
+		$('#pheno_img_mouth').attr('src', phenotype);
+		$('#pheno_text_mouth').text(descr);
+	}
+	else if (body_part == 'tail') {
+		$('#pheno_img_tail').attr('src', phenotype);
+		$('#pheno_text_tail').text(descr);
+	}
+}
+
+function imageOnClick(clicked) {
+	var img_id = "#pheno_img_" + current_phenotype;
+	var current_text = "#pheno_text_" + current_phenotype;
+	var current_div = "#lab_" + current_phenotype;
+	var new_text = "#pheno_text_" + clicked.substr(11);
+	var show_div = "#lab_" + clicked.substr(11);
+	
+    console.log("img_id "+img_id)
+    console.log("current_text "+current_text);
+    console.log("current_div "+current_div);
+    console.log("new_text "+new_text);
+    console.log("show_div "+show_div);
+    
+	$(current_div).hide();
+	$(show_div).show();
+	$(current_text).text('');
+	console.log(img_id);
+	$(img_id).animate({
+	width: '50',
+	height: '50',
+	opacity: 1,	
+	}, {duration: 1000, queue: false});
+
+	$(clicked).animate({
+	width: '100',
+	height: '100',
+	opacity: 1,	
+	}, {duration: 1000, queue: false});
+
+	current_phenotype = clicked.substr(11);
+    console.log("current_phenotype "+current_phenotype);
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $(clicked).attr('src'))
+			$(new_text).text(i)
+	}		
+}
+
+</script>
+
+</body>
+
+<footer>
+</footer>
+
+</html>
