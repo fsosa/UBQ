@@ -4,7 +4,7 @@ from django.contrib.auth import logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
-from beasties_app.models import Enemy, Player, Zombie, Amino_Acid_Name, Amino_Acid, Bodypart
+from beasties_app.models import Enemy, Zombie, Amino_Acid_Name, Amino_Acid, Bodypart
 
 def logout_page(request):
     """
@@ -56,9 +56,68 @@ def lab(request):
         # user hits the Back button.
         return render_to_response('beasties/lab.html', vars, context_instance=RequestContext(request))
         
-#TODO: Make fight screen
-# def fight(request):
+@login_required
+def fight(request):
     #TODO: Create new zombie with phenotypes selected in lab screen
     # zombie = new Zombie entry
     # vars = {}
     # return render_to_response('beasties/fight.html', vars, context_instance=RequestContext(request))
+    
+    # Get current user's zombie
+    user = request.user
+    zombie = user.zombie_set.filter(built_flag=True, deceased_flag=False)[0]
+    
+    # Get current enemy 
+    #TODO: this should be an instance of User_Enemy, not Enemy
+    # Will need to change the UserProfile model
+    enemy = user.get_profile().current_enemy 
+    
+    # Construct list of enemy's weaknesses
+    enemy_weaknesses = [weakness for weakness in enemy.weakness.all()]
+    
+    # Construct list of zombie's strengths
+    hand_strength = zombie.hand_phenotype.strong_against.all()[0]
+    horn_strength = zombie.horn_phenotype.strong_against.all()[0]
+    mouth_strength = zombie.mouth_phenotype.strong_against.all()[0]
+    tail_strength = zombie.tail_phenotype.strong_against.all()[0]
+    
+    zombie_strengths = [hand_strength, horn_strength, mouth_strength, tail_strength]
+    
+    # Check to see if the zombie has enough phenotypes to defeat the enemy
+    enemy_set = set(enemy_weaknesses)
+    zombie_set = set(zombie_strengths)
+    common_set = zombie_set.intersection(enemy_set)
+    
+    fight_outcome = []
+    # Declare winner and loser
+    if len(common_set) >= len(enemy_set): 
+        # Zombie wins, update won_flag
+        zombie.won_flag = True
+        
+        fight_outcome.append(enemy.win_message)
+        fight_outcome.append("Way to go!")
+        
+        #TODO: Here we would update the User_Enemy flags
+        
+        
+    else:
+        # Zombie loses
+        zombie.won_flag = False
+        needed_phen_num = len(common_set) - len(enemy_set)
+        
+        fight_outcome.append("You lost the fight!")
+        fight_outcome.append("You needed "+ needed_phen_num + "phenotypes strong against the monster")
+        
+        #TODO: Here we would update the User_Enemy flags
+    
+    # Create context for template rendering
+    vars = {}
+    vars['fight_outcome'] = fight_outcome
+    vars['enemy'] = enemy
+    vars['zombie'] = zombie
+    
+    return render_to_response('beasties/fight.html', vars, context_instance=RequestContext(request))
+    
+        
+    
+    

@@ -66,22 +66,15 @@ class Level_Admin(admin.ModelAdmin):
     search_fields = ['pretty_name','number']
 admin.site.register(Level, Level_Admin)
 
-class Player_Admin(admin.ModelAdmin):
-    fieldsets = [
-    (None, {'fields': ['user','game','level','current_enemy']})
-    ]
-    list_display = ('user','game','level')
-    search_fields = ['user','game']
-admin.site.register(Player, Player_Admin)
 
 class Zombie_Admin(admin.ModelAdmin):
     fieldsets = [
-    (None, {'fields': ['player']}),
+    (None, {'fields': ['user']}),
     ('Bodyparts', {'fields': ['hand_phenotype','horn_phenotype','mouth_phenotype','tail_phenotype']}),
     ('Flags', {'fields': ['built_flag','deceased_flag','won_flag']}),
     ]
-    list_display = ('player','built_flag','deceased_flag','won_flag')
-    search_fields = ['player']
+    list_display = ('user','built_flag','deceased_flag','won_flag')
+    search_fields = ['user']
 admin.site.register(Zombie, Zombie_Admin)
 
 class Phenotype_Admin(admin.ModelAdmin):
@@ -93,11 +86,11 @@ class Phenotype_Admin(admin.ModelAdmin):
     search_fields = ['pretty_name','name','bodypart']
 admin.site.register(Phenotype, Phenotype_Admin)
 
-class Player_Enemy_Admin(admin.ModelAdmin):
+class User_Enemy_Admin(admin.ModelAdmin):
     fieldsets = [
-    (None, {'fields': ['enemy','player']}),
+    (None, {'fields': ['enemy','user']}),
     ('Flags', {'fields': ['deceased_flag']}),
     ]
-    list_display = ('enemy','player','deceased_flag')
-    search_fields = ['enemy','player','deceased_flag']
-admin.site.register(Player_Enemy, Player_Enemy_Admin)
+    list_display = ('enemy','user','deceased_flag')
+    search_fields = ['enemy','user','deceased_flag']
+admin.site.register(User_Enemy, User_Enemy_Admin)

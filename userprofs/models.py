@@ -1,4 +1,5 @@
 from django.db import models
+from beasties_app.models import Game, Level, Enemy
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
@@ -26,6 +27,13 @@ class UserProfile(models.Model):
     school = models.ForeignKey(School, null=True, blank=True)
     added_by = models.ForeignKey(User, related_name = "userprof_added_by", null=True, blank=True)
     accessible_by = models.ManyToManyField(User, null=True, blank=True, related_name = "userprof_accessible_by")
+   
+    # Game-specific fields
+    game = models.ForeignKey(Game, blank=True, null=True)
+    level = models.ForeignKey(Level)
+    current_enemy = models.ForeignKey(Enemy, blank=True, null=True)
+    
+    # TODO: Add user-activity related fields (e.g. last-login, etc.)
     
     def __unicode__(self):
         return self.user.username

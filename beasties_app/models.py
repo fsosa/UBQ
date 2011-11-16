@@ -76,14 +76,6 @@ class Level(models.Model):
     def __unicode__(self):
         return self.pretty_name
         
-class Player(models.Model):
-    user = models.ForeignKey(User) # TODO: Change to User_Profile
-    game = models.ForeignKey(Game)
-    level = models.ForeignKey(Level) # TODO: Add default level = 0
-    current_enemy = models.ForeignKey(Enemy, blank=True, null=True)
-    
-    def __unicode__(self):
-        return self.user.first_name
 
 class Phenotype(models.Model):
     bodypart = models.ForeignKey(Bodypart)
@@ -100,7 +92,7 @@ class Phenotype(models.Model):
         return self.name
 
 class Zombie(models.Model):
-    player = models.ForeignKey(Player)
+    user = models.ForeignKey(User)
     
     hand_phenotype = models.ForeignKey(Phenotype, related_name='+')
     horn_phenotype = models.ForeignKey(Phenotype, related_name='+')
@@ -112,12 +104,12 @@ class Zombie(models.Model):
     won_flag = models.BooleanField()
     
     def __unicode__(self):
-        return self.player
+        return self.user.username
         
 # TODO: Apply ManyToMany + available_flag, deceaesd_flag, position_num
-class Player_Enemy(models.Model):
+class User_Enemy(models.Model):
     enemy = models.ForeignKey(Enemy)
-    player = models.ForeignKey(Player)
+    user = models.ForeignKey(User)
     deceased_flag = models.BooleanField() 
     #TODO string representation
     # def __unicode__(self):
