@@ -51,7 +51,11 @@ class Enemy(models.Model):
     group_number = models.IntegerField() #TODO: Possibly same as level.  There are 9 enemeies that share same group number
     
     description = models.CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    weakness = models.ManyToManyField(Weakness)
+    weakness_1 = models.ForeignKey(Weakness, related_name='weakness_one', blank=True, null=True)
+    weakness_2 = models.ForeignKey(Weakness, related_name='weakness_two', blank=True, null=True)
+    weakness_3 = models.ForeignKey(Weakness, related_name='weakness_three', blank=True, null=True)
+    weakness_4 = models.ForeignKey(Weakness, related_name='weakness_four', blank=True, null=True)
+    
     
     win_message = models.CharField(max_length=MAX_LENGTH, blank=True, null=True)
     lose_message = models.CharField(max_length=MAX_LENGTH, blank=True, null=True)
@@ -91,40 +95,13 @@ class Phenotype(models.Model):
     def __unicode__(self):
         return self.name
 
-class Zombie(models.Model):
-    user = models.ForeignKey(User)
-    
-    hand_phenotype = models.ForeignKey(Phenotype, related_name='+')
-    horn_phenotype = models.ForeignKey(Phenotype, related_name='+')
-    mouth_phenotype = models.ForeignKey(Phenotype, related_name='+')
-    tail_phenotype = models.ForeignKey(Phenotype, related_name='+')
-    
-    built_flag = models.BooleanField()
-    deceased_flag = models.BooleanField()
-    won_flag = models.BooleanField()
-    
-    def __unicode__(self):
-        return self.user.username
-        
+
 # TODO: Apply ManyToMany + available_flag, deceaesd_flag, position_num
 class User_Enemy(models.Model):
     enemy = models.ForeignKey(Enemy)
     user = models.ForeignKey(User)
     deceased_flag = models.BooleanField() 
-    #TODO string representation
-    # def __unicode__(self):
-        # return self.name
 
-# class Permissions(models.Model):
-    # name = models.CharField(max_length=MAX_LENGTH)
-    # created_at = models.DateTimeField()
-    # updated_at = models.DateTimeField()
-
-# # Cannot have a class without a primary key
-# # TODO: Want to make a relational mapping without one
-# class Permissions_User_Groups(models.Model):
-    # permission_id = models.ForeignKey(Permissions)
-    # user_group_id = models.ForeignKey(User_Groups)
     
 # class Schools(models.Model):
     # name = models.CharField(max_length=MAX_LENGTH)

@@ -31,7 +31,9 @@ class UserProfile(models.Model):
     # Game-specific fields
     game = models.ForeignKey(Game, blank=True, null=True)
     level = models.ForeignKey(Level)
-    current_enemy = models.ForeignKey(Enemy, blank=True, null=True)
+    login_count = models.IntegerField()
+    win_count = models.IntegerField()
+    loss_count = models.IntegerField()
     
     # TODO: Add user-activity related fields (e.g. last-login, etc.)
     
