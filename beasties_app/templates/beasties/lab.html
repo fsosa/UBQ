@@ -60,7 +60,8 @@ white-space: normal;
                 {% for i in template_mapping %}
                     <div class="ui-block-{{ i|last }}">
                                     <div class="actions">
-                        <a class="next browse up"></a>                    </div>                   
+                        <a class="next browse up"></a>
+                    </div>                   
                    <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}">
                    <div class="items">                        {% for aa_name in amino_acid_names %}
                             <div>
@@ -69,7 +70,8 @@ white-space: normal;
                         {% endfor %}                   </div>                   </div>
                    
                     <div class="actions">
-                        <a class="prev browse down"></a>                    </div>                </div>
+                        <a class="prev browse down"></a>
+                    </div>                </div>
                 {% endfor %}
                 
                 <div id="amino_sequences_{{bodypart}}">
@@ -78,7 +80,8 @@ white-space: normal;
                 {% endfor %}
                 
                 </div><!--/{{bodypart}}-->
-                        </div>
+        
+                </div>
             </div>
         {% endfor %}
         
@@ -133,12 +136,10 @@ white-space: normal;
 		</div>
 		
 	</div>
-
 </div><!--/fight-confirmation-->
 
 <div data-role="page" id="help" data-add-back-btn="true">
 	<div data-role="header" >
-		<!--<span style="font-size: xx-large; font-weight: bold;text-align: left;"></span>-->
         <h1>Info Sheets</h1>
 	</div>
 
@@ -146,8 +147,7 @@ white-space: normal;
 		<ul data-role="listview">
 		<li><a href="#phenotypes">Known Monster Phenotypes</a></li>
 		<li><a href="#genetic_code">Genetic Code</a></li>
-		</ul><br />
-		<!-- <a href="#lab" data-role="button" data-theme='b'>Back to Lab</a>-->
+		</ul>
 	</div>
 </div>
 
@@ -155,7 +155,6 @@ white-space: normal;
     <div data-role="header">
 		<h1> Genetic Code </h1>
 	</div>
-	
 	<div data-role="content">
 		<img src='/static/images/genetic_code.jpg' />
 	</div>
@@ -185,8 +184,7 @@ white-space: normal;
             {% endfor %}
         </ul>
 	</div><!-- /content -->
-
-	
+    
 	<div data-role="footer">
 	</div><!-- /footer -->
 </div>
@@ -212,11 +210,7 @@ white-space: normal;
     pheno_pics["{{phenotype.name}}"] = "{{phenotype.image_filename}}"
     {% endfor %}
 
-
-
-
-
-var current_phenotype = "hands";
+    var current_phenotype = "hands";
 
 $('#lab').live('pageinit',function(event){
 	$("#lab_horns").hide();
@@ -232,9 +226,13 @@ $('#lab').live('pageinit',function(event){
 	$("#amino_select_2_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_hands', 'prev')});
 	$("#amino_select_3_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_hands', 'prev')});
 
+
+
 	$("#amino_select_1_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_horns', 'prev')});
 	$("#amino_select_2_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_horns', 'prev')});
 	$("#amino_select_3_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_horns', 'prev')});
+
+
 
 	$("#amino_select_1_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_mouth', 'prev')});
 	$("#amino_select_2_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_mouth', 'prev')});
@@ -428,5 +426,8 @@ function imageOnClick(clicked) {
 
 <footer>
 </footer>
+
+
+
 
 </html>

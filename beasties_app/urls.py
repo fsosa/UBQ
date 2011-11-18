@@ -8,6 +8,7 @@ urlpatterns = patterns('beasties_app.views',
     (r'^$', 'index'),
     (r'^graveyard/$', 'graveyard'),
     (r'^lab/$', 'lab'),
+    (r'^level2/$', 'level2'),
     (r'^fight/$', 'fight'),
     
     (r'^login/$', login), 
