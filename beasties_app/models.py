@@ -22,14 +22,14 @@ class Amino_Acid_Name(models.Model):
 class Amino_Acid(models.Model):
     name = models.ForeignKey(Amino_Acid_Name)
 
-    nucleotide_1 = models.ForeignKey(Nucleotide, related_name='+')
-    nucleotide_2 = models.ForeignKey(Nucleotide, related_name='+')
-    nucleotide_3 = models.ForeignKey(Nucleotide, related_name='+')
+    nucleotide_1 = models.ForeignKey(Nucleotide, related_name='nucleotide_one')
+    nucleotide_2 = models.ForeignKey(Nucleotide, related_name='nucleotide_two')
+    nucleotide_3 = models.ForeignKey(Nucleotide, related_name='nucleotide_three')
     
     # Allowd http://stackoverflow.com/questions/395340/can-i-use-a-foreignkey-in-unicode-return
-    def __unicode__(self):
-        return u'%s' % self.id # returns ID...not ideal
-        # return self.name.name # want to return name
+    # def __unicode__(self):
+        # return u'%s' % self.id # returns ID...not ideal
+        # # return self.name.name # want to return name
         
 class Bodypart(models.Model):
     name = models.CharField(max_length=MAX_LENGTH)

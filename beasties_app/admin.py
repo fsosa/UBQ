@@ -43,8 +43,8 @@ admin.site.register(Weakness, Weakness_Admin)
 class Enemy_Admin(admin.ModelAdmin):
     fieldsets = [
     (None, {'fields': ['name','image_filename','group_number']}),
-    ('Details', {'fields': ['description','weakness']}),
-    ('Messages', {'fields': ['win_message','lose_message']}),
+    ('Weaknesses', {'fields': ['weakness_1','weakness_2','weakness_3','weakness_4']}),
+    ('Messages', {'fields': ['description','win_message','lose_message']}),
     ]
     list_display = ('name','description')
     search_fields = ['name']
@@ -65,18 +65,6 @@ class Level_Admin(admin.ModelAdmin):
     list_display = ('pretty_name','number','num_enemies')
     search_fields = ['pretty_name','number']
 admin.site.register(Level, Level_Admin)
-
-
-class Zombie_Admin(admin.ModelAdmin):
-    fieldsets = [
-    (None, {'fields': ['user']}),
-    ('Bodyparts', {'fields': ['hand_phenotype','horn_phenotype','mouth_phenotype','tail_phenotype']}),
-    ('Flags', {'fields': ['built_flag','deceased_flag','won_flag']}),
-    ]
-    list_display = ('user','built_flag','deceased_flag','won_flag')
-    search_fields = ['user']
-admin.site.register(Zombie, Zombie_Admin)
-
 class Phenotype_Admin(admin.ModelAdmin):
     fieldsets = [
     (None, {'fields': ['name','pretty_name','image_filename','bodypart','strong_against']}),
