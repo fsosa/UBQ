@@ -1,0 +1,642 @@
+[
+    {
+        "pk": 1, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 2, 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 2, 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 2, 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 2, 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 3, 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 3, 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 3, 
+            "name": 2
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 3, 
+            "name": 2
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 1, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 1, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 1, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 1, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 4, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 4, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 4, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 2, 
+            "nucleotide_1": 4, 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 2, 
+            "name": 4
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 2, 
+            "name": 4
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 2, 
+            "name": 4
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 2, 
+            "name": 4
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 3, 
+            "name": 5
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 3, 
+            "name": 5
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 3, 
+            "name": 5
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 3, 
+            "name": 5
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 1, 
+            "name": 6
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 1, 
+            "name": 6
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 1, 
+            "name": 6
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 1, 
+            "name": 6
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 4, 
+            "name": 7
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 4, 
+            "name": 7
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 4, 
+            "name": 8
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 3, 
+            "nucleotide_1": 4, 
+            "name": 8
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 2, 
+            "name": 8
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 2, 
+            "name": 8
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 2, 
+            "name": 8
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 2, 
+            "name": 8
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 3, 
+            "name": 9
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 3, 
+            "name": 9
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 3, 
+            "name": 10
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 3, 
+            "name": 10
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 1, 
+            "name": 11
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 1, 
+            "name": 11
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 1, 
+            "name": 12
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 1, 
+            "name": 12
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 4, 
+            "name": 13
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 4, 
+            "name": 13
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 4, 
+            "name": 14
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 1, 
+            "nucleotide_1": 4, 
+            "name": 14
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 2, 
+            "name": 15
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 2, 
+            "name": 15
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 2, 
+            "name": 16
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 2, 
+            "name": 16
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 3, 
+            "name": 17
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 3, 
+            "name": 17
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 3, 
+            "name": 18
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 3, 
+            "name": 18
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 1, 
+            "name": 18
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 1, 
+            "name": 18
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 2, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 4, 
+            "name": 19
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 3, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 4, 
+            "name": 19
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 4, 
+            "name": 20
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 4, 
+            "name": 20
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 1, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 1, 
+            "name": 19
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "beasties_app.amino_acid", 
+        "fields": {
+            "nucleotide_3": 4, 
+            "nucleotide_2": 4, 
+            "nucleotide_1": 1, 
+            "name": 19
+        }
+    }
+]

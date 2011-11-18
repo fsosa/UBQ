@@ -1,0 +1,529 @@
+
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<title>The Lab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/tabs-slideshow.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-pheno.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical.css" />
+	<style>
+.ui-btn-text {
+white-space: normal;
+}
+	</style>
+</head> 
+
+	
+
+<body> 
+
+<!--LAB-->
+<div data-role="page" id="lab">
+
+	<div data-role="header">
+		<table width=100%>
+		<tr>
+			<td width=50%>
+                <span style="font-size: xx-large; font-weight: bold;">
+                    The Lab
+                </span>
+                <a href="#help" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b">
+                Help
+                </a>
+            </td>
+			<td width=50% style="text-align: right">
+                <span>
+                <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="40px" height="40px" style="margin: 0px 5px;"/>
+                Weakness:
+                {% for weakness, count in weakness_count.items %}
+                    {{weakness}} {{count}}
+                {% endfor %}
+                <br />
+                <a href="#fight_confirm" id="fight_button" data-role="button" data-inline="true" data-theme="b">Fight!</a>
+                </span>
+            </td>
+		</tr>
+		</table>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+
+		<table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">
+			<tr>
+				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg"/></td>
+				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>
+				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>
+				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>
+			</tr>
+			<tr>
+				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>
+				<td id="pheno_text_horns" style="font-weight:bold"></td>
+				<td id="pheno_text_mouth" style="font-weight:bold"></td>
+				<td id="pheno_text_tail" style="font-weight:bold"></td>
+			</tr>
+		</table>		
+
+    {% for bodypart in bodyparts %}
+        <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->  
+            <div class="ui-grid-b" style="text-align:center">
+                {% for i in template_mapping %}
+                    <div class="ui-block-{{ i|last }}">
+                    <div id="amino_select_{{i|first}}_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">
+                    Bwycine
+                    </div>
+                    </div>
+                {% endfor %}
+                
+                <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                    <div id="amino_1_{{bodypart}}" class="ui-block-a"  style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
+                        <a id ="codon_1_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -2%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" >U</a>
+                        <a id ="codon_2_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -8%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                        <a id ="codon_3_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -15%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                    </div>
+                    <div id="amino_2_{{bodypart}}" class="ui-block-b">
+                        <a id ="codon_4_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -8%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                        <a id ="codon_5_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -13%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                        <a id ="codon_6_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -18%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                    </div>
+                    <div id="amino_3_{{bodypart}}" class="ui-block-c">
+                        <a id ="codon_7_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -14%; width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                        <a id ="codon_8_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -19%;width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                        <a id ="codon_9_{{bodypart}}" class="ui-btn ui-btn-up-b ui-shadow" style="left: -24%;width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;">U</a>
+                    </div>
+                </div>
+            </div>
+		</div><!--/{{bodypart}}-->
+    {% endfor %}
+
+	</div><!-- /content -->
+
+	
+	<div data-role="footer">
+	</div><!-- /footer -->
+</div><!--/lab-->
+
+<style>.ui-dialog  .ui-header .ui-btn-icon-notext	{ display:none;} </style>
+
+<div data-role="page" id="fight_confirm" data-add-back-btn="true"> <!--FIGHT-CONFIRMATION-->
+	<div data-role='header'>
+        <div style="margin-left:80px;margin-right:80px;text-align:center">Ready to Fight?</div>
+        <div style="text-align: right">
+            <form id="fight_form" action="/beasties/fight/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="enemy_id" value="{{enemy.id}}">
+            <input type="hidden" id="fight_hands" name="fight_hands" value="Normal Hands">
+            <input type="hidden" id="fight_horns" name="fight_horns" value="Normal Horns">
+            <input type="hidden" id="fight_mouth" name="fight_mouth" value="Normal Mouth">
+            <input type="hidden" id="fight_tail" name="fight_tail" value="Normal Tail">
+            <input type="submit" value="Fight" class="ui-btn-right" data-theme="a" data-inline="true">
+            </form>
+        </div>
+	</div>
+
+	<div data-role='content'>
+		<div class='ui-grid-a' style="text-align: center;">
+			<div class='ui-block-a'>
+				<h2>You</h2>
+				<table align="center">
+				<tr>
+				<td><img id="confirm_hands" src='' /><h4 id="confirm_hands_text"></h4></td>
+				<td><img id="confirm_horns" src='' /><h4 id="confirm_horns_text"></h4></td>
+				</tr>
+				<tr>
+				<td><img id="confirm_mouth" src='' /><h4 id="confirm_mouth_text"></h4></td>
+				<td><img id="confirm_tail" src='' /><h4 id="confirm_tail_text"></h4></td>
+				</tr>
+				</table>
+			</div>
+
+			<div class='ui-block-b'>
+				<h2>{{enemy.name}}</h2>
+				<img src="{{enemy.image_filename}}" />
+				<h4>
+                Weakness:
+                {% for weakness, count in weakness_count.items %}
+                    {{weakness}} {{count}}
+                {% endfor %}
+                </h4>
+			</div>
+		</div>
+		
+	</div>
+</div><!--/fight-confirmation-->
+
+<div data-role="page" id="help" data-add-back-btn="true">
+	<div data-role="header" >
+        <h1>Info Sheets</h1>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview">
+		<li><a href="#phenotypes">Known Monster Phenotypes</a></li>
+		<li><a href="#genetic_code">Genetic Code</a></li>
+		</ul>
+	</div>
+</div>
+
+<div data-role="page" id="genetic_code" data-add-back-btn="true">
+    <div data-role="header">
+		<h1> Genetic Code </h1>
+	</div>
+	<div data-role="content">
+		<img src='/static/images/genetic_code.jpg' />
+	</div>
+</div>
+
+<div data-role="page" id="phenotypes" data-add-back-btn="true">
+
+	<div data-role="header">
+		<h1> Known Monster Phenotypes</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search for phenotype...">
+            {% for bodypart in bodyparts %}
+                <li data-role="list-divider">
+                    <font style="text-transform: uppercase;">{{bodypart}}</font> 
+                </li>
+                {% for phenotype in phenotypes %}
+                    {% if phenotype.bodypart == bodypart %}
+                        <li>
+                            <img src="{{phenotype.image_filename}}" height="80px" width="80px"/>
+                            <h2>{{ phenotype.name }}</h2>
+                            <p><b>Amino Acid Sequence:</b> {{phenotype.amino_acid_name_1}} {{phenotype.amino_acid_name_2}} {{phenotype.amino_acid_name_3}}</p>
+                        </li>
+                    {% endif %}
+                {% endfor %}            
+            {% endfor %}
+        </ul>
+	</div><!-- /content -->
+    
+	<div data-role="footer">
+	</div><!-- /footer -->
+</div>
+
+<script>
+
+    var amino_sequences = {}
+    var genetic_code = {}
+    {% for amino_acid in amino_acids %}
+    amino_sequences["{{amino_acid.name.name}}"] = "{{amino_acid.nucleotide_1.symbol}}{{amino_acid.nucleotide_2.symbol}}{{amino_acid.nucleotide_3.symbol}}"
+    genetic_code["{{amino_acid.nucleotide_1.symbol}}{{amino_acid.nucleotide_2.symbol}}{{amino_acid.nucleotide_3.symbol}}"] = "{{amino_acid.name.name}}"
+    {% endfor %}
+
+    var pheno_seq = {}
+    {% for phenotype in phenotypes %}
+    pheno_seq["{{phenotype.name}}"] = "{{phenotype.amino_acid_name_1.symbol}}{{phenotype.amino_acid_name_2.symbol}}{{phenotype.amino_acid_name_3.symbol}}"
+    {% endfor %}
+
+    //var pheno_pics = {"Mirror Palms": "/static/images/phenotypes/reflect-hands.jpg", "Poblano Pepper Fists": "/static/images/phenotypes/spicy-hands.jpg", "Cyclone Fists": "/static/images/phenotypes/wind-hands.jpg", "Razor Claws": "/static/images/phenotypes/sharp-hands.jpg", "Thunder Clap": "/static/images/phenotypes/elec-hands.jpg", "Fiery Fists": "/static/images/phenotypes/fire-hands.jpg", "Shocking Palms": "/static/images/phenotypes/noisy-hands.jpg", "Frozen Fists": "/static/images/phenotypes/cold-hands.jpg", "Sweaty Palms": "/static/images/phenotypes/water-hands.jpg", "Normal Hands": "/static/images/phenotypes/normal-hands.jpg", "Normal Horns": "/static/images/phenotypes/normal-horns.jpg", "Normal Mouth": "/static/images/phenotypes/normal-mouth.jpg", "Normal Tail": "/static/images/phenotypes/normal-tail.jpg"};
+    var pheno_pics = {}
+    {% for phenotype in phenotypes %}
+    pheno_pics["{{phenotype.name}}"] = "{{phenotype.image_filename}}"
+    {% endfor %}
+    
+    var pheno_pics = {}
+    {% for phenotype in phenotypes %}
+    pheno_pics["{{phenotype.name}}"] = "{{phenotype.image_filename}}"
+    {% endfor %}
+
+    var current_phenotype = "hands";
+
+    var codon_dict = new Array();
+    codon_dict[0] = "U";
+    codon_dict[1] = "C";
+    codon_dict[2] = "A";
+    codon_dict[3] = "G";
+
+$('#lab').live('pageinit',function(event){
+	// Hide all of the other phenotypes except hands
+	$("#lab_horns").hide();
+	$("#lab_mouth").hide();
+	$("#lab_tail").hide();	
+
+	// Bind the pictures to the showing animation
+	$("#pheno_img_hands").bind('click', function(){imageOnClick("#pheno_img_hands")});
+	$("#pheno_img_horns").bind('click', function(){imageOnClick("#pheno_img_horns")});
+	$("#pheno_img_mouth").bind('click', function(){imageOnClick("#pheno_img_mouth")});
+	$("#pheno_img_tail").bind('click', function(){imageOnClick("#pheno_img_tail")});
+
+	// Bind Hand Codons to CodonClick
+	$('#amino_sequences_hands .ui-btn-text').css({margin: 0, padding: 0, left: '0%'});
+	$('#codon_1_hands').bind('click', function() {CodonClick('#codon_1_hands')});
+	$('#codon_2_hands').click(function() {CodonClick('#codon_2_hands')});
+	$('#codon_3_hands').click(function() {CodonClick('#codon_3_hands')});
+	$('#codon_4_hands').click(function() {CodonClick('#codon_4_hands')});
+	$('#codon_5_hands').click(function() {CodonClick('#codon_5_hands')});
+	$('#codon_6_hands').click(function() {CodonClick('#codon_6_hands')});
+	$('#codon_7_hands').click(function() {CodonClick('#codon_7_hands')});
+	$('#codon_8_hands').click(function() {CodonClick('#codon_8_hands')});
+	$('#codon_9_hands').click(function() {CodonClick('#codon_9_hands')});
+
+	// Bind Horn Codons to CodonClick
+	$('#amino_sequences_horns .ui-btn-text').css({margin: 0, padding: 0, left: '0%'});
+	$('#codon_1_horns').bind('click', function() {CodonClick('#codon_1_horns')});
+	$('#codon_2_horns').click(function() {CodonClick('#codon_2_horns')});
+	$('#codon_3_horns').click(function() {CodonClick('#codon_3_horns')});
+	$('#codon_4_horns').click(function() {CodonClick('#codon_4_horns')});
+	$('#codon_5_horns').click(function() {CodonClick('#codon_5_horns')});
+	$('#codon_6_horns').click(function() {CodonClick('#codon_6_horns')});
+	$('#codon_7_horns').click(function() {CodonClick('#codon_7_horns')});
+	$('#codon_8_horns').click(function() {CodonClick('#codon_8_horns')});
+	$('#codon_9_horns').click(function() {CodonClick('#codon_9_horns')});
+
+	// Bind Mouth Codons to CodonClick
+	$('#amino_sequences_mouth .ui-btn-text').css({margin: 0, padding: 0, left: '0%'});
+	$('#codon_1_mouth').bind('click', function() {CodonClick('#codon_1_mouth')});
+	$('#codon_2_mouth').click(function() {CodonClick('#codon_2_mouth')});
+	$('#codon_3_mouth').click(function() {CodonClick('#codon_3_mouth')});
+	$('#codon_4_mouth').click(function() {CodonClick('#codon_4_mouth')});
+	$('#codon_5_mouth').click(function() {CodonClick('#codon_5_mouth')});
+	$('#codon_6_mouth').click(function() {CodonClick('#codon_6_mouth')});
+	$('#codon_7_mouth').click(function() {CodonClick('#codon_7_mouth')});
+	$('#codon_8_mouth').click(function() {CodonClick('#codon_8_mouth')});
+	$('#codon_9_mouth').click(function() {CodonClick('#codon_9_mouth')});
+
+	// Bind Tail Codons to CodonClick
+	$('#amino_sequences_tail .ui-btn-text').css({margin: 0, padding: 0, left: '0%'});
+	$('#codon_1_tail').bind('click', function() {CodonClick('#codon_1_tail')});
+	$('#codon_2_tail').click(function() {CodonClick('#codon_2_tail')});
+	$('#codon_3_tail').click(function() {CodonClick('#codon_3_tail')});
+	$('#codon_4_tail').click(function() {CodonClick('#codon_4_tail')});
+	$('#codon_5_tail').click(function() {CodonClick('#codon_5_tail')});
+	$('#codon_6_tail').click(function() {CodonClick('#codon_6_tail')});
+	$('#codon_7_tail').click(function() {CodonClick('#codon_7_tail')});
+	$('#codon_8_tail').click(function() {CodonClick('#codon_8_tail')});
+	$('#codon_9_tail').click(function() {CodonClick('#codon_9_tail')});
+
+	//bind fight button to FightClick
+	$('#fight_button').click(FightClick);
+
+	$('#dialog_close').click(function() {$('#fight_confirm').dialog('close');});
+
+	$(function() {		
+		
+	// initialize scrollable
+	$(".scrollable").scrollable({ vertical: true, circular: true});	
+	
+	});
+})
+
+
+function FightClick() {
+	$('#confirm_hands').attr('src', $('#pheno_img_hands').attr('src'));
+	$('#confirm_horns').attr('src', $('#pheno_img_horns').attr('src'));
+	$('#confirm_mouth').attr('src', $('#pheno_img_mouth').attr('src'));
+	$('#confirm_tail').attr('src', $('#pheno_img_tail').attr('src'));
+
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_hands').attr('src')) {
+			$('#confirm_hands_text').text(i);
+		}
+	}
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_horns').attr('src')) {
+			$('#confirm_horns_text').text(i);
+		}
+	}
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_mouth').attr('src')) {
+			$('#confirm_mouth_text').text(i);
+		}
+	}
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_tail').attr('src')) {
+			$('#confirm_tail_text').text(i);
+		}
+	}
+}
+
+
+function amino_select_mouseover(event, select_id, type){
+	//amino_acid_seq = this.selectedIndex;
+	console.log("SCROLL!");
+	// Grab the underlying api for scrollable and grab index of current item
+	var scroll = "#" + select_id;
+	var api = $(scroll).data("scrollable")
+	var index = api.getIndex();
+	// The amino acid is the text of the current item
+	var amino_acid = api.getItems()[index].childNodes[1].childNodes[0].nodeValue;//options[amino_acid_seq];
+	console.log(amino_acid);
+	// Set the sequence for the amino acid
+	var sequence = amino_sequences[amino_acid];
+	// Find the scrollable we are on, set the text below it to the sequence, and call sync function
+	var amino_id = select_id
+	if (amino_id == 'amino_select_1_' + current_phenotype) {
+		$("#amino_1_" + current_phenotype +' >h1').text(sequence);
+		sync(current_phenotype);
+	}
+	else if (amino_id == 'amino_select_2_' + current_phenotype) {
+		$('#amino_2_' + current_phenotype + ' >h1').text(sequence);
+		sync(current_phenotype);
+	}
+	else if (amino_id == 'amino_select_3_' + current_phenotype) {
+		$('#amino_3_'+current_phenotype+ ' >h1').text(sequence);
+		sync(current_phenotype);
+	}
+	//$('amino_' + amino_id > h1)
+}
+
+function sync(body_part) {
+	// Boolean to determine whether or not a phenotype pic was found
+	var changeBool = false;
+	// All of the aminoacid sequences together
+	var text = $('#amino_sequences_' + current_phenotype).text().replace(/\s+/gm,'');
+	// Splice the text string into the separate ones, each representing the amino acid sequence
+	var seq_1 = text.substring(0,3);
+	var seq_2 = text.substring(3,6);
+	var seq_3 = text.substring(6,9);
+	var phenotype_seq = "";
+	// If each sequence matches one of our amino_acids, add the abbreviation of the amino_acid to the phenotype_seq
+	for (var i in genetic_code) {
+	if (i == seq_1)
+	    phenotype_seq += (genetic_code[i].substring(0,3));
+	}
+	for (var i in genetic_code) {
+        if (i == seq_2)
+             phenotype_seq += (genetic_code[i].substring(0,3));
+	}
+	for (var i in genetic_code) {
+        if (i == seq_3)
+             phenotype_seq += (genetic_code[i].substring(0,3));
+	}
+	console.log(phenotype_seq);
+	for (var i in pheno_pics) {
+		//If the sequence matches a phenotype sequence that we have in a dictionary
+		if (pheno_seq[i] == phenotype_seq){
+			// Change and update the pic and text, ONLY if we are in the right body part
+			var regexp = new RegExp(current_phenotype);
+			// we check to see if we are in the right body part by looking at image filename (each one contains either "hands," "horns," etc.)
+			if (regexp.test(pheno_pics[i]) != false) {
+				UpdatePic(pheno_pics[i],i,body_part);
+				// If we update pic, we have found a phenotype pic, so set bool to true
+				changeBool = true;
+			}
+		}
+	}
+	// If we did not find a phenotype pic, we have to change picture to a normal one
+	if (changeBool == false) {
+		//Find the normal phenotype associated with the body part we are on
+		var pattern = new RegExp("Normal " + current_phenotype.charAt(0).toUpperCase() + current_phenotype.substring(1));
+		console.log(pattern.source);
+		// Once we find it, call update pic with the normal one
+		for (var i in pheno_pics) {
+			if (pattern.test(i) == true)
+				UpdatePic(pheno_pics[i], i, body_part);
+		}
+	}
+	
+}
+
+function UpdatePic(phenotype, descr,body_part){
+	// depending on the body part, change the image src to the new phenotype, and set the text underneath to the new descr.
+	if (body_part == 'hands') {
+		$('#pheno_img_hands').attr('src', phenotype);
+		console.log($('#current_Hands > img').attr('src'));
+		$('#pheno_text_hands').text(descr);
+	}
+	else if (body_part == 'horns') {
+		$('#pheno_img_horns').attr('src', phenotype);
+		$('#pheno_text_horns').text(descr);
+	}
+	else if (body_part == 'mouth') {
+		$('#pheno_img_mouth').attr('src', phenotype);
+		$('#pheno_text_mouth').text(descr);
+	}
+	else if (body_part == 'tail') {
+		$('#pheno_img_tail').attr('src', phenotype);
+		$('#pheno_text_tail').text(descr);
+	}
+    $('#fight_'+body_part).val(descr);
+}
+
+// clicked is the new body part image_id
+function imageOnClick(clicked) {
+	// Current body part image id
+	var img_id = "#pheno_img_" + current_phenotype;
+	// Current body part text
+	var current_text = "#pheno_text_" + current_phenotype;
+	// Current body part div id
+	var current_div = "#lab_" + current_phenotype;
+	// new body part text
+	var new_text = "#pheno_text_" + clicked.substr(11);
+	// new body part div id
+	var show_div = "#lab_" + clicked.substr(11);
+	console.log(current_div);
+	// Hide and show the new div
+	$(current_div).hide();
+	$(show_div).show();
+	//Hide the current text
+	$(current_text).text('');
+	console.log(img_id);
+	// Let the current image id shrink
+	$(img_id).animate({
+	width: '50',
+	height: '50',
+	opacity: 1,	
+	}, {duration: 1000, queue: false});
+
+	// Grow the new image id
+	$(clicked).animate({
+	width: '100',
+	height: '100',
+	opacity: 1,	
+	}, {duration: 1000, queue: false});
+
+	// Set the new current_phenotype
+	current_phenotype = clicked.substr(11);
+	// Find the text of the new body part by looking up a matching image filename
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $(clicked).attr('src'))
+			$(new_text).text(i)
+	}		
+}
+
+function CodonClick(codon) {
+	console.log('CLICK');
+	// Grab the letter on the button
+	current_codon = $(codon).text()[0];
+	console.log(current_codon);
+	// find index in dictionary
+	current_index = codon_dict.indexOf(current_codon);
+	console.log(current_index);
+	// shift to the next letter in the sequence
+	if (current_index == 3)
+		$(codon).text(codon_dict[0]);
+	else {
+		console.log('else');
+		$(codon).text(codon_dict[current_index + 1]);
+	}
+	short_sequence = $(codon).parent().text().replace(/\s+/gm,'');
+	console.log(short_sequence);
+	for (var i in genetic_code) {
+		// if the sequence of 3 is in the dictionary
+		if (i == short_sequence) {
+			// Find the right text to update by using the number associated with codon id
+			if (codon[7] <=3)
+				$('#amino_select_1_' + current_phenotype).text(genetic_code[i]);
+			else if (codon[7] <=6)
+				$('#amino_select_2_' + current_phenotype).text(genetic_code[i]);
+			else if (codon[7] <=9)
+				$('#amino_select_3_' + current_phenotype).text(genetic_code[i]);
+		}
+	}
+	sync(current_phenotype);
+}
+
+
+
+</script>
+
+</body>
+</html>
