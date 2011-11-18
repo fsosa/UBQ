@@ -43,16 +43,7 @@ white-space: normal;
                     {{weakness}} {{count}}
                 {% endfor %}
                 <br />
-                <form id="fight_form" action="/beasties/fight/" method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="enemy_id" value="{{enemy.id}}">
-                    <input type="hidden" id="fight_hands" name="fight_hands" value="Normal Hands">
-                    <input type="hidden" id="fight_horns" name="fight_horns" value="Normal Horns">
-                    <input type="hidden" id="fight_mouth" name="fight_mouth" value="Normal Mouth">
-                    <input type="hidden" id="fight_tail" name="fight_tail" value="Normal Tail">
-                    <input type="submit" value="Fight" class="ui-btn-hidden" data-inline="true">
-                </form>
-                <!-- <a href="#" data-role="button" data-inline="true" data-theme="b">Fight!</a>-->
+                <a href="#fight_confirm" id="fight_button" data-role="button" data-inline="true" data-theme="b">Fight!</a>
                 </span>
             </td>
 		</tr>
@@ -60,20 +51,25 @@ white-space: normal;
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="d">	
-    <div style="text-align: center;">		        <!-- Carosel of Body Parts -->        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">			<tr>				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>			</tr>			<tr>				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>				<td id="pheno_text_horns" style="font-weight:bold"></td>				<td id="pheno_text_mouth" style="font-weight:bold"></td>				<td id="pheno_text_tail" style="font-weight:bold"></td>			</tr>		</table>
+    <div style="text-align: center;">		        <!-- Carosel of Body Parts -->
+        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">			<tr>				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>			</tr>			<tr>				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>				<td id="pheno_text_horns" style="font-weight:bold"></td>				<td id="pheno_text_mouth" style="font-weight:bold"></td>				<td id="pheno_text_tail" style="font-weight:bold"></td>			</tr>		</table>
     </div>        
         {% for bodypart in bodyparts %}
-            <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->                  <div class="ui-grid-b" style="text-align:center">                
+            <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->  
+                <div class="ui-grid-b" style="text-align:center">                
                 {% for i in template_mapping %}
                     <div class="ui-block-{{ i|last }}">
-                                    <div class="actions">                        <a class="next browse up"></a>                    </div>                   
+                                    <div class="actions">
+                        <a class="next browse up"></a>                    </div>                   
                    <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}">
                    <div class="items">                        {% for aa_name in amino_acid_names %}
                             <div>
                             <div class="item" title="{{aa_name}}">{{aa_name}}</div>
                             </div>
                         {% endfor %}                   </div>                   </div>
-                                       <div class="actions">                        <a class="prev browse down"></a>                    </div>                </div>
+                   
+                    <div class="actions">
+                        <a class="prev browse down"></a>                    </div>                </div>
                 {% endfor %}
                 
                 <div id="amino_sequences_{{bodypart}}">
@@ -88,11 +84,57 @@ white-space: normal;
         
     </div>
     </div><!-- /content -->
-
 	<div data-role="footer">
 	</div><!-- /footer -->
 </div><!--/lab-->
 
+<div data-role="page" id="fight_confirm" data-add-back-btn="true"> <!--FIGHT-CONFIRMATION-->
+	<div data-role='header'>
+        <div style="margin-left:80px;margin-right:80px;text-align:center">Ready to Fight?</div>
+        <div style="text-align: right">
+            <form id="fight_form" action="/beasties/fight/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="enemy_id" value="{{enemy.id}}">
+            <input type="hidden" id="fight_hands" name="fight_hands" value="Normal Hands">
+            <input type="hidden" id="fight_horns" name="fight_horns" value="Normal Horns">
+            <input type="hidden" id="fight_mouth" name="fight_mouth" value="Normal Mouth">
+            <input type="hidden" id="fight_tail" name="fight_tail" value="Normal Tail">
+            <input type="submit" value="Fight" class="ui-btn-right" data-theme="a" data-inline="true">
+            </form>
+        </div>
+	</div>
+
+	<div data-role='content'>
+		<div class='ui-grid-a' style="text-align: center;">
+			<div class='ui-block-a'>
+				<h2>You</h2>
+				<table align="center">
+				<tr>
+				<td><img id="confirm_hands" src='' /><h4 id="confirm_hands_text"></h4></td>
+				<td><img id="confirm_horns" src='' /><h4 id="confirm_horns_text"></h4></td>
+				</tr>
+				<tr>
+				<td><img id="confirm_mouth" src='' /><h4 id="confirm_mouth_text"></h4></td>
+				<td><img id="confirm_tail" src='' /><h4 id="confirm_tail_text"></h4></td>
+				</tr>
+				</table>
+			</div>
+
+			<div class='ui-block-b'>
+				<h2>{{enemy.name}}</h2>
+				<img src="{{enemy.image_filename}}" />
+				<h4>
+                Weakness:
+                {% for weakness, count in weakness_count.items %}
+                    {{weakness}} {{count}}
+                {% endfor %}
+                </h4>
+			</div>
+		</div>
+		
+	</div>
+
+</div><!--/fight-confirmation-->
 
 <div data-role="page" id="help" data-add-back-btn="true">
 	<div data-role="header" >
@@ -170,6 +212,10 @@ white-space: normal;
     pheno_pics["{{phenotype.name}}"] = "{{phenotype.image_filename}}"
     {% endfor %}
 
+
+
+
+
 var current_phenotype = "hands";
 
 $('#lab').live('pageinit',function(event){
@@ -200,9 +246,10 @@ $('#lab').live('pageinit',function(event){
 
     //TODO Add fight screen confirm
     //Confirm fight
-	// $('#fight_button').click(FightClick);
+    $('#fight_button').click(FightClick);
+
     //Cancel fight
-	// $('#dialog_close').click(function() {$('#fight_confirm').dialog('close');});
+    $('#dialog_close').click(function() {$('#fight_confirm').dialog('close');});
 	$(function() {		
 		
 	// initialize scrollable with mousewheel support
@@ -211,6 +258,33 @@ $('#lab').live('pageinit',function(event){
 	});
 })
 
+function FightClick() {
+	$('#confirm_hands').attr('src', $('#pheno_img_hands').attr('src'));
+	$('#confirm_horns').attr('src', $('#pheno_img_horns').attr('src'));
+	$('#confirm_mouth').attr('src', $('#pheno_img_mouth').attr('src'));
+	$('#confirm_tail').attr('src', $('#pheno_img_tail').attr('src'));
+
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_hands').attr('src')) {
+			$('#confirm_hands_text').text(i);
+		}
+	}
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_horns').attr('src')) {
+			$('#confirm_horns_text').text(i);
+		}
+	}
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_mouth').attr('src')) {
+			$('#confirm_mouth_text').text(i);
+		}
+	}
+	for (var i in pheno_pics){
+		if (pheno_pics[i] == $('#pheno_img_tail').attr('src')) {
+			$('#confirm_tail_text').text(i);
+		}
+	}
+}
 function amino_select_mouseover(event, select_id, type){
 	var scroll = "#" + select_id;
 	var api = $(scroll).data("scrollable")

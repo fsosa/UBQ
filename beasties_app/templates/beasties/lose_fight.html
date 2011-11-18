@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<title>The Fight</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" src="jquery.tools.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="tabs-slideshow.css" />
+	<link rel="stylesheet" type="text/css" href="scrollable-pheno.css" />
+	<link rel="stylesheet" type="text/css" href="scrollable-vertical-m.css" />
+	<style>
+.ui-btn-text {
+white-space: normal;
+}
+	</style>
+</head> 
+<body>
+
+<div data-role="page" id="fight"><!--FIGHT-->
+	<div data-role="header">
+		<span style="font-size: xx-large; text-align: left;"> The Fight</span>
+		<div id='graveyard' style="text-align: right; display: inline; float: right;"><a href="/beasties/graveyard/" rel="external" data-role="button" data-theme="a">Back to Graveyard</a></div>
+	</div>
+
+	<div data-role="content">
+		<div class='ui-grid-a' id='loss_descr' style="text-align: center;">
+			<div class='ui-block-a' width=66%>
+				<span style="font-size: 72px;">YOU LOST</span>
+				<p> {{fight_outcome}} </p>
+			</div>
+			<div class='ui-block-b' width=33%>
+				<img id="beasty_pic" src="{{enemy.image_filename}}" />
+			</div>
+		</div>
+	</div>
+
+	<div data-role='footer'>
+
+	</div>
+</div><!--/fight-->
+
+<script>
+
+$('#fight').live('pagecreate', function() {
+	$('#loss_descr').hide();
+	LoseFight();
+
+});
+
+function LoseFight() {
+	$('#loss_descr').animate({
+	height: 'show',
+	}, {duration: 10000, queue: true});
+}
+
+
+</script>
+
+</body>
+</html>

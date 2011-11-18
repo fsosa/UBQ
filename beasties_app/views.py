@@ -133,7 +133,7 @@ def fight(request):
             #TODO: Here we would update the User_Enemy flags
             
             vars['fight_outcome'] = fight_outcome
-            return render_to_response('beasties/fight.html', vars, context_instance=RequestContext(request))
+            return render_to_response('beasties/win_fight.html', vars, context_instance=RequestContext(request))
         else:
             # # TODO: Zombie loses, update LOSS_COUNT in userprofile
             # #zombie.won_flag = False
@@ -152,4 +152,4 @@ def fight(request):
             # # Finalize changes to zombie
             # # Create context for template rendering
             
-            return render_to_response('beasties/fight.html', vars, context_instance=RequestContext(request))
+            return render_to_response('beasties/lose_fight.html', vars, context_instance=RequestContext(request))
