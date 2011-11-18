@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<title>The Fight</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" src="/static/jquery.tools.min.js"></script>
+	<style>
+.ui-btn-text {
+white-space: normal;
+}
+	</style>
+</head> 
+<body>
+
+<div data-role="page" id="stadium"><!-- STADIUM -->
+	<div data-role="header" data-position="inline">
+		<h1>The Fight</h1>
+        <a href="/beasties/graveyard/" rel="external" data-icon="forward" data-iconpos="right" class="ui-btn-right">To The Graveyard</a>
+	</div>
+
+	<div data-role="content">
+		<div class='ui-grid-b' style="text-align: center;" id='reg_descr'>
+			<div class='ui-block-a'>
+				<img id="your_monster" src="/static/images/enemies/yourmonster.png" height="100px" width="100px"/>
+				<h4 id="you_text">Your Monster</h4>
+			</div>
+
+			<div class='ui-block-b'>
+				<span style="font-size: 48px;" id="versus">VERSUS</span>
+                </br>
+                {{fight_outcome}}
+			</div>
+
+			<div class='ui-block-c'>
+				<img src="{{enemy.image_filename}}" id="beasty_pic" height="100px" width="100px"/>
+				<h4 id="beasty_text">{{enemy.name}}</h4>
+			</div>
+		</div>
+        
+    </div>
+</div>
+
+<div data-role="page" id="won"><!-- YOU WIN -->
+	<div data-role="header" data-position="inline">
+		<h1>You Won!</h1>
+        <a href="/beasties/graveyard/" rel="external" data-icon="forward" data-iconpos="right" class="ui-btn-right">To The Graveyard</a>
+	</div>
+
+	<div data-role="content">
+		<div class='ui-grid-b' style="text-align: center;" id='reg_descr'>
+			<div class='ui-block-a'>
+				<img id="your_monster" src="/static/images/enemies/yourmonster.png" height="100px" width="100px"/>
+				<h4 id="you_text">You</h4>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div data-role="page" id="lost"><!--YOU LOSE -->
+	<div data-role="header" data-position="inline">
+		<h1>You Lost!</h1>
+        <a href="/beasties/graveyard/" rel="external" data-icon="forward" data-iconpos="right" class="ui-btn-right">To The Graveyard</a>
+	</div>
+
+	<div data-role="content">
+		<div class='ui-grid-b' style="text-align: center;" id='reg_descr'>
+			<div class='ui-block-c'>
+				<img src="{{enemy.image_filename}}" id="beasty_pic" height="100px" width="100px"/>
+				<h4 id="beasty_text">{{enemy.name}}</h4>
+			</div>
+		</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
