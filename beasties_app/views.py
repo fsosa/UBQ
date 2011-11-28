@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from beasties_app.models import Enemy, Amino_Acid_Name, Amino_Acid, Bodypart, Phenotype
+from random import choice
 
 def logout_page(request):
     """
@@ -19,7 +20,20 @@ def index(request):
 
 @login_required    
 def graveyard(request):
-    enemy_list = Enemy.objects.all()[5:9]
+    user = request.user
+    
+    DISPLAYABLE_ENEMIES = 4
+    all_enemies = Enemy.objects.all()[:]
+    enemy_list = []
+    
+    user_level = 1 #TODO user.get_profile().level
+    user_defeated_enemies = [] #TODO user.get_profile().defeated_enemies
+    #Check if player has less than 4 DISPLAYABLE_ENEMIES
+    while(len(enemy_list) < 4):
+        enemy = choice(all_enemies)
+        #TODO if( ( enemy.level <= user_level ) and not (enemy.id in user_defeated_enemies) )
+        if( enemy.group_number <= user_level and not (enemy in enemy_list) ):
+            enemy_list.append(enemy)
     
     # Create dictionary of variables to pass to site
     vars = {}
@@ -35,6 +49,10 @@ def graveyard(request):
         enemies_weaknesses[enemy] = weakness_count
                     
     vars['enemies_weaknesses'] = enemies_weaknesses
+    
+    vars['user_wins'] = user.get_profile().win_count
+    vars['user_losses'] = user.get_profile().loss_count
+    
     return render_to_response('beasties/graveyard_accordian.html', vars, context_instance=RequestContext(request))
 
 
@@ -44,6 +62,7 @@ def lab(request):
     # Try to create dictionary of variables to pass to site
     vars = {}
     try:
+        user = request.user 
         enemy = Enemy.objects.get(pk=request.POST['enemy_id'])
 
         vars['amino_acid_names'] = Amino_Acid_Name.objects.all()[:]
@@ -114,7 +133,6 @@ def level2(request):
         
 @login_required
 def fight(request):
-    vars = {}
     # Get current user and create the new zombie
     user = request.user 
     vars = {}
@@ -163,16 +181,22 @@ def fight(request):
         
         # Declare winner and loser
         if len(remaining_weaknesses) == 0:
-            # TODO: User wins, update WIN_COUNT in userprofile
-            # #zombie.won_flag = True
+            # User wins, update WIN_COUNT in userprofile
+            user.get_profile().win_count += 1
+            user.save()
+            #TODO user.get_profile().defeated_enemies = enemy.id
+            
             fight_outcome = "Way to go!  " + enemy.win_message
             #TODO: Here we would update the User_Enemy flags
             
             vars['fight_outcome'] = fight_outcome
             return render_to_response('beasties/win_fight.html', vars, context_instance=RequestContext(request))
         else:
-            # # TODO: Zombie loses, update LOSS_COUNT in userprofile
-            # #zombie.won_flag = False
+            # Zombie loses, update LOSS_COUNT in userprofile
+            user.get_profile().loss_count += 1
+            user.get_profile().save()
+            #TODO user.get_profile().defeated_enemies = enemy.id
+            
             fight_outcome = "You lost the fight!  You needed another "
             
             weakness_count = {}

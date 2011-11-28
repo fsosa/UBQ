@@ -43,7 +43,7 @@ white-space: normal;
                 <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="40px" height="40px" style="margin: 0px 5px;"/>
                 Weakness:
                 {% for weakness, count in weakness_count.items %}
-                    {{weakness}} {{count}}
+                    {{weakness}} x{{count}}
                 {% endfor %}
                 <br />
                 <a href="#fight_confirm" id="fight_button" data-role="button" data-inline="true" data-theme="b">Fight!</a>
@@ -149,7 +149,7 @@ white-space: normal;
 				<h4>
                 Weakness:
                 {% for weakness, count in weakness_count.items %}
-                    {{weakness}} {{count}}
+                    {{weakness}} x{{count}}
                 {% endfor %}
                 </h4>
 			</div>

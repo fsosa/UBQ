@@ -40,7 +40,7 @@ white-space: normal;
                 <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="40px" height="40px" style="margin: 0px 5px;"/>
                 Weakness:
                 {% for weakness, count in weakness_count.items %}
-                    {{weakness}} {{count}}
+                    {{weakness}} x{{count}}
                 {% endfor %}
                 <br />
                 <a href="#fight_confirm" id="fight_button" data-role="button" data-inline="true" data-theme="b">Fight!</a>
@@ -75,9 +75,23 @@ white-space: normal;
                 {% endfor %}
                 
                 <div id="amino_sequences_{{bodypart}}">
-                {% for i in template_mapping %}
-                    <div class="ui-block-{{i|last}}" id="amino_{{ i|first }}_{{bodypart}}" style="text-align:center"><h1>UUU</h1></div>
-                {% endfor %}
+                {% if bodypart == bodyparts.0 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>UUU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>CUA</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>AUU</h1></div>
+                {% else %}{% if bodypart == bodyparts.1 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>ACU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>GCU</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>GCA</h1></div>
+                {% else %}{% if bodypart == bodyparts.2 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>CAU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>CAA</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>AAU</h1></div>
+                {% else %}{% if bodypart == bodyparts.3 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>AUU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>UCU</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>CCU</h1></div>
+                {% endif %}{% endif %}{% endif %}{% endif %}
                 
                 </div><!--/{{bodypart}}-->
         
@@ -129,7 +143,7 @@ white-space: normal;
 				<h4>
                 Weakness:
                 {% for weakness, count in weakness_count.items %}
-                    {{weakness}} {{count}}
+                    {{weakness}} x{{count}}
                 {% endfor %}
                 </h4>
 			</div>
@@ -156,7 +170,7 @@ white-space: normal;
 		<h1> Genetic Code </h1>
 	</div>
 	<div data-role="content">
-		<img src='/static/images/genetic_code.jpg' />
+		<img src='/static/images/genetic_code.jpg' height="100%" width="100%"/>
 	</div>
 </div>
 
@@ -173,7 +187,7 @@ white-space: normal;
                     <font style="text-transform: uppercase;">{{bodypart}}</font> 
                 </li>
                 {% for phenotype in phenotypes %}
-                    {% if phenotype.bodypart == bodypart %}
+                    {% if phenotype.bodypart == bodypart and not "Normal" in phenotype.name %}
                         <li>
                             <img src="{{phenotype.image_filename}}" height="80px" width="80px"/>
                             <h2>{{ phenotype.name }}</h2>
@@ -226,13 +240,9 @@ $('#lab').live('pageinit',function(event){
 	$("#amino_select_2_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_hands', 'prev')});
 	$("#amino_select_3_hands").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_hands', 'prev')});
 
-
-
 	$("#amino_select_1_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_horns', 'prev')});
 	$("#amino_select_2_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_horns', 'prev')});
 	$("#amino_select_3_horns").bind('onSeek', function() {amino_select_mouseover('','amino_select_3_horns', 'prev')});
-
-
 
 	$("#amino_select_1_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_1_mouth', 'prev')});
 	$("#amino_select_2_mouth").bind('onSeek', function() {amino_select_mouseover('','amino_select_2_mouth', 'prev')});
