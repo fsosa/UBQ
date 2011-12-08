@@ -2,17 +2,25 @@
 <html> 
 
 <head>
-	<meta charset="utf-8">
-	<title>The Lab</title>
+	<title>The Lab!</title>
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
 	<script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="/static/css/tabs-slideshow.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-pheno.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
-	<style>
+    <script type="text/javascript" src="/static/javascript/lab.js"></script>
+    
+    <!-- Unique CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/genetic_code_table.css" />
+    {% if user_is_mobile %}
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-mobile.css" />
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-desktop.css" />
+    {% endif %}
+    
+    <style>
 .ui-btn-text {
 white-space: normal;
 }
@@ -31,8 +39,8 @@ white-space: normal;
                 <span style="font-size: xx-large; font-weight: bold;">
                     The Lab
                 </span>
-                <a href="#help" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b">
-                Help
+                <a href="#phenotypes" data-role="button" data-transition="slidedown" data-theme="b">
+                Phenotype Handbook
                 </a>
             </td>
 			<td width=50% style="text-align: right">
@@ -52,16 +60,19 @@ white-space: normal;
 
 	<div data-role="content" data-theme="d">	
     <div style="text-align: center;">		        <!-- Carosel of Body Parts -->
-        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">			<tr>				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>			</tr>			<tr>				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>				<td id="pheno_text_horns" style="font-weight:bold"></td>				<td id="pheno_text_mouth" style="font-weight:bold"></td>				<td id="pheno_text_tail" style="font-weight:bold"></td>			</tr>		</table>
+        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">			<tr>				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>			</tr>			<tr>				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>				<td id="pheno_text_horns" style="font-weight:bold"></td>				<td id="pheno_text_mouth" style="font-weight:bold"></td>				<td id="pheno_text_tail" style="font-weight:bold"></td>
+			</tr>		</table>
     </div>        
         {% for bodypart in bodyparts %}
             <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->  
                 <div class="ui-grid-b" style="text-align:center">                
                 {% for i in template_mapping %}
                     <div class="ui-block-{{ i|last }}">
-                                    <div class="actions">
+                
+                    <div class="actions">
                         <a class="next browse up"></a>
-                    </div>                   
+                    </div>
+                   
                    <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}">
                    <div class="items">                        {% for aa_name in amino_acid_names %}
                             <div>
@@ -71,7 +82,8 @@ white-space: normal;
                    
                     <div class="actions">
                         <a class="prev browse down"></a>
-                    </div>                </div>
+                    </div>
+                </div>
                 {% endfor %}
                 
                 <div id="amino_sequences_{{bodypart}}">
@@ -92,14 +104,12 @@ white-space: normal;
                     <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>UCU</h1></div>
                     <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>CCU</h1></div>
                 {% endif %}{% endif %}{% endif %}{% endif %}
-                
-                </div><!--/{{bodypart}}-->
-        
                 </div>
-            </div>
+                </div>
+                
+            </div><!--/{{bodypart}}-->
         {% endfor %}
         
-    </div>
     </div><!-- /content -->
 	<div data-role="footer">
 	</div><!-- /footer -->
@@ -152,25 +162,249 @@ white-space: normal;
 	</div>
 </div><!--/fight-confirmation-->
 
-<div data-role="page" id="help" data-add-back-btn="true">
-	<div data-role="header" >
-        <h1>Info Sheets</h1>
+<div data-role="page"  id="genetic_code">
+	<div data-role="header" data-position="fixed">
+		<table width=100%>
+		<tr>
+            <td width=50px>
+                <a href="#phenotypes" data-role="button" data-rel="back" data-theme='b' data-inline="true" data-icon="back">
+                Handbook
+                </a>
+            </td>
+            <td>
+                <span style="font-size: xx-large; font-weight: bold;text-align: left;">
+                    Monster Universal Genetic Code
+                </span>
+            </td>
+            <td>
+                <span style="text-align: right;">
+                    <span style="font-weight: bold;">
+                    <img align='left' src='' id='selected_image' width=40px height=40px />
+                    <span style="font-size: 24px;" id="selected_phenotype">
+                    </span>
+                    <br />
+                    <span style="color: #FF6666;" id="selected_amino_1">-</span>-<span style="color: #FFFF66;" id="selected_amino_2"></span>-<span style="color: #99CCFF;" id="selected_amino_3"></span>
+                    </span>
+                </span>
+            </td>
+            <td>
+                <a href="#lab" data-role="button" data-transition='slideup' data-theme='b' data-inline="true">
+                Back to Lab
+                </a>
+            </td>
+		</tr>
+		</table>	
 	</div>
-
+	
 	<div data-role="content">
-		<ul data-role="listview">
-		<li><a href="#phenotypes">Known Monster Phenotypes</a></li>
-		<li><a href="#genetic_code">Genetic Code</a></li>
-		</ul>
-	</div>
-</div>
+		<table width="90%" align=center style="background: white;text-align: center;">
+		<tr style="font-size: 20px; font-weight: bold;">
+		<td width=5%></td>
+		<td colspan=2 class="border-all">U</td>
+		<td colspan=2 class="border-all">C</td>
+		<td colspan=2 class="border-all">A</td>
+		<td colspan=2 class="border-all">G</td>
+		<td colspan=2 width=5%></td>
+		</tr>
 
-<div data-role="page" id="genetic_code" data-add-back-btn="true">
-    <div data-role="header">
-		<h1> Genetic Code </h1>
-	</div>
-	<div data-role="content">
-		<img src='/static/images/genetic_code.jpg' height="100%" width="100%"/>
+		<tr>
+		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">U</td>
+		<td class="codon_cell Bwy">UUU</td>
+		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="codon_cell Hig">UCU</td>
+		<td class="amino_cell Hig">Higgonine</td>
+		<td class="codon_cell Lon">UAU</td>
+		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="codon_cell Sly">UGU</td>
+		<td class="amino_cell Sly">Slyctein</td>
+		<td width=5% class="border-all">U</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Bwy">UUC</td>
+		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="codon_cell Hig">UCC</td>
+		<td class="amino_cell Hig">Higgonine</td>
+		<td class="codon_cell Lon">UAC</td>
+		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="codon_cell Sly">UGC</td>
+		<td class="amino_cell Sly">Slyctein</td>
+		<td width=5% class="border-all">C</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Bwy">UUA</td>
+		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="codon_cell Hig">UCA</td>
+		<td class="amino_cell Hig">Higgonine</td>
+		<td class="codon_cell Lon">UAA</td>
+		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="codon_cell Tor">UGA</td>
+		<td class="amino_cell Tor">Torkanine</td>
+		<td width=5% class="border-all">A</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Bwy" style="border-bottom: 2px solid black;">UUG</td>
+		<td class="amino_cell Bwy" style="border-bottom: 2px solid black;">Bwycine</td>
+		<td class="codon_cell Hig" style="border-bottom: 2px solid black;">UCG</td>
+		<td class="amino_cell Hig" style="border-bottom: 2px solid black;">Higgonine</td>
+		<td class="codon_cell Lon" style="border-bottom: 2px solid black;">UAG</td>
+		<td class="amino_cell Lon" style="border-bottom: 2px solid black;">Lonkidine</td>
+		<td class="codon_cell Tor" style="border-bottom: 2px solid black;">UGG</td>
+		<td class="amino_cell Tor" style="border-bottom: 2px solid black;">Torkanine</td>
+		<td width=5% class="border-all">G</td>
+		</tr>
+
+		<tr>
+		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">C</td>
+		<td class="codon_cell Bwy">CUU</td>
+		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="codon_cell Ixa">CCU</td>
+		<td class="amino_cell Ixa">Ixanine</td>
+		<td class="codon_cell Mew">CAU</td>
+		<td class="amino_cell Mew">Mewsamine</td>
+		<td class="codon_cell Vla">CGU</td>
+		<td class="amino_cell Vla">Vladine</td>
+		<td width=5% class="border-all">U</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Bwy">CUC</td>
+		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="codon_cell Ixa">CCC</td>
+		<td class="amino_cell Ixa">Ixanine</td>
+		<td class="codon_cell Mew">CAC</td>
+		<td class="amino_cell Mew">Mewsamine</td>
+		<td class="codon_cell Vla">CGC</td>
+		<td class="amino_cell Vla">Vladine</td>
+		<td width=5% class="border-all">C</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Den">CUA</td>
+		<td class="amino_cell Den">Dentine</td>
+		<td class="codon_cell Ixa">CCA</td>
+		<td class="amino_cell Ixa">Ixanine</td>
+		<td class="codon_cell Nif">CAA</td>
+		<td class="amino_cell Nif">Niffagine</td>
+		<td class="codon_cell Wor">CGA</td>
+		<td class="amino_cell Wor">Worbamine</td>
+		<td width=5% class="border-all">A</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Den" style="border-bottom: 2px solid black;">CUG</td>
+		<td class="amino_cell Den" style="border-bottom: 2px solid black;">Dentine</td>
+		<td class="codon_cell Ixa" style="border-bottom: 2px solid black;">CCG</td>
+		<td class="amino_cell Ixa" style="border-bottom: 2px solid black;">Ixanine</td>
+		<td class="codon_cell Nif" style="border-bottom: 2px solid black;">CAG</td>
+		<td class="amino_cell Nif" style="border-bottom: 2px solid black;">Niffagine</td>
+		<td class="codon_cell Wor" style="border-bottom: 2px solid black;">CGG</td>
+		<td class="amino_cell Wor" style="border-bottom: 2px solid black;">Worbamine</td>
+		<td width=5% class="border-all">G</td>
+		</tr>
+
+		<tr>
+		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">A</td>
+		<td class="codon_cell Elp">AUU</td>
+		<td class="amino_cell Elp">Elphine</td>
+		<td class="codon_cell Jor">ACU</td>
+		<td class="amino_cell Jor">Jorganine</td>
+		<td class="codon_cell Orz">AAU</td>
+		<td class="amino_cell Orz">Orzine</td>
+		<td class="codon_cell Wor">AGU</td>
+		<td class="amino_cell Wor">Worbamine</td>
+		<td width=5% class="border-all">U</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Elp">AUC</td>
+		<td class="amino_cell Elp">Elphine</td>
+		<td class="codon_cell Jor">ACC</td>
+		<td class="amino_cell Jor">Jorganine</td>
+		<td class="codon_cell Orz">AAC</td>
+		<td class="amino_cell Orz">Orzine</td>
+		<td class="codon_cell Wor">AGC</td>
+		<td class="amino_cell Wor">Worbamine</td>
+		<td width=5% class="border-all">C</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Elp">AUA</td>
+		<td class="amino_cell Elp">Elphine</td>
+		<td class="codon_cell Jor">ACA</td>
+		<td class="amino_cell Jor">Jorganine</td>
+		<td class="codon_cell Pef">AAA</td>
+		<td class="amino_cell Pef">Peffaline</td>
+		<td class="codon_cell Yaf">AGA</td>
+		<td class="amino_cell Yaf">Yaffline</td>
+		<td width=5% class="border-all">A</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Elp" style="border-bottom: 2px solid black;">AUG</td>
+		<td class="amino_cell Elp" style="border-bottom: 2px solid black;">Elphine</td>
+		<td class="codon_cell Jor" style="border-bottom: 2px solid black;">ACG</td>
+		<td class="amino_cell Jor" style="border-bottom: 2px solid black;">Jorganine</td>
+		<td class="codon_cell Pef" style="border-bottom: 2px solid black;">AAG</td>
+		<td class="amino_cell Pef" style="border-bottom: 2px solid black;">Peffaline</td>
+		<td class="codon_cell Yaf" style="border-bottom: 2px solid black;">AGG</td>
+		<td class="amino_cell Yaf" style="border-bottom: 2px solid black;">Yaffline</td>
+		<td width=5% class="border-all">G</td>
+		</tr>
+
+		<tr>
+		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">G</td>
+		<td class="codon_cell Elp">GUU</td>
+		<td class="amino_cell Elp">Elphine</td>
+		<td class="codon_cell Kru">GCU</td>
+		<td class="amino_cell Kru">Kruzosine</td>
+		<td class="codon_cell Qua">GAU</td>
+		<td class="amino_cell Qua">Quarbline</td>
+		<td class="codon_cell Yaf">GGU</td>
+		<td class="amino_cell Yaf">Yaffline</td>
+		<td width=5% class="border-all">U</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Elp">GUC</td>
+		<td class="amino_cell Elp">Elphine</td>
+		<td class="codon_cell Kru">GCC</td>
+		<td class="amino_cell Kru">Kruzosine</td>
+		<td class="codon_cell Qua">GAC</td>
+		<td class="amino_cell Qua">Quarbline</td>
+		<td class="codon_cell Yaf">GGC</td>
+		<td class="amino_cell Yaf">Yaffline</td>
+		<td width=5% class="border-all">C</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Elp">GUA</td>
+		<td class="amino_cell Elp">Elphine</td>
+		<td class="codon_cell Lon">GCA</td>
+		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="codon_cell Raj">GAA</td>
+		<td class="amino_cell Raj">Rajormine</td>
+		<td class="codon_cell Zun">GGA</td>
+		<td class="amino_cell Zun">Zunganine</td>
+		<td width=5% class="border-all">A</td>
+		</tr>
+
+		<tr>
+		<td class="codon_cell Elp" style="border-bottom: 2px solid black;">GUG</td>
+		<td class="amino_cell Elp" style="border-bottom: 2px solid black;">Elphine</td>
+		<td class="codon_cell Lon" style="border-bottom: 2px solid black;">GCG</td>
+		<td class="amino_cell Lon" style="border-bottom: 2px solid black;">Lonkidine</td>
+		<td class="codon_cell Raj" style="border-bottom: 2px solid black;">GAG</td>
+		<td class="amino_cell Raj" style="border-bottom: 2px solid black;">Rajormine</td>
+		<td class="codon_cell Zun" style="border-bottom: 2px solid black;">GGG</td>
+		<td class="amino_cell Zun" style="border-bottom: 2px solid black;">Zunganine</td>
+		<td width=5% class="border-all">G</td>
+		</tr>
+		</table>
+
+		<!--<img src='genetic_code.jpg' />-->
 	</div>
 </div>
 
@@ -189,9 +423,12 @@ white-space: normal;
                 {% for phenotype in phenotypes %}
                     {% if phenotype.bodypart == bodypart and not "Normal" in phenotype.name %}
                         <li>
+                            <a href="#genetic_code" data-transition="slide" class="pheno_list_item" data-phenotype="{{phenotype.name}}" data-aminoacids="{{phenotype.amino_acid_name_1.symbol}}-{{phenotype.amino_acid_name_2.symbol}}-{{phenotype.amino_acid_name_3.symbol}}">
                             <img src="{{phenotype.image_filename}}" height="80px" width="80px"/>
                             <h2>{{ phenotype.name }}</h2>
-                            <p><b>Amino Acid Sequence:</b> {{phenotype.amino_acid_name_1}} {{phenotype.amino_acid_name_2}} {{phenotype.amino_acid_name_3}}</p>
+                            <!--<p><b>Amino Acid Sequence:</b> {{phenotype.amino_acid_name_1}} {{phenotype.amino_acid_name_2}} {{phenotype.amino_acid_name_3}}</p>-->
+                            <p><b>Amino Acid Sequence:</b> {{phenotype.amino_acid_name_1.symbol}} {{phenotype.amino_acid_name_2.symbol}} {{phenotype.amino_acid_name_3.symbol}}</p>
+                            </a>
                         </li>
                     {% endif %}
                 {% endfor %}            
@@ -211,7 +448,12 @@ white-space: normal;
     {% for amino_acid in amino_acids %}
     amino_sequences["{{amino_acid.name.name}}"] = "{{amino_acid.nucleotide_1.symbol}}{{amino_acid.nucleotide_2.symbol}}{{amino_acid.nucleotide_3.symbol}}"
     {% endfor %}
-
+    
+    var amino_abbreviations = {};
+    {% for amino_acid in amino_acids %}
+    amino_abbreviations["{{amino_acid.name.name}}"] = "{{amino_acid.name.symbol}}"
+    {% endfor %}
+    
 //var pheno_seq = {"Mirror Palms": "PefWorOrz", "Poblano Pepper Fists": "LonOrzElp", "Cyclone Fists": "YafPefOrz", "Razor Claws": "YafPefWor", "Thunder Clap": "BwySlyLon", "Fiery Fists": "BwySlyTor", "Schocking Palms": "YafPefBwy", "Frozen Fists": "LonTorRaj", "Sweaty Palms": "PefElpTor"};
     var pheno_seq = {}
     {% for phenotype in phenotypes %}
@@ -225,11 +467,8 @@ white-space: normal;
     {% endfor %}
 
     var current_phenotype = "hands";
-
-$('#lab').live('pageinit',function(event){
-	$("#lab_horns").hide();
-	$("#lab_mouth").hide();
-	$("#lab_tail").hide();	
+    
+    $('#lab').live('pageinit',function(event){
 
 	$("#pheno_img_hands").bind('click', function(){imageOnClick("#pheno_img_hands")});
 	$("#pheno_img_horns").bind('click', function(){imageOnClick("#pheno_img_horns")});
@@ -264,178 +503,42 @@ $('#lab').live('pageinit',function(event){
 	$(".scrollable").scrollable({ vertical: true, circular: true});	
 	
 	});
+
+    $(".pheno_list_item").click(PhenoListItemClick);
+
 })
 
-function FightClick() {
-	$('#confirm_hands').attr('src', $('#pheno_img_hands').attr('src'));
-	$('#confirm_horns').attr('src', $('#pheno_img_horns').attr('src'));
-	$('#confirm_mouth').attr('src', $('#pheno_img_mouth').attr('src'));
-	$('#confirm_tail').attr('src', $('#pheno_img_tail').attr('src'));
-
-	for (var i in pheno_pics){
-		if (pheno_pics[i] == $('#pheno_img_hands').attr('src')) {
-			$('#confirm_hands_text').text(i);
-		}
-	}
-	for (var i in pheno_pics){
-		if (pheno_pics[i] == $('#pheno_img_horns').attr('src')) {
-			$('#confirm_horns_text').text(i);
-		}
-	}
-	for (var i in pheno_pics){
-		if (pheno_pics[i] == $('#pheno_img_mouth').attr('src')) {
-			$('#confirm_mouth_text').text(i);
-		}
-	}
-	for (var i in pheno_pics){
-		if (pheno_pics[i] == $('#pheno_img_tail').attr('src')) {
-			$('#confirm_tail_text').text(i);
-		}
-	}
-}
-function amino_select_mouseover(event, select_id, type){
-	var scroll = "#" + select_id;
-	var api = $(scroll).data("scrollable")
-	var index = api.getIndex();
-	var amino_acid = api.getItems()[index].childNodes[1].childNodes[0].nodeValue;//options[amino_acid_seq];
-	console.log(amino_acid);
-	var sequence = amino_sequences[amino_acid];
-	var amino_id = select_id
-	if (amino_id == 'amino_select_1_' + current_phenotype) {
-		$("#amino_1_" + current_phenotype +' >h1').text(sequence);
-		sync(current_phenotype);
-	}
-	else if (amino_id == 'amino_select_2_' + current_phenotype) {
-		$('#amino_2_' + current_phenotype + ' >h1').text(sequence);
-		sync(current_phenotype);
-	}
-	else if (amino_id == 'amino_select_3_' + current_phenotype) {
-		$('#amino_3_'+current_phenotype+ ' >h1').text(sequence);
-		sync(current_phenotype);
-	}
-	//$('amino_' + amino_id > h1)
-}
-
-
-function sync(body_part) {
-	// Boolean to determine whether or not a phenotype pic was found
-	var changeBool = false;
-	// All of the aminoacid sequences together
-	var text = $('#amino_sequences_' + current_phenotype).text().replace(/\s+/gm,'');
-	// Splice the text string into the separate ones, each representing the amino acid sequence
-	var seq_1 = text.substring(0,3);
-	var seq_2 = text.substring(3,6);
-	var seq_3 = text.substring(6,9);
-	var phenotype_seq = "";
-	// If each sequence matches one of our amino_acids, add the abbreviation of the amino_acid to the phenotype_seq
-	for (var i in amino_sequences) {
-	if (amino_sequences[i] == seq_1)
-	    phenotype_seq += (i.substring(0,3));
-	}
-	for (var i in amino_sequences) {
-        if (amino_sequences[i] == seq_2)
-             phenotype_seq += (i.substring(0,3));
-	}
-	for (var i in amino_sequences) {
-        if (amino_sequences[i] == seq_3)
-             phenotype_seq += (i.substring(0,3));
-	}
-	console.log(phenotype_seq);
-
-	for (var i in pheno_pics) {
-		//If the sequence matches a phenotype sequence that we have in a dictionary
-		if (pheno_seq[i] == phenotype_seq){
-			// Change and update the pic and text, ONLY if we are in the right body part
-			var regexp = new RegExp(current_phenotype);
-			// we check to see if we are in the right body part by looking at image filename (each one contains either "hands," "horns," etc.)
-			if (regexp.test(pheno_pics[i]) != false) {
-				UpdatePic(pheno_pics[i],i,body_part);
-
-
-				// If we update pic, we have found a phenotype pic, so set bool to true
-				changeBool = true;
-			}
-		}
-	}
-
-	// If we did not find a phenotype pic, we have to change picture to a normal one
-	if (changeBool == false) {
-		//Find the normal phenotype associated with the body part we are on
-		var pattern = new RegExp("Normal " + current_phenotype.charAt(0).toUpperCase() + current_phenotype.substring(1));
-		console.log(pattern.source);
-		// Once we find it, call update pic with the normal one
-		for (var i in pheno_pics) {
-			if (pattern.test(i) == true)
-				UpdatePic(pheno_pics[i], i, body_part);
-		}
-	}
-	
-}
-
-function UpdatePic(phenotype, descr,body_part){
-	if (body_part == 'hands') {
-		$('#pheno_img_hands').attr('src', phenotype);
-		console.log($('#current_Hands > img').attr('src'));
-		$('#pheno_text_hands').text(descr);
-	}
-	else if (body_part == 'horns') {
-		$('#pheno_img_horns').attr('src', phenotype);
-		$('#pheno_text_horns').text(descr);
-	}
-	else if (body_part == 'mouth') {
-		$('#pheno_img_mouth').attr('src', phenotype);
-		$('#pheno_text_mouth').text(descr);
-	}
-	else if (body_part == 'tail') {
-		$('#pheno_img_tail').attr('src', phenotype);
-		$('#pheno_text_tail').text(descr);
-	}
-    //TODO Use for updating form values
-    $('#fight_'+body_part).val(descr);
-}
-
-function imageOnClick(clicked) {
-	var img_id = "#pheno_img_" + current_phenotype;
-	var current_text = "#pheno_text_" + current_phenotype;
-	var current_div = "#lab_" + current_phenotype;
-	var new_text = "#pheno_text_" + clicked.substr(11);
-	var show_div = "#lab_" + clicked.substr(11);
-	
-    console.log("img_id "+img_id)
-    console.log("current_text "+current_text);
-    console.log("current_div "+current_div);
-    console.log("new_text "+new_text);
-    console.log("show_div "+show_div);
+$(window).load(function(event){
+//Adjust initial amino acid sequences
+    $("#amino_select_1_hands").data("scrollable").seekTo(0, 1000);
+	$("#amino_select_2_hands").data("scrollable").seekTo(1, 1000);
+	$("#amino_select_3_hands").data("scrollable").seekTo(2, 1000);
     
-	$(current_div).hide();
-	$(show_div).show();
-	$(current_text).text('');
-	console.log(img_id);
-	$(img_id).animate({
-	width: '50',
-	height: '50',
-	opacity: 1,	
-	}, {duration: 1000, queue: false});
+    $("#amino_select_1_horns").data("scrollable").seekTo(5, 1000);
+	$("#amino_select_2_horns").data("scrollable").seekTo(6, 1000);
+	$("#amino_select_3_horns").data("scrollable").seekTo(7, 1000);
+    
+    $("#amino_select_1_mouth").data("scrollable").seekTo(8, 1000);
+	$("#amino_select_2_mouth").data("scrollable").seekTo(9, 1000);
+	$("#amino_select_3_mouth").data("scrollable").seekTo(10, 1000);
+    
+    $("#amino_select_1_tail").data("scrollable").seekTo(2, 1000);
+	$("#amino_select_2_tail").data("scrollable").seekTo(3, 1000);
+	$("#amino_select_3_tail").data("scrollable").seekTo(4, 1000);
 
-	$(clicked).animate({
-	width: '100',
-	height: '100',
-	opacity: 1,	
-	}, {duration: 1000, queue: false});
-
-	current_phenotype = clicked.substr(11);
-    console.log("current_phenotype "+current_phenotype);
-	for (var i in pheno_pics){
-		if (pheno_pics[i] == $(clicked).attr('src'))
-			$(new_text).text(i)
-	}		
-}
-
+    //Only display hand options
+    $("#lab_horns").hide();
+	$("#lab_mouth").hide();
+	$("#lab_tail").hide();	    
+});
 </script>
+
 </body>
 
 <footer>
 </footer>
+
+
 
 
 

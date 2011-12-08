@@ -67,7 +67,7 @@
 }
 
 a.browse {
-	background:url(/static/images/vert_large.png) no-repeat;
+	background:url(/static/images/hori_large.png) no-repeat;
 	display:block;
 	width:30px;
 	height:30px;
@@ -79,7 +79,7 @@ a.browse {
 
 /* up and down */
 a.up, a.down		{ 
-	background:url(/static/images/vert_large.png) no-repeat; 
+	background:url(/static/images/hori_large.png) no-repeat; 
 	float: none;
 	margin: 10px 40px;
 }

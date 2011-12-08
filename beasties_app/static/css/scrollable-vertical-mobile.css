@@ -1,0 +1,124 @@
+/* root element for scrollable */
+.vertical {  
+	
+	/* required settings */
+	position:relative;
+	overflow:hidden;	
+
+
+	text-shadow:    0    /*{a-body-shadow-x}*/   0px   /*{a-body-shadow-y}*/    0    /*{a-body-shadow-radius}*/    #fff    /*{a-body-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(   #9AB983   /*{a-bup-background-start}*/), to(   #9AB983   /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top,   #9AB983   /*{a-bup-background-start}*/,   #9AB983   /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top,   #9AB983   /*{a-bup-background-start}*/,   #9AB983   /*{a-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top,   #9AB983   /*{a-bup-background-start}*/,   #9AB983   /*{a-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient(top,   #9AB983   /*{a-bup-background-start}*/,   #9AB983   /*{a-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient(top,   #9AB983   /*{a-bup-background-start}*/,   #9AB983   /*{a-bup-background-end}*/);
+	/* vertical scrollers have typically larger height than width */	
+	height: 55px;	 
+	width: 90px;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;	
+}
+
+/* root element for scrollable items */
+.items {	
+	position:absolute;
+	/*overflow:hidden;*/
+	
+	/* this time we have very large space for height */	
+	height:50px;	
+	margin: 0px;
+}
+
+/* single scrollable item */
+.item {
+
+	margin:0px 0px;
+	padding-top:10px;
+	font-size:17px;
+	height:50px;
+}
+
+/* elements inside single item */
+.item img {
+	float:left;
+	margin-right:22px;
+	height:180px;
+	width:240px;
+}
+
+.item h3 {
+	margin:0 0 5px 0;
+	font-size:16px;
+	color:#456;
+	font-weight:normal;
+}
+
+/* the action buttons above the scrollable */
+.actions {
+	width:100px;
+	margin:0px 0 10px 0;	
+}
+
+.actions a {
+	font-size:11px;		
+	cursor:pointer;
+	color:#666;
+}
+
+.actions a:hover {
+	text-decoration:underline;
+	color:#000;
+}
+
+a.browse {
+	background:url(../images/vert_large.png) no-repeat;
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	margin:40px 10px;
+	cursor:pointer;
+	font-size:1px;
+}
+
+/* up and down */
+a.up, a.down		{ 
+	background:url(../images/vert_large.png) no-repeat; 
+	float: none;
+	margin: 10px 40px;
+}
+
+/* up */
+a.up:hover  		{ background-position:-30px 0; }
+a.up:active  		{ background-position:-60px 0; }
+
+/* down */
+a.down 				{ background-position: 0 -30px; }
+a.down:hover  		{ background-position:-30px -30px; }
+a.down:active  	{ background-position:-60px -30px; } 
+
+.disabled {
+	visibility:hidden;		
+}
+
+.next {
+	float:right;
+}	
+
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+	display:none;
+	background:transparent url(../images/white_arrow.png);
+	font-size:18px;
+	text-align: center;
+	height:75px;
+	width:160px;
+	padding:25px;
+	color:#000;	
+}
+
+

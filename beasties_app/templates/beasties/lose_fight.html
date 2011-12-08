@@ -2,20 +2,19 @@
 <html> 
 
 <head>
-	<meta charset="utf-8">
-	<title>The Fight</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
-	<script type="text/javascript" src="jquery.tools.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="tabs-slideshow.css" />
-	<link rel="stylesheet" type="text/css" href="scrollable-pheno.css" />
-	<link rel="stylesheet" type="text/css" href="scrollable-vertical-m.css" />
+	<title>Fight Results</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.mobile-1.0.min.css" />
+    <script src="/static/javascript/jquery-1.6.4.min.js"></script>
+    <script src="/static/javascript/jquery.mobile-1.0.min.js"></script>
+    <script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
+    <!-- Unique CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
 	<style>
-.ui-btn-text {
-white-space: normal;
-}
+    .ui-btn-text {
+    white-space: normal;
+    }
 	</style>
 </head> 
 <body>
@@ -38,9 +37,10 @@ white-space: normal;
 		</div>
 	</div>
 
-	<div data-role='footer'>
-
-	</div>
+	<div data-role="footer" data-theme="a">
+        <h4>Wins: {{user_wins}} Losses: {{user_losses}}</h4>
+    </div><!-- /footer -->
+    
 </div><!--/fight-->
 
 <script>
