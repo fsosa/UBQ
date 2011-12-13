@@ -1,2 +1,4 @@
 *.pyc
+settings.py
+ubiqbiosqlite3.db
 
