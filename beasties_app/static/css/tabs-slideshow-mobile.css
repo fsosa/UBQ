@@ -2,9 +2,9 @@
 /* container for slides */
 .images {
 	background: -moz-linear-gradient(center top , #EEEEEE, #DDDDDD) repeat-x;
-	border:1px solid #ccc;
+	border:0px solid #ccc;
 	position:relative;	
-	height:380px;
+	height:320px;
 	text-align:center;
 	
 	width:180px;
@@ -43,8 +43,8 @@
 
 /* tabs (those little circles below slides) */
 .tabs {
-	clear:both;
-	margin-left:330px;
+
+	margin-left:100px;
 }
 
 /* single tab */
@@ -53,7 +53,7 @@
 	height:8px;
 	float:left;
 	margin:3px;
-	background: url(/static/images/arrows/navigator.png) 0 0 no-repeat;
+	background: url(arrow/navigator.png) 0 0 no-repeat;
 	display:block;
 	font-size:1px;		
 }
@@ -74,7 +74,7 @@
 	float:left;
 	margin-top:140px;
 	display:block;
-	background: url(/static/images/hori_large.png) no-repeat;
+	background: url(hori_large.png) no-repeat;
 	width:30px;
 	height:30px;
 	cursor:pointer;

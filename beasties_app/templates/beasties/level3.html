@@ -83,6 +83,14 @@ white-space: normal;
         <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->  
             <div class="ui-grid-b" style="text-align:center">
                 
+                <!--
+                {% for i in template_mapping %}
+                    <div class="ui-block-{{ i|last }}">
+                    <div id="amino_select_{{i|first}}_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">
+                    Bwycine
+                    </div>
+                    </div>
+                {% endfor %}-->
                 
                     {% if bodypart == bodyparts.0 %}
                         <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Bwycine</div></div>
@@ -91,19 +99,19 @@ white-space: normal;
                         
                         <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
                         <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">U</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_hands">U</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">U</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
                         </div>
                         <div id="amino_2_{{bodypart}}" class="ui-block-b">
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">U</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_hands">U</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">A</a>
                         </div>
                         <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_hands">A</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_hands">U</a>
                         </div>
                         </div>
                     {% else %}{% if bodypart == bodyparts.1 %}
@@ -113,19 +121,19 @@ white-space: normal;
                         
                         <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
                         <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">C</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
                         </div>
                         <div id="amino_2_{{bodypart}}" class="ui-block-b">
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">G</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">U</a>
                         </div>
                         <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">G</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">G</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">A</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">A</a>
                         </div>
                         </div>
                     {% else %}{% if bodypart == bodyparts.2 %}
@@ -135,19 +143,19 @@ white-space: normal;
                         
                         <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
                         <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">C</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">C</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">A</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
                         </div>
                         <div id="amino_2_{{bodypart}}" class="ui-block-b">
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">A</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">A</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">A</a>
                         </div>
                         <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
                         </div>
                         </div>
                     {% else %}{% if bodypart == bodyparts.3 %}
@@ -157,24 +165,45 @@ white-space: normal;
                         
                         <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
                         <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">U</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
                         </div>
                         <div id="amino_2_{{bodypart}}" class="ui-block-b">
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">U</a>
                         </div>
                         <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">C</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">C</a>
                             <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
+                            <a class="ui-btn ui-shadow locked" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
                         </div>
                         </div>
                     {% endif %}{% endif %}{% endif %}{% endif %}
+                    
+                <!--
+                <div id="amino_sequences_{{bodypart}}">
+                {% if bodypart == bodyparts.0 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>UUU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>CUA</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>AUU</h1></div>
+                {% else %}{% if bodypart == bodyparts.1 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>ACU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>GCU</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>GCA</h1></div>
+                {% else %}{% if bodypart == bodyparts.2 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>CAU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>CAA</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>AAU</h1></div>
+                {% else %}{% if bodypart == bodyparts.3 %}
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="text-align:center"><h1>AUU</h1></div>
+                    <div class="ui-block-b" id="amino_2_{{bodypart}}" style="text-align:center"><h1>UCU</h1></div>
+                    <div class="ui-block-c" id="amino_3_{{bodypart}}" style="text-align:center"><h1>CCU</h1></div>
+                {% endif %}{% endif %}{% endif %}{% endif %}
+                -->
+                
             </div>
-            
 		</div><!--/{{bodypart}}-->
     {% endfor %}
 
@@ -186,6 +215,7 @@ white-space: normal;
 	</div><!-- /footer -->
 </div><!--/lab-->
 
+<style>.ui-dialog  .ui-header .ui-btn-icon-notext	{ display:none;} </style>
 <div data-role="page" id="fight_confirm" data-add-back-btn="true"> <!--FIGHT-CONFIRMATION-->
 	<div data-role='header'>
         <div style="margin-left:80px;margin-right:80px;text-align:center">Ready to Fight?</div>
@@ -512,7 +542,6 @@ white-space: normal;
 	</div><!-- /footer -->
 </div>
 
-<style>.ui-dialog  .ui-header .ui-btn-icon-notext	{ display:none;} </style>
 <script>
 
     var amino_sequences = {}
@@ -620,6 +649,20 @@ $('#lab').live('pageinit',function(event){
 $(window).load(function(event){
 /*TODO Initial Codons, instead of nucleotides
     $("#amino_select_1_hands").data("scrollable").seekTo(0, 1000);
+	$("#Adjust initial nucleotideseekTo(1, 1000);
+	$("#amino_select_3_hands").data("scrollable").seekTo(2, 1000);
+    
+    $("#amino_select_1_horns").data("scrollable").seekTo(5, 1000);
+	$("#amino_select_2_horns").data("scrollable").seekTo(6, 1000);
+	$("#amino_select_3_horns").data("scrollable").seekTo(7, 1000);
+    
+    $("#amino_select_1_mouth").data("scrollable").seekTo(8, 1000);
+	$("#amino_select_2_mouth").data("scrollable").seekTo(9, 1000);
+	$("#amino_select_3_mouth").data("scrollable").seekTo(10, 1000);
+    
+    $("#amino_select_1_tail").data("scrollable").seekTo(2, 1000);
+	$("#amino_select_2_tail").data("scrollable").seekTo(3, 1000);
+	$("#amino_select_3_tail").data("scrollable").seekTo(4, 1000);
 */
     
     //Only display hand options
@@ -803,7 +846,8 @@ function imageOnClick(clicked) {
 }
 
 function CodonClick(codon) {
-	
+	if ($(codon).hasClass('locked') == true)
+		return;
 	console.log('CLICK');
 	// Grab the letter on the button
 	current_codon = $(codon).text()[0];
@@ -815,24 +859,23 @@ function CodonClick(codon) {
 	if (current_index == 3)
 		$(codon).text(codon_dict[0]);
 	else {
+		console.log('else');
 		$(codon).text(codon_dict[current_index + 1]);
 	}
 	short_sequence = $(codon).parent().text().replace(/\s+/gm,'');
 	console.log(short_sequence);
-    //Assumese short sequence exists in genetic_code
-    if (codon[7] <=3)
-    {
-        $('#amino_select_1_' + current_phenotype).text(genetic_code[short_sequence]);
-    }   
-    else if (codon[7] <=6)
-    {
-        $('#amino_select_2_' + current_phenotype).text(genetic_code[short_sequence]);
-    }
-    else if (codon[7] <=9)
-    {
-        $('#amino_select_3_' + current_phenotype).text(genetic_code[short_sequence]);
-    }
-    
+	for (var i in genetic_code) {
+		// if the sequence of 3 is in the dictionary
+		if (i == short_sequence) {
+			// Find the right text to update by using the number associated with codon id
+			if (codon[7] <=3)
+				$('#amino_select_1_' + current_phenotype).text(genetic_code[i]);
+			else if (codon[7] <=6)
+				$('#amino_select_2_' + current_phenotype).text(genetic_code[i]);
+			else if (codon[7] <=9)
+				$('#amino_select_3_' + current_phenotype).text(genetic_code[i]);
+		}
+	}
 	sync(current_phenotype);
 }
 
