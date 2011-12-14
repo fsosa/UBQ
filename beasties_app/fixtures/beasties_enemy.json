@@ -443,7 +443,7 @@
             "weakness_1": 9, 
             "win_message": "Who's the fairest one of all now, Evil Queen?", 
             "lose_message": "", 
-            "image_filename": "/static/images/enemies/noise-2.jpg", 
+            "image_filename": "/static/images/enemies/ugly-1.jpg", 
             "name": "Evil Queen"
         }
     }, 

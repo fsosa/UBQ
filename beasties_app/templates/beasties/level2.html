@@ -41,13 +41,13 @@ white-space: normal;
                 <span style="font-size: xx-large; font-weight: bold;">
                     The Lab
                 </span>
-                <a href="#phenotypes" data-role="button" data-transition="slidedown" data-theme="b">
+                <a href="#phenotypes" data-role="button" data-transition="slidedown" data-icon="arrow-d" data-theme="b">
                 Phenotype Handbook
                 </a>
             </td>
-			<td width=50% style="text-align: right">
+			<td width=50% style="text-align: right; font-size:20px">
                 <span>
-                <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="40px" height="40px" style="margin: 0px 5px;"/>
+                <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="60px" height="80px" style="margin: 0px 5px;"/>
                 Weakness:
                 {% for weakness, count in weakness_count.items %}
                     {{weakness}} x{{count}}
@@ -71,10 +71,10 @@ white-space: normal;
 				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>
 			</tr>
 			<tr>
-				<td id="pheno_text_hands" style="font-weight:bold">Normal Hands</td>
-				<td id="pheno_text_horns" style="font-weight:bold"></td>
-				<td id="pheno_text_mouth" style="font-weight:bold"></td>
-				<td id="pheno_text_tail" style="font-weight:bold"></td>
+				<td id="pheno_text_hands" width="50px" style="font-size: 26px; font-weight:bold">Normal Hands</td>
+				<td id="pheno_text_horns" width="50px" style="font-size: 26px; font-weight:bold"></td>
+				<td id="pheno_text_mouth" width="50px" style="font-size: 26px; font-weight:bold"></td>
+				<td id="pheno_text_tail" width="50px" style="font-size: 26px; font-weight:bold"></td>
 			</tr>
 		</table>		
     </div>
@@ -480,10 +480,15 @@ white-space: normal;
 	</div>
 </div>
 
-<div data-role="page" id="phenotypes" data-add-back-btn="true">
+<div data-role="page" id="phenotypes">
 
 	<div data-role="header">
-		<h1> Known Monster Phenotypes</h1>
+    <span style="font-size: xx-large; font-weight: bold;text-align: left;">
+        Known Monster Phenotypes
+        <a href="#lab" data-role="button" data-icon="arrow-u" data-transition="slideup" data-theme='b' data-inline="true">
+        Back to Lab
+        </a>
+    </span>
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="d">	
@@ -499,7 +504,7 @@ white-space: normal;
                             <img src="{{phenotype.image_filename}}" height="80px" width="80px"/>
                             <h2>{{ phenotype.name }}</h2>
                             <!--<p><b>Amino Acid Sequence:</b> {{phenotype.amino_acid_name_1}} {{phenotype.amino_acid_name_2}} {{phenotype.amino_acid_name_3}}</p>-->
-                            <p><b>Amino Acid Sequence:</b> {{phenotype.amino_acid_name_1.symbol}} {{phenotype.amino_acid_name_2.symbol}} {{phenotype.amino_acid_name_3.symbol}}</p>
+                            <p style="font-size:18px">{{phenotype.amino_acid_name_1.symbol}} {{phenotype.amino_acid_name_2.symbol}} {{phenotype.amino_acid_name_3.symbol}}</p>
                             </a>
                         </li>
                     {% endif %}
