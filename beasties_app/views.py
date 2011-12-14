@@ -28,7 +28,6 @@ def graveyard(request):
     all_enemies = Enemy.objects.all()[:]
     enemy_list = []
     
-
     defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
     userlevel = user_level(request)
     
@@ -289,12 +288,7 @@ def fight(request):
             user.get_profile().defeated_enemies = defeated_str
             user.get_profile().save()
             
-            
-            
-
-            
             fight_outcome = "Way to go!  " + enemy.win_message
-            
             
             vars['fight_outcome'] = fight_outcome
 
