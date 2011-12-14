@@ -35,7 +35,7 @@ def graveyard(request):
     while(len(enemy_list) < DISPLAYABLE_ENEMIES):
         enemy = choice(all_enemies)
 
-        if( enemy.group_number <= user_level and not (enemy in enemy_list) and not(enemy.id in defeated_enemies) ):
+        if( enemy.group_number <= userlevel and not (enemy in enemy_list) and not(enemy.id in defeated_enemies) ):
             enemy_list.append(enemy)
     
     # Create dictionary of variables to pass to site
