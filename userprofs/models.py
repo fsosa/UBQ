@@ -3,6 +3,8 @@ from beasties_app.models import Game, Level, Enemy
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
+MAX_LENGTH = 256 # Maximum length of CharField/CommaSeparatedIntegerField values
+
 class ProxyUser(User):
     class Meta:
         proxy = True
@@ -34,6 +36,7 @@ class UserProfile(models.Model):
     login_count = models.IntegerField()
     win_count = models.IntegerField()
     loss_count = models.IntegerField()
+    defeated_enemies = models.CharField(max_length=MAX_LENGTH, blank=True)
     
     # TODO: Add user-activity related fields (e.g. last-login, etc.)
     

@@ -28,14 +28,15 @@ def graveyard(request):
     all_enemies = Enemy.objects.all()[:]
     enemy_list = []
     
+
+    defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
     userlevel = user_level(request)
     
-    user_defeated_enemies = [] #TODO user.get_profile().defeated_enemies
     #Check if player has less than 4 DISPLAYABLE_ENEMIES
     while(len(enemy_list) < DISPLAYABLE_ENEMIES):
         enemy = choice(all_enemies)
-        #TODO and not (enemy.id in user_defeated_enemies) )
-        if( enemy.group_number <= userlevel and not (enemy in enemy_list) ):
+
+        if( enemy.group_number <= user_level and not (enemy in enemy_list) and not(enemy.id in defeated_enemies) ):
             enemy_list.append(enemy)
     
     # Create dictionary of variables to pass to site
@@ -277,13 +278,23 @@ def fight(request):
         
         # Declare winner and loser
         if len(remaining_weaknesses) == 0:
-            # User wins, update WIN_COUNT in userprofile
+            # User wins
             user.get_profile().win_count += 1
+            
+            #Convert CharField to list and convert back to comma-separated after operation
+            defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
+            defeated_enemies.append(eval(request.POST['enemy_id']))
+            defeated_str = str(defeated_enemies).strip('[').strip(']')
+            
+            user.get_profile().defeated_enemies = defeated_str
             user.get_profile().save()
-            #TODO user.get_profile().defeated_enemies = enemy.id
+            
+            
+            
+
             
             fight_outcome = "Way to go!  " + enemy.win_message
-            #TODO: Here we would update the User_Enemy flags
+            
             
             vars['fight_outcome'] = fight_outcome
 
@@ -292,10 +303,10 @@ def fight(request):
             vars['user_is_mobile'] = user_is_mobile(request)
             return render_to_response('beasties/win_fight.html', vars, context_instance=RequestContext(request))
         else:
-            # Zombie loses, update LOSS_COUNT in userprofile
+            # User loses
             user.get_profile().loss_count += 1
             user.get_profile().save()
-            #TODO user.get_profile().defeated_enemies = enemy.id
+            
             
             fight_outcome = "You lost the fight!  You needed another "
             
@@ -307,7 +318,7 @@ def fight(request):
                 fight_outcome += str(weakness_count[key]) + " phenotype(s) against " + key
             vars['fight_outcome'] = fight_outcome
             
-            #TODO: Here we would update the User_Enemy flags
+            
         
             # # Finalize changes to zombie
             # # Create context for template rendering
