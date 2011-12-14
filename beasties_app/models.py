@@ -37,7 +37,17 @@ class Bodypart(models.Model):
     
     def __unicode__(self):
         return self.name
-        
+
+class Locked_Nucleotide(models.Model):
+    bodypart = models.ForeignKey(Bodypart)
+    symbol =  models.ForeignKey(Nucleotide)
+    codon_position = models.IntegerField()
+    nucleotide_position = models.IntegerField()
+    absolute_position = models.IntegerField()
+    
+    def __unicode__(self):
+        return str(self.id)
+    
 class Weakness(models.Model):
     name = models.CharField(max_length=MAX_LENGTH)
     pretty_name = models.CharField(max_length=MAX_LENGTH)
@@ -56,6 +66,9 @@ class Enemy(models.Model):
     weakness_3 = models.ForeignKey(Weakness, related_name='weakness_three', blank=True, null=True)
     weakness_4 = models.ForeignKey(Weakness, related_name='weakness_four', blank=True, null=True)
     
+    locked_nucleotide_1 = models.ForeignKey(Locked_Nucleotide, related_name='locked_one', blank=True, null=True)
+    locked_nucleotide_2 = models.ForeignKey(Locked_Nucleotide , related_name='locked_two', blank=True, null=True)
+    locked_nucleotide_3 = models.ForeignKey(Locked_Nucleotide , related_name='locked_three', blank=True, null=True)
     
     win_message = models.CharField(max_length=MAX_LENGTH, blank=True, null=True)
     lose_message = models.CharField(max_length=MAX_LENGTH, blank=True, null=True)
@@ -101,48 +114,3 @@ class User_Enemy(models.Model):
     enemy = models.ForeignKey(Enemy)
     user = models.ForeignKey(User)
     deceased_flag = models.BooleanField() 
-
-    
-# class Schools(models.Model):
-    # name = models.CharField(max_length=MAX_LENGTH)
-    # created_at = models.DateTimeField()
-    # updated_at = models.DateTimeField()
-
-# class Teachers(models.Model):
-    # user_id = models.ForeignKey(User)
-    # school_id = models.ForeignKey(Schools)
-    # created_at = models.DateTimeField()
-    # updated_at = models.DateTimeField()
-
-# class User_Activities(models.Model):
-    # category = models.CharField(max_length=MAX_LENGTH)
-    # text = models.TextField()
-    # user_id = models.ForeignKey(User)
-    # created_at = models.DateTimeField()
-    # updated_at = models.DateTimeField()
-
-# class User_Groups(models.Model):
-    # name = models.CharField(max_length=MAX_LENGTH)
-    # user = models.ManyToManyField(User)
-    # created_at = models.DateTimeField()
-    # updated_at = models.DateTimeField()
-    
-# class User
-    # login = models.CharField(blank=False, max_length=MAX_LENGTH)
-    # email = models.CharField(max_length=MAX_LENGTH)
-    # cryped_password = models.CharField(blank=False, max_length=MAX_LENGTH)
-    # password_salt = models.CharField(blank=False, max_length=MAX_LENGTH)
-    # persistence_token = models.CharField(blank=False, max_length=MAX_LENGTH)
-    # perishable_token = models.CharField(blank=False, max_length=MAX_LENGTH)
-    # login_count = models.IntegerField(blank=False, default=0)
-    # failed_login_count = models.IntegerField(blank=False, default=0)
-    # last_request_at = models.DateTimeField()
-    # current_login_at = models.DateTimeField()
-    # last_login_at = models.DateTimeField()
-    # current_login_ip = models.CharField(max_length=MAX_LENGTH)
-    # last_login_ip = models.CharField(max_length=MAX_LENGTH)
-    # first_name = models.CharField(max_length=MAX_LENGTH)
-    # last_name = models.CharField(max_length=MAX_LENGTH)
-    # game_code = models.CharField(max_length=MAX_LENGTH)
-    # created_at = models.DateTimeField()
-    # updated_at = models.DateTimeField()

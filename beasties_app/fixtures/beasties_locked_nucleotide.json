@@ -1,0 +1,695 @@
+[
+  {
+    "pk": 1, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4, 
+      "symbol": 1, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 2, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 3, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 4, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 5, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 6, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 7, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 2, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 8, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 9, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 3, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 10, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 3, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 11, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 2, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 12, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 13, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 1, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 14, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 15, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 1, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 16, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 17, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 2, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 18, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 2, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 19, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 20, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 21, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 2, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 22, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 23, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 24, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 25, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 2, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 26, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 27, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 28, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 3, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 29, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 1, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 30, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 31, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 32, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 33, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 34, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 35, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 36, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 2, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 37, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 38, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 39, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 2, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 40, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 41, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 1, 
+      "absolute_position": 3, 
+      "codon_position": 1, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 42, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 1, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 43, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 44, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 45, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 46, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 47, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 48, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 2, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 49, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 50, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 51, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 3, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 52, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 53, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 54, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 4, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 55, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 56, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 57, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,      
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 58, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 2, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 59, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 2,
+      "symbol": 4, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 60, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 4, 
+      "absolute_position": 4, 
+      "codon_position": 2, 
+      "nucleotide_position": 1
+    }
+  },
+  {
+    "pk": 61, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 4,
+      "symbol": 3, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 62, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 3,
+      "symbol": 1, 
+      "absolute_position": 9, 
+      "codon_position": 3, 
+      "nucleotide_position": 3
+    }
+  },
+  {
+    "pk": 63, 
+    "model": "beasties_app.locked_nucleotide", 
+    "fields": {
+      "bodypart": 1,
+      "symbol": 4, 
+      "absolute_position": 1, 
+      "codon_position": 1, 
+      "nucleotide_position": 1
+    }
+  }
+]

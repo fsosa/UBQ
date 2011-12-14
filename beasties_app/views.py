@@ -67,7 +67,7 @@ def lab(request):
     vars = {}
     try:
         user = request.user 
-        userlevel = 2+user_level(request)
+        userlevel = user_level(request)
         
         enemy = Enemy.objects.get(pk=request.POST.get('enemy_id'))
 
@@ -90,8 +90,13 @@ def lab(request):
         weakness_count = {}
         for weakness in set(enemy_weaknesses):
             weakness_count[weakness] = enemy_weaknesses.count(weakness)
-            
         vars['weakness_count'] = weakness_count
+        
+        enemy_locked_nucleotides = [enemy.locked_nucleotide_1, enemy.locked_nucleotide_2, enemy.locked_nucleotide_3]
+        enemy_locked_nucleotides = filter (lambda lock: lock != None, enemy_locked_nucleotides)
+        
+        vars['locked_nucs'] = enemy_locked_nucleotides
+        
         vars['template_mapping'] = [[1,'a'],[2,'b'],[3,'c']]
         
     except (KeyError, Enemy.DoesNotExist):
@@ -108,6 +113,7 @@ def lab(request):
         return render_to_response('beasties/level'+str(userlevel)+'.html', vars, context_instance=RequestContext(request))
         # return render_to_response('beasties/lab.html', vars, context_instance=RequestContext(request))
 
+"""
 @login_required    
 # https://docs.djangoproject.com/en/1.3/intro/tutorial04/
 def level1(request):
@@ -184,7 +190,6 @@ def level2(request):
         vars['user_is_mobile'] = user_is_mobile(request)
         return render_to_response('beasties/level2.html', vars, context_instance=RequestContext(request))
 
-
 @login_required    
 # https://docs.djangoproject.com/en/1.3/intro/tutorial04/
 def level3(request):
@@ -220,6 +225,7 @@ def level3(request):
 
         vars['user_is_mobile'] = user_is_mobile(request)
         return render_to_response('beasties/level3.html', vars, context_instance=RequestContext(request))
+"""
 
 @login_required
 def fight(request):
@@ -310,12 +316,29 @@ def fight(request):
             vars['user_losses'] = user.get_profile().loss_count
             vars['user_is_mobile'] = user_is_mobile(request)
             return render_to_response('beasties/lose_fight.html', vars, context_instance=RequestContext(request))
+
+            
+@login_required
+def levelup(request):
+    # Get current user and create the new zombie
+    user = request.user 
+    vars = {}
+    
+    userlevel = user_level(request)
+    vars['user_wins'] = user.get_profile().win_count
+    vars['user_losses'] = user.get_profile().loss_count
+    vars['user_is_mobile'] = user_is_mobile(request)
+    
+    if (vars['user_wins'] == 10 or vars['user_wins'] == 20):
+        return render_to_response('beasties/levelup.html', vars, context_instance=RequestContext(request))
+    else:
+        return render_to_response('beasties/index.html', vars, context_instance=RequestContext(request))
             
 # TODO Smarter level metric?
 # 1 <= User Level <= 3
 def user_level(request):
     
-    return min(1 + request.user.get_profile().win_count % 10, 3)
+    return min(1 + request.user.get_profile().win_count / 10, 3)
     
 # Taken from http://djangosnippets.org/snippets/2001/
 def user_is_mobile(request):

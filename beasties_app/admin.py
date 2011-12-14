@@ -8,6 +8,13 @@ class Nucleotide_Admin(admin.ModelAdmin):
     search_fields = ['symbol','compliment']
 admin.site.register(Nucleotide, Nucleotide_Admin)
 
+class Locked_Nucleotide_Admin(admin.ModelAdmin):
+    fieldsets = [
+    (None, {'fields': ['bodypart','symbol','absolute_position','codon_position','nucleotide_position']})
+    ]
+    list_display = ('id','bodypart','symbol','absolute_position','codon_position','nucleotide_position')
+admin.site.register(Locked_Nucleotide, Locked_Nucleotide_Admin)
+
 class Amino_Acid_Name_Admin(admin.ModelAdmin):
     fieldsets = [
     (None, {'fields': ['name','symbol']}),
@@ -44,6 +51,7 @@ class Enemy_Admin(admin.ModelAdmin):
     fieldsets = [
     (None, {'fields': ['name','image_filename','group_number']}),
     ('Weaknesses', {'fields': ['weakness_1','weakness_2','weakness_3','weakness_4']}),
+    ('Locked Nucleotides', {'fields': ['locked_nucleotide_1', 'locked_nucleotide_2', 'locked_nucleotide_3']}),
     ('Messages', {'fields': ['description','win_message','lose_message']}),
     ]
     list_display = ('name','description')
