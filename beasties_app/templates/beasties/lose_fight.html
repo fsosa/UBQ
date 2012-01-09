@@ -2,6 +2,7 @@
 <html> 
 
 <head>
+    <!-- Include on all beasties pages -->
 	<title>Fight Results</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <meta charset="utf-8">
@@ -28,7 +29,11 @@
 	<div data-role="content">
 		<div class='ui-grid-a' id='loss_descr' style="text-align: center;">
 			<div class='ui-block-a' width=66%>
+				{% if user_is_mobile %}
+				<span style="font-size: 48px;">YOU LOST</span>
+				{% else %}
 				<span style="font-size: 72px;">YOU LOST</span>
+				{% endif %}
 				<p> {{fight_outcome}} </p>
 			</div>
 			<div class='ui-block-b' width=33%>

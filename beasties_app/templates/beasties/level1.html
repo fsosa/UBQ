@@ -43,7 +43,7 @@ white-space: normal;
                 Phenotype Handbook
                 </a>
             </td>
-			<td width=50% style="text-align: right; font-size:20px">
+			<td id='lab_header' width=50% style="text-align: right; font-size:20px">
                 <span>
                 <img id="lab_monster" align="right" src="{{enemy.image_filename}}" width="60px" height="80px" style="margin: 0px 5px;"/>
                 Weakness:
@@ -60,31 +60,56 @@ white-space: normal;
 
 	<div data-role="content" data-theme="d">	
     <div style="text-align: center;">
-		        <!-- Carosel of Body Parts -->
-        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">			<tr>				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>			</tr>			<tr>				<td id="pheno_text_hands" width="50px" style="font-size: 26px; font-weight:bold">Normal Hands</td>				<td id="pheno_text_horns" width="50px" style="font-size: 26px; font-weight:bold"></td>				<td id="pheno_text_mouth" width="50px" style="font-size: 26px; font-weight:bold"></td>				<td id="pheno_text_tail" width="50px" style="font-size: 26px; font-weight:bold"></td>
-			</tr>		</table>
+		
+        <!-- Carosel of Body Parts -->
+        <table cellspacing=0 border=0 style="margin-left: auto; margin-right: auto">
+			<tr>
+				<td valign="bottom"><img id="pheno_img_hands" src="/static/images/phenotypes/normal-hands.jpg" height="100px" width="100px"/></td>
+				<td valign="bottom"><img id="pheno_img_horns" src="/static/images/phenotypes/normal-horns.jpg" height="50px" width="50px"/></td>
+				<td valign="bottom"><img id="pheno_img_mouth" src="/static/images/phenotypes/normal-mouth.jpg" height="50px" width="50px"/></td>
+				<td valign="bottom"><img id="pheno_img_tail"src="/static/images/phenotypes/normal-tail.jpg" height="50px" width="50px"/></td>
+			</tr>
+			<tr>
+				<td id="pheno_text_hands" width="50px" style="font-size: 26px; font-weight:bold">Normal Hands</td>
+				<td id="pheno_text_horns" width="50px" style="font-size: 26px; font-weight:bold"></td>
+				<td id="pheno_text_mouth" width="50px" style="font-size: 26px; font-weight:bold"></td>
+				<td id="pheno_text_tail" width="50px" style="font-size: 26px; font-weight:bold"></td>
+			</tr>
+		</table>
     </div>
-        
+    <br />
         {% for bodypart in bodyparts %}
             <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->  
-                <div class="ui-grid-b" style="text-align:center">                
+                <div class="ui-grid-b" style="text-align:center">
+                
                 {% for i in template_mapping %}
                     <div class="ui-block-{{ i|last }}">
                 
+                {% if not user_is_mobile %}
                     <div class="actions">
-                        <a class="next browse up"></a>
+                        <a class="prev browse up"></a>
                     </div>
-                   
-                   <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}">
-                   <div class="items">                        {% for aa_name in amino_acid_names %}
+                {% endif %}
+		
+		{% if user_is_mobile %}
+                   <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}" title="Swipe with your finger to change amino acid!">
+		{% else %}
+		   <div class="scrollable vertical" id="amino_select_{{ i|first }}_{{ bodypart }}">
+		{% endif %}
+                   <div class="items">
+                        {% for aa_name in amino_acid_names %}
                             <div>
                             <div class="item" title="{{aa_name}}">{{aa_name}}</div>
                             </div>
-                        {% endfor %}                   </div>                   </div>
-                   
-                    <div class="actions">
-                        <a class="prev browse down"></a>
-                    </div>
+                        {% endfor %}
+                   </div>
+                   </div>
+
+                    {% if not user_is_mobile %}
+                        <div class="actions">
+                            <a class="next browse down"></a>
+                        </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
                 
@@ -137,7 +162,7 @@ white-space: normal;
 		<div class='ui-grid-a' style="text-align: center;">
 			<div class='ui-block-a'>
 				<h2>You</h2>
-				<table align="center">
+				<table id='fight_conf_table' align="center">
 				<tr>
 				<td><img id="confirm_hands" src='' /><h4 id="confirm_hands_text"></h4></td>
 				<td><img id="confirm_horns" src='' /><h4 id="confirm_horns_text"></h4></td>
@@ -151,7 +176,7 @@ white-space: normal;
 
 			<div class='ui-block-b'>
 				<h2>{{enemy.name}}</h2>
-				<img src="{{enemy.image_filename}}" />
+				<img id='fight_conf_img' src="{{enemy.image_filename}}" />
 				<h4>
                 Weakness:
                 {% for weakness, count in weakness_count.items %}
@@ -182,7 +207,11 @@ white-space: normal;
                 <span style="text-align: right;">
                     <span style="font-weight: bold;">
                     <img align='left' src='' id='selected_image' width=40px height=40px />
+                    {% if user_is_mobile %}
+                    <span style="font-size: 20px;" id="selected_phenotype">
+                    {% else %}
                     <span style="font-size: 24px;" id="selected_phenotype">
+                    {% endif %}
                     </span>
                     <br />
                     <span style="color: #FF6666;" id="selected_amino_1">-</span>-<span style="color: #FFFF66;" id="selected_amino_2"></span>-<span style="color: #99CCFF;" id="selected_amino_3"></span>
@@ -199,7 +228,7 @@ white-space: normal;
 	</div>
 	
 	<div data-role="content">
-		<table width="90%" align=center style="background: white;text-align: center;">
+		<table width="100%" align=center style="background: white;text-align: center;">
 		<tr style="font-size: 20px; font-weight: bold;">
 		<td width=5%></td>
 		<td colspan=2 class="border-all">U</td>
@@ -209,199 +238,264 @@ white-space: normal;
 		<td colspan=2 width=5%></td>
 		</tr>
 
-		<tr>
+        <!-- TODO: Replace if user_is_mobile with <tr style=user_is_mobile_style -->
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">U</td>
 		<td class="codon_cell Bwy">UUU</td>
-		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="amino_cell Bwy">Bwy</td>
 		<td class="codon_cell Hig">UCU</td>
-		<td class="amino_cell Hig">Higgonine</td>
+		<td class="amino_cell Hig">Hig</td>
 		<td class="codon_cell Lon">UAU</td>
-		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="amino_cell Lon">Lon</td>
 		<td class="codon_cell Sly">UGU</td>
-		<td class="amino_cell Sly">Slyctein</td>
+		<td class="amino_cell Sly">Sly</td>
 		<td width=5% class="border-all">U</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Bwy">UUC</td>
-		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="amino_cell Bwy">Bwy</td>
 		<td class="codon_cell Hig">UCC</td>
-		<td class="amino_cell Hig">Higgonine</td>
+		<td class="amino_cell Hig">Hig</td>
 		<td class="codon_cell Lon">UAC</td>
-		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="amino_cell Lon">Lon</td>
 		<td class="codon_cell Sly">UGC</td>
-		<td class="amino_cell Sly">Slyctein</td>
+		<td class="amino_cell Sly">Sly</td>
 		<td width=5% class="border-all">C</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Bwy">UUA</td>
-		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="amino_cell Bwy">Bwy</td>
 		<td class="codon_cell Hig">UCA</td>
-		<td class="amino_cell Hig">Higgonine</td>
+		<td class="amino_cell Hig">Hig</td>
 		<td class="codon_cell Lon">UAA</td>
-		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="amino_cell Lon">Lon</td>
 		<td class="codon_cell Tor">UGA</td>
-		<td class="amino_cell Tor">Torkanine</td>
+		<td class="amino_cell Tor">Tor</td>
 		<td width=5% class="border-all">A</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Bwy" style="border-bottom: 2px solid black;">UUG</td>
-		<td class="amino_cell Bwy" style="border-bottom: 2px solid black;">Bwycine</td>
+		<td class="amino_cell Bwy" style="border-bottom: 2px solid black;">Bwy</td>
 		<td class="codon_cell Hig" style="border-bottom: 2px solid black;">UCG</td>
-		<td class="amino_cell Hig" style="border-bottom: 2px solid black;">Higgonine</td>
+		<td class="amino_cell Hig" style="border-bottom: 2px solid black;">Hig</td>
 		<td class="codon_cell Lon" style="border-bottom: 2px solid black;">UAG</td>
-		<td class="amino_cell Lon" style="border-bottom: 2px solid black;">Lonkidine</td>
+		<td class="amino_cell Lon" style="border-bottom: 2px solid black;">Lon</td>
 		<td class="codon_cell Tor" style="border-bottom: 2px solid black;">UGG</td>
-		<td class="amino_cell Tor" style="border-bottom: 2px solid black;">Torkanine</td>
+		<td class="amino_cell Tor" style="border-bottom: 2px solid black;">Tor</td>
 		<td width=5% class="border-all">G</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">C</td>
 		<td class="codon_cell Bwy">CUU</td>
-		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="amino_cell Bwy">Bwy</td>
 		<td class="codon_cell Ixa">CCU</td>
-		<td class="amino_cell Ixa">Ixanine</td>
+		<td class="amino_cell Ixa">Ixa</td>
 		<td class="codon_cell Mew">CAU</td>
-		<td class="amino_cell Mew">Mewsamine</td>
+		<td class="amino_cell Mew">Mew</td>
 		<td class="codon_cell Vla">CGU</td>
-		<td class="amino_cell Vla">Vladine</td>
+		<td class="amino_cell Vla">Vla</td>
 		<td width=5% class="border-all">U</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Bwy">CUC</td>
-		<td class="amino_cell Bwy">Bwycine</td>
+		<td class="amino_cell Bwy">Bwy</td>
 		<td class="codon_cell Ixa">CCC</td>
-		<td class="amino_cell Ixa">Ixanine</td>
+		<td class="amino_cell Ixa">Ixa</td>
 		<td class="codon_cell Mew">CAC</td>
-		<td class="amino_cell Mew">Mewsamine</td>
+		<td class="amino_cell Mew">Mew</td>
 		<td class="codon_cell Vla">CGC</td>
-		<td class="amino_cell Vla">Vladine</td>
+		<td class="amino_cell Vla">Vla</td>
 		<td width=5% class="border-all">C</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Den">CUA</td>
-		<td class="amino_cell Den">Dentine</td>
+		<td class="amino_cell Den">Den</td>
 		<td class="codon_cell Ixa">CCA</td>
-		<td class="amino_cell Ixa">Ixanine</td>
+		<td class="amino_cell Ixa">Ixa</td>
 		<td class="codon_cell Nif">CAA</td>
-		<td class="amino_cell Nif">Niffagine</td>
+		<td class="amino_cell Nif">Nif</td>
 		<td class="codon_cell Wor">CGA</td>
-		<td class="amino_cell Wor">Worbamine</td>
+		<td class="amino_cell Wor">Wor</td>
 		<td width=5% class="border-all">A</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Den" style="border-bottom: 2px solid black;">CUG</td>
-		<td class="amino_cell Den" style="border-bottom: 2px solid black;">Dentine</td>
+		<td class="amino_cell Den" style="border-bottom: 2px solid black;">Den</td>
 		<td class="codon_cell Ixa" style="border-bottom: 2px solid black;">CCG</td>
-		<td class="amino_cell Ixa" style="border-bottom: 2px solid black;">Ixanine</td>
+		<td class="amino_cell Ixa" style="border-bottom: 2px solid black;">Ixa</td>
 		<td class="codon_cell Nif" style="border-bottom: 2px solid black;">CAG</td>
-		<td class="amino_cell Nif" style="border-bottom: 2px solid black;">Niffagine</td>
+		<td class="amino_cell Nif" style="border-bottom: 2px solid black;">Nif</td>
 		<td class="codon_cell Wor" style="border-bottom: 2px solid black;">CGG</td>
-		<td class="amino_cell Wor" style="border-bottom: 2px solid black;">Worbamine</td>
+		<td class="amino_cell Wor" style="border-bottom: 2px solid black;">Wor</td>
 		<td width=5% class="border-all">G</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">A</td>
 		<td class="codon_cell Elp">AUU</td>
-		<td class="amino_cell Elp">Elphine</td>
+		<td class="amino_cell Elp">Elp</td>
 		<td class="codon_cell Jor">ACU</td>
-		<td class="amino_cell Jor">Jorganine</td>
+		<td class="amino_cell Jor">Jor</td>
 		<td class="codon_cell Orz">AAU</td>
-		<td class="amino_cell Orz">Orzine</td>
+		<td class="amino_cell Orz">Orz</td>
 		<td class="codon_cell Wor">AGU</td>
-		<td class="amino_cell Wor">Worbamine</td>
+		<td class="amino_cell Wor">Wor</td>
 		<td width=5% class="border-all">U</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Elp">AUC</td>
-		<td class="amino_cell Elp">Elphine</td>
+		<td class="amino_cell Elp">Elp</td>
 		<td class="codon_cell Jor">ACC</td>
-		<td class="amino_cell Jor">Jorganine</td>
+		<td class="amino_cell Jor">Jor</td>
 		<td class="codon_cell Orz">AAC</td>
-		<td class="amino_cell Orz">Orzine</td>
+		<td class="amino_cell Orz">Orz</td>
 		<td class="codon_cell Wor">AGC</td>
-		<td class="amino_cell Wor">Worbamine</td>
+		<td class="amino_cell Wor">Wor</td>
 		<td width=5% class="border-all">C</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Elp">AUA</td>
-		<td class="amino_cell Elp">Elphine</td>
+		<td class="amino_cell Elp">Elp</td>
 		<td class="codon_cell Jor">ACA</td>
-		<td class="amino_cell Jor">Jorganine</td>
+		<td class="amino_cell Jor">Jor</td>
 		<td class="codon_cell Pef">AAA</td>
-		<td class="amino_cell Pef">Peffaline</td>
+		<td class="amino_cell Pef">Pef</td>
 		<td class="codon_cell Yaf">AGA</td>
-		<td class="amino_cell Yaf">Yaffline</td>
+		<td class="amino_cell Yaf">Yaf</td>
 		<td width=5% class="border-all">A</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Elp" style="border-bottom: 2px solid black;">AUG</td>
-		<td class="amino_cell Elp" style="border-bottom: 2px solid black;">Elphine</td>
+		<td class="amino_cell Elp" style="border-bottom: 2px solid black;">Elp</td>
 		<td class="codon_cell Jor" style="border-bottom: 2px solid black;">ACG</td>
-		<td class="amino_cell Jor" style="border-bottom: 2px solid black;">Jorganine</td>
+		<td class="amino_cell Jor" style="border-bottom: 2px solid black;">Jor</td>
 		<td class="codon_cell Pef" style="border-bottom: 2px solid black;">AAG</td>
-		<td class="amino_cell Pef" style="border-bottom: 2px solid black;">Peffaline</td>
+		<td class="amino_cell Pef" style="border-bottom: 2px solid black;">Pef</td>
 		<td class="codon_cell Yaf" style="border-bottom: 2px solid black;">AGG</td>
-		<td class="amino_cell Yaf" style="border-bottom: 2px solid black;">Yaffline</td>
+		<td class="amino_cell Yaf" style="border-bottom: 2px solid black;">Yaf</td>
 		<td width=5% class="border-all">G</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td width=5% rowspan=4 class="border-all" style="font-size: 20px;">G</td>
 		<td class="codon_cell Elp">GUU</td>
-		<td class="amino_cell Elp">Elphine</td>
+		<td class="amino_cell Elp">Elp</td>
 		<td class="codon_cell Kru">GCU</td>
-		<td class="amino_cell Kru">Kruzosine</td>
+		<td class="amino_cell Kru">Kru</td>
 		<td class="codon_cell Qua">GAU</td>
-		<td class="amino_cell Qua">Quarbline</td>
+		<td class="amino_cell Qua">Qua</td>
 		<td class="codon_cell Yaf">GGU</td>
-		<td class="amino_cell Yaf">Yaffline</td>
+		<td class="amino_cell Yaf">Yaf</td>
 		<td width=5% class="border-all">U</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Elp">GUC</td>
-		<td class="amino_cell Elp">Elphine</td>
+		<td class="amino_cell Elp">Elp</td>
 		<td class="codon_cell Kru">GCC</td>
-		<td class="amino_cell Kru">Kruzosine</td>
+		<td class="amino_cell Kru">Kru</td>
 		<td class="codon_cell Qua">GAC</td>
-		<td class="amino_cell Qua">Quarbline</td>
+		<td class="amino_cell Qua">Qua</td>
 		<td class="codon_cell Yaf">GGC</td>
-		<td class="amino_cell Yaf">Yaffline</td>
+		<td class="amino_cell Yaf">Yaf</td>
 		<td width=5% class="border-all">C</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Elp">GUA</td>
-		<td class="amino_cell Elp">Elphine</td>
+		<td class="amino_cell Elp">Elp</td>
 		<td class="codon_cell Lon">GCA</td>
-		<td class="amino_cell Lon">Lonkidine</td>
+		<td class="amino_cell Lon">Lon</td>
 		<td class="codon_cell Raj">GAA</td>
-		<td class="amino_cell Raj">Rajormine</td>
+		<td class="amino_cell Raj">Raj</td>
 		<td class="codon_cell Zun">GGA</td>
-		<td class="amino_cell Zun">Zunganine</td>
+		<td class="amino_cell Zun">Zun</td>
 		<td width=5% class="border-all">A</td>
 		</tr>
 
-		<tr>
+		{%if user_is_mobile %}
+            <tr style="font-size: 10px;">
+        {% else %}
+            <tr>
+        {% endif %}
 		<td class="codon_cell Elp" style="border-bottom: 2px solid black;">GUG</td>
-		<td class="amino_cell Elp" style="border-bottom: 2px solid black;">Elphine</td>
+		<td class="amino_cell Elp" style="border-bottom: 2px solid black;">Elp</td>
 		<td class="codon_cell Lon" style="border-bottom: 2px solid black;">GCG</td>
-		<td class="amino_cell Lon" style="border-bottom: 2px solid black;">Lonkidine</td>
+		<td class="amino_cell Lon" style="border-bottom: 2px solid black;">Lon</td>
 		<td class="codon_cell Raj" style="border-bottom: 2px solid black;">GAG</td>
-		<td class="amino_cell Raj" style="border-bottom: 2px solid black;">Rajormine</td>
+		<td class="amino_cell Raj" style="border-bottom: 2px solid black;">Raj</td>
 		<td class="codon_cell Zun" style="border-bottom: 2px solid black;">GGG</td>
-		<td class="amino_cell Zun" style="border-bottom: 2px solid black;">Zunganine</td>
+		<td class="amino_cell Zun" style="border-bottom: 2px solid black;">Zun</td>
 		<td width=5% class="border-all">G</td>
 		</tr>
 		</table>
@@ -475,7 +569,9 @@ white-space: normal;
 
     var current_phenotype = "hands";
 
+
 $('#lab').live('pageinit',function(event){
+
 
 	$("#pheno_img_hands").bind('click', function(){imageOnClick("#pheno_img_hands")});
 	$("#pheno_img_horns").bind('click', function(){imageOnClick("#pheno_img_horns")});
@@ -521,12 +617,19 @@ $('#lab').live('pageinit',function(event){
 	$(".scrollable").scrollable({ vertical: true, circular: true});	
 	
 	});
-
+	
+	// initialize tooltip
+    if ($("#amino_select_2_hands").attr("title") == "Swipe with your finger to change amino acid!")
+	$("#amino_select_2_hands").tooltip({effect: 'fade', fadeOutSpeed: 10000});
+    
     $(".pheno_list_item").click(PhenoListItemClick);
 
 })
 
 $(window).load(function(event){
+	// show tooltip
+	if ($("#amino_select_2_hands").attr("title") == "Swipe with your finger to change amino acid!")	
+		$("#amino_select_2_hands").data("tooltip").show();
 //Adjust initial amino acid sequences
     $("#amino_select_1_hands").data("scrollable").seekTo(0, 1000);
 	$("#amino_select_2_hands").data("scrollable").seekTo(1, 1000);
@@ -547,7 +650,11 @@ $(window).load(function(event){
     //Only display hand options
     $("#lab_horns").hide();
 	$("#lab_mouth").hide();
-	$("#lab_tail").hide();	    
+	$("#lab_tail").hide();
+	
+	//hide tooltip
+	if ($("#amino_select_2_hands").attr("title") == "Swipe with your finger to change amino acid!")
+		$("#amino_select_2_hands").data("tooltip").hide();
 });
 
 function FightClick() {
@@ -747,6 +854,7 @@ function PhenoListItemClick() {
 
 <footer>
 </footer>
+
 
 
 

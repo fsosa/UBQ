@@ -7,6 +7,7 @@ from django.template import RequestContext
 from beasties_app.models import Enemy, Amino_Acid_Name, Amino_Acid, Bodypart, Phenotype
 from random import choice
 import re
+import csv
 
 def logout_page(request):
     """
@@ -29,6 +30,7 @@ def graveyard(request):
     enemy_list = []
     
     defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
+        
     userlevel = user_level(request)
     
     #Check if player has less than 4 DISPLAYABLE_ENEMIES
@@ -279,12 +281,12 @@ def fight(request):
         if len(remaining_weaknesses) == 0:
             # User wins
             user.get_profile().win_count += 1
+            user.get_profile().save()
             
-            #Convert CharField to list and convert back to comma-separated after operation
+            # #Convert CharField to list and convert back to comma-separated after operation
             defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
             defeated_enemies.append(eval(request.POST['enemy_id']))
             defeated_str = str(defeated_enemies).strip('[').strip(']')
-            
             user.get_profile().defeated_enemies = defeated_str
             user.get_profile().save()
             
@@ -312,8 +314,6 @@ def fight(request):
                 fight_outcome += str(weakness_count[key]) + " phenotype(s) against " + key
             vars['fight_outcome'] = fight_outcome
             
-            
-        
             # # Finalize changes to zombie
             # # Create context for template rendering
             

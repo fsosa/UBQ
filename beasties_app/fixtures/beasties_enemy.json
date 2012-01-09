@@ -1,626 +1,686 @@
 [
-    {
-        "pk": 1, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "Obviously prefers hot places.  When it rains, steam is said to spout from the tip of its tail.", 
-            "weakness_4": 1, 
-            "group_number": 4, 
-            "weakness_2": 1, 
-            "weakness_3": 1, 
-            "weakness_1": 1, 
-            "win_message": "The flame at the tip of its tail makes a sound as it burngs.  You can only hear it in quiet places.", 
-            "lose_message": "Even the newborns have flaming tails. Unfamiliar with fire, babies are said to accidentally burn themselves.", 
-            "image_filename": "http://cdn.bulbagarden.net/media/upload/7/73/004Charmander.png", 
-            "name": "Charmander"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pok\u00e9mon.", 
-            "weakness_4": 1, 
-            "group_number": 1, 
-            "weakness_2": 1, 
-            "weakness_3": 1, 
-            "weakness_1": 1, 
-            "win_message": "It can go for days without eating a single morsel. In the bulb on its back, it stores energy.", 
-            "lose_message": "The bulb-like pouch on its back grows larger as it ages. The pouch is filled with numerous seeds.", 
-            "image_filename": "http://cdn.bulbagarden.net/media/upload/2/21/001Bulbasaur.png", 
-            "name": "Bulbasaur"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.", 
-            "weakness_4": 1, 
-            "group_number": 7, 
-            "weakness_2": 1, 
-            "weakness_3": 1, 
-            "weakness_1": 1, 
-            "win_message": "Shoots water at prey while in the water. Withdraws into its shell when in danger.", 
-            "lose_message": "It takes time for the shell to form and harden after hatching. It sprays foam powerfully from its mouth.", 
-            "image_filename": "http://cdn.bulbagarden.net/media/upload/3/39/007Squirtle.png", 
-            "name": "Squirtle"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 4, 
-            "win_message": "You melted that Slushee beastie!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ice-1.jpg", 
-            "name": "Slushee"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 4, 
-            "weakness_3": null, 
-            "weakness_1": 4, 
-            "win_message": "Nice work! Fridgie won't be chillin' anytime soon.", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ice-2.jpg", 
-            "name": "Fridgie"
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 4, 
-            "weakness_3": 4, 
-            "weakness_1": 4, 
-            "win_message": "You thawed out Braaain Freeze!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ice-3.jpg", 
-            "name": "Braaaain Freeze"
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 4, 
-            "group_number": 4, 
-            "weakness_2": 4, 
-            "weakness_3": 4, 
-            "weakness_1": 4, 
-            "win_message": "Blizzardo didn't expect that heat wave!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ice-4.jpg", 
-            "name": "Blizzardo"
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 5, 
-            "win_message": "Looks like Belle Pepper couldn't take her own spice!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/macho-1.jpg", 
-            "name": "Belle Pepper"
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 5, 
-            "weakness_3": null, 
-            "weakness_1": 5, 
-            "win_message": "You overpowered that Weak Sauce!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/macho-2.jpg", 
-            "name": "Weak Sauce"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 5, 
-            "weakness_3": 5, 
-            "weakness_1": 5, 
-            "win_message": "You processed that Hal A. Peno into pico del gallo!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/macho-3.jpg", 
-            "name": "Hal. A. Peno"
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 5, 
-            "group_number": 4, 
-            "weakness_2": 5, 
-            "weakness_3": 5, 
-            "weakness_1": 5, 
-            "win_message": "Ghost Pepper who? Never heard of him.", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/macho-4.jpg", 
-            "name": "The Ghost Pepper"
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 1, 
-            "win_message": "Sorry Mittens, you're gonna need a dryer after that!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/cat-1.jpg", 
-            "name": "Mittens"
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 1, 
-            "weakness_3": null, 
-            "weakness_1": 1, 
-            "win_message": "How'd you lik that bath Kat?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/cat-2.jpg", 
-            "name": "Kat A. Clysm"
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 1, 
-            "weakness_3": 1, 
-            "weakness_1": 1, 
-            "win_message": "Ninja what?  Hope you like getting soaked!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/cat-3.jpg", 
-            "name": "Ninja Cat"
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 1, 
-            "group_number": 4, 
-            "weakness_2": 1, 
-            "weakness_3": 1, 
-            "weakness_1": 1, 
-            "win_message": "So much for Goodbye Kitty!  I'm getting rid of my pencil box.", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/cat-4.jpg", 
-            "name": "Goodbye Kitty"
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 6, 
-            "win_message": "Shocking, wouldn't you say, my dear Watson?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/robot-1.jpg", 
-            "name": "Fuse Boxer"
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 6, 
-            "weakness_3": null, 
-            "weakness_1": 6, 
-            "win_message": "How'd you like input, Johnny 4?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/robot-2.jpg", 
-            "name": "Johnny 4"
-        }
-    }, 
-    {
-        "pk": 18, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 6, 
-            "weakness_3": 6, 
-            "weakness_1": 6, 
-            "win_message": "You shocked that Androidicus!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/robot-3.jpg", 
-            "name": "Kitus Androidicus"
-        }
-    }, 
-    {
-        "pk": 19, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 6, 
-            "group_number": 4, 
-            "weakness_2": 6, 
-            "weakness_3": 6, 
-            "weakness_1": 6, 
-            "win_message": "Anyone order a burger with Franklinstein fries?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/robot-4.jpg", 
-            "name": "Franklinstein"
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 7, 
-            "win_message": "You blew those Flying Pants out of the sky!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/flying-1.jpg", 
-            "name": "Flying Pants"
-        }
-    }, 
-    {
-        "pk": 21, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 7, 
-            "weakness_3": null, 
-            "weakness_1": 7, 
-            "win_message": "You tangled up Kitus' line!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/flying-2.jpg", 
-            "name": "Kitus"
-        }
-    }, 
-    {
-        "pk": 22, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 7, 
-            "weakness_3": 7, 
-            "weakness_1": 7, 
-            "win_message": "Nice work.  You scrambled up Tempestua!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/flying-3.jpg", 
-            "name": "Tempestua"
-        }
-    }, 
-    {
-        "pk": 23, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 7, 
-            "group_number": 4, 
-            "weakness_2": 7, 
-            "weakness_3": 7, 
-            "weakness_1": 7, 
-            "win_message": "You bewildered that Smoke Stakk!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/flying-4.jpg", 
-            "name": "Smoke Stakk"
-        }
-    }, 
-    {
-        "pk": 24, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 8, 
-            "win_message": "POW!  You startled the fru-fru outta Muffy!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/hearing-1.jpg", 
-            "name": "Muffy"
-        }
-    }, 
-    {
-        "pk": 25, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 8, 
-            "weakness_3": null, 
-            "weakness_1": 8, 
-            "win_message": "BANG! Hiber Nate won't be able to sleep anytime soon!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/noise-2.jpg", 
-            "name": "Hiber Nate"
-        }
-    }, 
-    {
-        "pk": 26, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 8, 
-            "weakness_3": 8, 
-            "weakness_1": 8, 
-            "win_message": "CRASH!  You deafened that Vampire Bat!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/noise-3.jpg", 
-            "name": "Vampire Bat"
-        }
-    }, 
-    {
-        "pk": 27, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 8, 
-            "group_number": 4, 
-            "weakness_2": 8, 
-            "weakness_3": 8, 
-            "weakness_1": 8, 
-            "win_message": "BOOM!  You shattered that Green Goblet!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/noise-4.jpg", 
-            "name": "The Green Goblet"
-        }
-    }, 
-    {
-        "pk": 28, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 9, 
-            "win_message": "Who's the fairest one of all now, Evil Queen?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ugly-1.jpg", 
-            "name": "Evil Queen"
-        }
-    }, 
-    {
-        "pk": 29, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 9, 
-            "weakness_3": null, 
-            "weakness_1": 9, 
-            "win_message": "Like the taste of your own medicine, Lazer Lizard?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ugly-2.jpg", 
-            "name": "Lazer Lizard"
-        }
-    }, 
-    {
-        "pk": 30, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 9, 
-            "weakness_3": 9, 
-            "weakness_1": 9, 
-            "win_message": "You turned that Basilisk to stone!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ugly-3.jpg", 
-            "name": "Basilisk"
-        }
-    }, 
-    {
-        "pk": 31, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 9, 
-            "group_number": 4, 
-            "weakness_2": 9, 
-            "weakness_3": 9, 
-            "weakness_1": 9, 
-            "win_message": "That Medusa is gonna need a make-over!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/ugly-4.jpg", 
-            "name": "Medusa"
-        }
-    }, 
-    {
-        "pk": 32, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 10, 
-            "group_number": 1, 
-            "weakness_2": 10, 
-            "weakness_3": 10, 
-            "weakness_1": 10, 
-            "win_message": "You popped that balloon!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/sliceme-1.jpg", 
-            "name": "Twisty"
-        }
-    }, 
-    {
-        "pk": 33, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 10, 
-            "weakness_3": null, 
-            "weakness_1": 10, 
-            "win_message": "You ran as fast as you can and sliced up that Gingerbread man!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/sliceme-2.jpg", 
-            "name": "Mumbly Crumbly"
-        }
-    }, 
-    {
-        "pk": 34, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 10, 
-            "weakness_3": 10, 
-            "weakness_1": 10, 
-            "win_message": "That Ded Zepplin is going down in flames!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/sliceme-3.jpg", 
-            "name": "The Ded Zeppelin"
-        }
-    }, 
-    {
-        "pk": 35, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 10, 
-            "group_number": 4, 
-            "weakness_2": 10, 
-            "weakness_3": 10, 
-            "weakness_1": 10, 
-            "win_message": "You let the air otta that Sue Flay!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/sliceme-4.jpg", 
-            "name": "Sue Flay"
-        }
-    }, 
-    {
-        "pk": 36, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 1, 
-            "weakness_2": null, 
-            "weakness_3": null, 
-            "weakness_1": 11, 
-            "win_message": "What's the matter, Luke Warm?  Too cool?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/reptile-1.jpg", 
-            "name": "Luke Warm"
-        }
-    }, 
-    {
-        "pk": 37, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 2, 
-            "weakness_2": 11, 
-            "weakness_3": null, 
-            "weakness_1": 11, 
-            "win_message": "Oh, I'm sorry, Mango Mangler. Not tropical enough for you?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/reptile-2.jpg", 
-            "name": "Mango Mangler"
-        }
-    }, 
-    {
-        "pk": 38, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": null, 
-            "group_number": 3, 
-            "weakness_2": 11, 
-            "weakness_3": 11, 
-            "weakness_1": 11, 
-            "win_message": "Feeling a chill down your spine, Grim Gecko?", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/reptile-3.jpg", 
-            "name": "The Grim Gecko"
-        }
-    }, 
-    {
-        "pk": 39, 
-        "model": "beasties_app.enemy", 
-        "fields": {
-            "description": "", 
-            "weakness_4": 11, 
-            "group_number": 4, 
-            "weakness_2": 11, 
-            "weakness_3": 11, 
-            "weakness_1": 11, 
-            "win_message": "Nice!  You made that Anna Conda extinct!", 
-            "lose_message": "", 
-            "image_filename": "/static/images/enemies/reptile-4.jpg", 
-            "name": "Anna Conda"
-        }
+  {
+    "pk": 4, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 4, 
+      "win_message": "You melted that Slushee beastie!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ice-1.jpg", 
+      "name": "Slushee"
     }
+  }, 
+  {
+    "pk": 5, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 1, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 4, 
+      "weakness_3": null, 
+      "weakness_1": 4, 
+      "win_message": "Nice work! Fridgie won't be chillin' anytime soon.", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ice-2.jpg", 
+      "name": "Fridgie"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 19, 
+      "description": "", 
+      "locked_nucleotide_3": 10, 
+      "locked_nucleotide_2": 20, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 4, 
+      "weakness_3": 4, 
+      "weakness_1": 4, 
+      "win_message": "You thawed out Braaain Freeze!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ice-3.jpg", 
+      "name": "Braaaain Freeze"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 37, 
+      "description": "", 
+      "locked_nucleotide_3": 39, 
+      "locked_nucleotide_2": 38, 
+      "weakness_4": 4, 
+      "group_number": 4, 
+      "weakness_2": 4, 
+      "weakness_3": 4, 
+      "weakness_1": 4, 
+      "win_message": "Blizzardo didn't expect that heat wave!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ice-4.jpg", 
+      "name": "Blizzardo"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 5, 
+      "win_message": "Looks like Belle Pepper couldn't take her own spice!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/macho-1.jpg", 
+      "name": "Belle Pepper"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 2, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 5, 
+      "weakness_3": null, 
+      "weakness_1": 5, 
+      "win_message": "You overpowered that Weak Sauce!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/macho-2.jpg", 
+      "name": "Weak Sauce"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 21, 
+      "description": "", 
+      "locked_nucleotide_3": 11, 
+      "locked_nucleotide_2": 22, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 5, 
+      "weakness_3": 5, 
+      "weakness_1": 5, 
+      "win_message": "You processed that Hal A. Peno into pico del gallo!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/macho-3.jpg", 
+      "name": "Hal. A. Peno"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 40, 
+      "description": "", 
+      "locked_nucleotide_3": 42, 
+      "locked_nucleotide_2": 41, 
+      "weakness_4": 5, 
+      "group_number": 4, 
+      "weakness_2": 5, 
+      "weakness_3": 5, 
+      "weakness_1": 5, 
+      "win_message": "Ghost Pepper who? Never heard of him.", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/macho-4.jpg", 
+      "name": "The Ghost Pepper"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 1, 
+      "win_message": "Sorry Mittens, you're gonna need a dryer after that!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/cat-1.jpg", 
+      "name": "Mittens"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 3, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 1, 
+      "weakness_3": null, 
+      "weakness_1": 1, 
+      "win_message": "How'd you lik that bath Kat?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/cat-2.jpg", 
+      "name": "Kat A. Clysm"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 23, 
+      "description": "", 
+      "locked_nucleotide_3": 12, 
+      "locked_nucleotide_2": 24, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 1, 
+      "weakness_3": 1, 
+      "weakness_1": 1, 
+      "win_message": "Ninja what?  Hope you like getting soaked!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/cat-3.jpg", 
+      "name": "Ninja Cat"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 43, 
+      "description": "", 
+      "locked_nucleotide_3": 45, 
+      "locked_nucleotide_2": 44, 
+      "weakness_4": 1, 
+      "group_number": 4, 
+      "weakness_2": 1, 
+      "weakness_3": 1, 
+      "weakness_1": 1, 
+      "win_message": "So much for Goodbye Kitty!  I'm getting rid of my pencil box.", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/cat-4.jpg", 
+      "name": "Goodbye Kitty"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 6, 
+      "win_message": "Shocking, wouldn't you say, my dear Watson?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/robot-1.jpg", 
+      "name": "Fuse Boxer"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 4, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 6, 
+      "weakness_3": null, 
+      "weakness_1": 6, 
+      "win_message": "How'd you like input, Johnny 4?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/robot-2.jpg", 
+      "name": "Johnny 4"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 25, 
+      "description": "", 
+      "locked_nucleotide_3": 13, 
+      "locked_nucleotide_2": 26, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 6, 
+      "weakness_3": 6, 
+      "weakness_1": 6, 
+      "win_message": "You shocked that Androidicus!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/robot-3.jpg", 
+      "name": "Kitus Androidicus"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 46, 
+      "description": "", 
+      "locked_nucleotide_3": 48, 
+      "locked_nucleotide_2": 47, 
+      "weakness_4": 6, 
+      "group_number": 4, 
+      "weakness_2": 6, 
+      "weakness_3": 6, 
+      "weakness_1": 6, 
+      "win_message": "Anyone order a burger with Franklinstein fries?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/robot-4.jpg", 
+      "name": "Franklinstein"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 7, 
+      "win_message": "You blew those Flying Pants out of the sky!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/flying-1.jpg", 
+      "name": "Flying Pants"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 5, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 7, 
+      "weakness_3": null, 
+      "weakness_1": 7, 
+      "win_message": "You tangled up Kitus' line!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/flying-2.jpg", 
+      "name": "Kitus"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 27, 
+      "description": "", 
+      "locked_nucleotide_3": 14, 
+      "locked_nucleotide_2": 28, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 7, 
+      "weakness_3": 7, 
+      "weakness_1": 7, 
+      "win_message": "Nice work.  You scrambled up Tempestua!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/flying-3.jpg", 
+      "name": "Tempestua"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 49, 
+      "description": "", 
+      "locked_nucleotide_3": 51, 
+      "locked_nucleotide_2": 50, 
+      "weakness_4": 7, 
+      "group_number": 4, 
+      "weakness_2": 7, 
+      "weakness_3": 7, 
+      "weakness_1": 7, 
+      "win_message": "You bewildered that Smoke Stakk!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/flying-4.jpg", 
+      "name": "Smoke Stakk"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 8, 
+      "win_message": "POW!  You startled the fru-fru outta Muffy!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/hearing-1.jpg", 
+      "name": "Muffy"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 6, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 8, 
+      "weakness_3": null, 
+      "weakness_1": 8, 
+      "win_message": "BANG! Hiber Nate won't be able to sleep anytime soon!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/hearing-2.jpg", 
+      "name": "Hiber Nate"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 29, 
+      "description": "", 
+      "locked_nucleotide_3": 15, 
+      "locked_nucleotide_2": 30, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 8, 
+      "weakness_3": 8, 
+      "weakness_1": 8, 
+      "win_message": "CRASH!  You deafened that Vampire Bat!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/hearing-3.jpg", 
+      "name": "Vampire Bat"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 52, 
+      "description": "", 
+      "locked_nucleotide_3": 54, 
+      "locked_nucleotide_2": 53, 
+      "weakness_4": 8, 
+      "group_number": 4, 
+      "weakness_2": 8, 
+      "weakness_3": 8, 
+      "weakness_1": 8, 
+      "win_message": "BOOM!  You shattered that Green Goblet!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/hearing-4.jpg", 
+      "name": "The Green Goblet"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 9, 
+      "win_message": "Who's the fairest one of all now, Evil Queen?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ugly-1.jpg", 
+      "name": "Evil Queen"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 7, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 9, 
+      "weakness_3": null, 
+      "weakness_1": 9, 
+      "win_message": "Like the taste of your own medicine, Lazer Lizard?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ugly-2.jpg", 
+      "name": "Lazer Lizard"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 31, 
+      "description": "", 
+      "locked_nucleotide_3": 16, 
+      "locked_nucleotide_2": 32, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 9, 
+      "weakness_3": 9, 
+      "weakness_1": 9, 
+      "win_message": "You turned that Basilisk to stone!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ugly-3.jpg", 
+      "name": "Basilisk"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 55, 
+      "description": "", 
+      "locked_nucleotide_3": 57, 
+      "locked_nucleotide_2": 56, 
+      "weakness_4": 9, 
+      "group_number": 4, 
+      "weakness_2": 9, 
+      "weakness_3": 9, 
+      "weakness_1": 9, 
+      "win_message": "That Medusa is gonna need a make-over!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/ugly-4.jpg", 
+      "name": "Medusa"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 10, 
+      "win_message": "You popped that balloon!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/sliceme-1.jpg", 
+      "name": "Twisty"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 8, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 10, 
+      "weakness_3": null, 
+      "weakness_1": 10, 
+      "win_message": "You ran as fast as you can and sliced up that Gingerbread man!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/sliceme-2.jpg", 
+      "name": "Mumbly Crumbly"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 33, 
+      "description": "", 
+      "locked_nucleotide_3": 17, 
+      "locked_nucleotide_2": 34, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 10, 
+      "weakness_3": 10, 
+      "weakness_1": 10, 
+      "win_message": "That Ded Zepplin is going down in flames!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/sliceme-3.jpg", 
+      "name": "The Ded Zeppelin"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 58, 
+      "description": "", 
+      "locked_nucleotide_3": 60, 
+      "locked_nucleotide_2": 59, 
+      "weakness_4": 10, 
+      "group_number": 4, 
+      "weakness_2": 10, 
+      "weakness_3": 10, 
+      "weakness_1": 10, 
+      "win_message": "You let the air otta that Sue Flay!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/sliceme-4.jpg", 
+      "name": "Sue Flay"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": null, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 1, 
+      "weakness_2": null, 
+      "weakness_3": null, 
+      "weakness_1": 11, 
+      "win_message": "What's the matter, Luke Warm?  Too cool?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/reptile-1.jpg", 
+      "name": "Luke Warm"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 9, 
+      "description": "", 
+      "locked_nucleotide_3": null, 
+      "locked_nucleotide_2": null, 
+      "weakness_4": null, 
+      "group_number": 2, 
+      "weakness_2": 11, 
+      "weakness_3": null, 
+      "weakness_1": 11, 
+      "win_message": "Oh, I'm sorry, Mango Mangler. Not tropical enough for you?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/reptile-2.jpg", 
+      "name": "Mango Mangler"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 35, 
+      "description": "", 
+      "locked_nucleotide_3": 18, 
+      "locked_nucleotide_2": 36, 
+      "weakness_4": null, 
+      "group_number": 3, 
+      "weakness_2": 11, 
+      "weakness_3": 11, 
+      "weakness_1": 11, 
+      "win_message": "Feeling a chill down your spine, Grim Gecko?", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/reptile-3.jpg", 
+      "name": "The Grim Gecko"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "beasties_app.enemy", 
+    "fields": {
+      "locked_nucleotide_1": 61, 
+      "description": "", 
+      "locked_nucleotide_3": 63, 
+      "locked_nucleotide_2": 62, 
+      "weakness_4": 11, 
+      "group_number": 4, 
+      "weakness_2": 11, 
+      "weakness_3": 11, 
+      "weakness_1": 11, 
+      "win_message": "Nice!  You made that Anna Conda extinct!", 
+      "lose_message": "", 
+      "image_filename": "/static/images/enemies/reptile-4.jpg", 
+      "name": "Anna Conda"
+    }
+  }
 ]

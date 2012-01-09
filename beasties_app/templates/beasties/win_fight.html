@@ -2,8 +2,8 @@
 <html> 
 
 <head>
-	<!-- Include on all beasties pages -->
-    <title>Fight Results</title> 
+    <!-- Include on all beasties pages -->
+	<title>Fight Results</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <meta charset="utf-8">
     <link rel="stylesheet" href="/static/css/jquery.mobile-1.0.min.css" />
@@ -11,7 +11,7 @@
     <script src="/static/javascript/jquery.mobile-1.0.min.js"></script>
     <script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
     <!-- Unique CSS -->
-    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
 	<style>
     .ui-btn-text {
     white-space: normal;
@@ -29,18 +29,21 @@
         {% else %}
         <a href="/beasties/graveyard/" rel="external" data-role="button" data-theme="a">Choose another enemy</a>
         {% endif %}
-        
         </div>
 	</div>
 
 	<div data-role="content">
 		<div class='ui-grid-a' id='win_descr' style="text-align: center;">
-			<div class='ui-block-a' width=33%>
-				<img id="beasty_pic" src="/static/images/enemies/yourmonster.png" />
-			</div>
-			<div class='ui-block-b' width=66%>
+			<div class='ui-block-a' width=66%>
+				{% if user_is_mobile %}
+				<span style="font-size: 48px;">YOU WON</span>
+				{% else %}
 				<span style="font-size: 72px;">YOU WON</span>
-				<p>{{fight_outcome}}</p>
+				{% endif %}
+				<p> {{fight_outcome}} </p>
+			</div>
+			<div class='ui-block-b' width=33%>
+				<img id="beasty_pic" src="{{enemy.image_filename}}" />
 			</div>
 		</div>
 	</div>
@@ -52,6 +55,7 @@
 </div><!--/fight-->
 
 <script>
+
 </script>
 
 </body>
