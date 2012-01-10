@@ -36,9 +36,9 @@
 			<div class='ui-block-b' width=66%>
 				<span style="font-size: 72px;">Congratulations</span>
                 <p>
-                {% if user_wins == 10 %}<!-- PASS ONTO LEVEL 2 -->
+                {% if user_wins == 9 %}<!-- PASS ONTO LEVEL 2 -->
                 You've defeated enough enemies to pass onto Level 2!  In level 2, you will choose the codons in each of the amino acids.
-                {% else %}{% if user_wins == 20 %}<!-- PASS ONTO LEVEL 3 -->
+                {% else %}{% if user_wins == 18 %}<!-- PASS ONTO LEVEL 3 -->
                 You've defeated enough enemies to pass onto Level 3!  In level 3, some of the codon choices are locked in.
                 {% endif %}{% endif %}
                 </p>

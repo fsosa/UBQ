@@ -25,20 +25,22 @@ def index(request):
 def graveyard(request):
     user = request.user
     
-    DISPLAYABLE_ENEMIES = 4
     all_enemies = Enemy.objects.all()[:]
     enemy_list = []
-    
-    defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
-        
     userlevel = user_level(request)
-    
-    #Check if player has less than 4 DISPLAYABLE_ENEMIES
-    while(len(enemy_list) < DISPLAYABLE_ENEMIES):
-        enemy = choice(all_enemies)
+    defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
+	
+    # Check if player has less than 4 DISPLAYABLE_ENEMIES
+    DISPLAYABLE_ENEMIES_NUM = 4
+    displayable_enemies = []
+    for enemy in all_enemies:
+        if (enemy.id not in defeated_enemies) and (enemy.group_number <= userlevel):
+            displayable_enemies.append(enemy)
 
-        if( enemy.group_number <= userlevel and not (enemy in enemy_list) and not(enemy.id in defeated_enemies) ):
-            enemy_list.append(enemy)
+    while len(displayable_enemies) > DISPLAYABLE_ENEMIES_NUM:
+        displayable_enemies.remove(choice(displayable_enemies))
+
+    enemy_list = displayable_enemies
     
     # Create dictionary of variables to pass to site
     vars = {}
@@ -334,7 +336,7 @@ def levelup(request):
     vars['user_losses'] = user.get_profile().loss_count
     vars['user_is_mobile'] = user_is_mobile(request)
     
-    if (vars['user_wins'] == 10 or vars['user_wins'] == 20):
+    if (vars['user_wins'] == 9 or vars['user_wins'] == 18):
         return render_to_response('beasties/levelup.html', vars, context_instance=RequestContext(request))
     else:
         return render_to_response('beasties/index.html', vars, context_instance=RequestContext(request))
@@ -343,7 +345,7 @@ def levelup(request):
 # 1 <= User Level <= 3
 def user_level(request):
     
-    return min(1 + request.user.get_profile().win_count / 10, 3)
+    return min(1 + request.user.get_profile().win_count / 9, 3)
     
 # Taken from http://djangosnippets.org/snippets/2001/
 def user_is_mobile(request):
