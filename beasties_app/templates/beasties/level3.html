@@ -95,188 +95,192 @@ white-space: normal;
                     Bwycine
                     </div>
                     </div>
-                {% endfor %}-->
-                    {% if user_is_mobile %}
-                    {% if bodypart == bodyparts.0 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Bwycine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Dentine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elphine</div></div>
-	    </div>
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;" title="Tap each nucleotide to change!">
-                        <div>
-			    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
-                        </div>
-                        <div>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
-			</div>
-                        <div>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
-                        </div>
-                        </div>
-                    {% else %}{% if bodypart == bodyparts.1 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Jorganine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Kruzosine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Lonkidine</div></div>
-	    </div>
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div>
-			    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
-                        </div>
-                        <div>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
-			</div>
-                        <div>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
-                        </div>
-                        </div>
-                    {% else %}{% if bodypart == bodyparts.2 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Mewsamine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Niffagine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Orzine</div></div>
-	    </div>
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div>
-			    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
-                        </div>
-                        <div>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
-			</div>
-                        <div>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
-                        </div>
-                        </div>
-                    {% else %}{% if bodypart == bodyparts.3 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elpine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Higgonine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Ixanine</div></div>
-	    </div>
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div>
-			    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
-			    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
-                        </div>
-                        <div>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
-			    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
-			</div>
-                        <div>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
-			    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
-                        </div>
-                        </div>
-                    {% endif %}{% endif %}{% endif %}{% endif %}
-		    {% else %}
-			    <!--BROWSERVERSION-->
+                {% endfor %}
+                -->
+                
+            {% if user_is_mobile %}
+            {% if bodypart == bodyparts.0 %}
+                <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Bwycine</div></div>
+                <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Dentine</div></div>
+                <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elphine</div></div>
+            </div>
+            <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;" title="Tap each nucleotide to change!">
+                <div>
+                    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
+                </div>
+            </div>
+            {% else %}{% if bodypart == bodyparts.1 %}
+                <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Jorganine</div></div>
+                <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Kruzosine</div></div>
+                <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Lonkidine</div></div>
+            </div>
+            <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                <div>
+                    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
+                </div>
+            </div>
+            {% else %}{% if bodypart == bodyparts.2 %}
+                <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Mewsamine</div></div>
+                <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Niffagine</div></div>
+                <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Orzine</div></div>
+            </div>
+            <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                <div>
+                    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
+                </div>
+            </div>
+            {% else %}{% if bodypart == bodyparts.3 %}
+                <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elpine</div></div>
+                <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Higgonine</div></div>
+                <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Ixanine</div></div>
+            </div>
+            
+            <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                <div>
+                    <button data-role="none" class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_1_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_2_{{bodypart}}">U</button>
+                    <button data-role='none' class='section1_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_3_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_4_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_5_{{bodypart}}">U</button>
+                    <button data-role='none' class='section2_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_6_{{bodypart}}">U</button>
+                </div>
+                <div>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_7_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_8_{{bodypart}}">U</button>
+                    <button data-role='none' class='section3_codon' style="width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;" id ="codon_9_{{bodypart}}">U</button>
+                </div>
+            </div>
+            {% endif %}{% endif %}{% endif %}{% endif %}
+		    {% else %} <!--BROWSERVERSION-->
 		    {% if bodypart == bodyparts.0 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Bwycine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Dentine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elphine</div></div>
-                        
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
-                        </div>
-                        <div id="amino_2_{{bodypart}}" class="ui-block-b">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">A</a>
-                        </div>
-                        <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
-                        </div>
-                        </div>
-                    {% else %}{% if bodypart == bodyparts.1 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Jorganine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Kruzosine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Lonkidine</div></div>
-                        
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
-                        </div>
-                        <div id="amino_2_{{bodypart}}" class="ui-block-b">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">G</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">U</a>
-                        </div>
-                        <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">G</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">A</a>
-                        </div>
-                        </div>
-                    {% else %}{% if bodypart == bodyparts.2 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Mewsamine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Niffagine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Orzine</div></div>
-                        
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
-                        </div>
-                        <div id="amino_2_{{bodypart}}" class="ui-block-b">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">A</a>
-                        </div>
-                        <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
-                        </div>
-                        </div>
-                    {% else %}{% if bodypart == bodyparts.3 %}
-                        <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elpine</div></div>
-                        <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Higgonine</div></div>
-                        <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Ixanine</div></div>
-                        
-                        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-                        <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
-                        </div>
-                        <div id="amino_2_{{bodypart}}" class="ui-block-b">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">U</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">U</a>
-                        </div>
-                        <div id="amino_3_{{bodypart}}" class="ui-block-c">
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">C</a>
-                            <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
-                        </div>
-                        </div>
-                    {% endif %}{% endif %}{% endif %}{% endif %}
+                <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Bwycine</div></div>
+                <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Dentine</div></div>
+                <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elphine</div></div>
+            </div>
+            
+            <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">U</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">U</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
+                </div>
+                <div id="amino_2_{{bodypart}}" class="ui-block-b">
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">C</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">U</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">A</a>
+                </div>
+                <div id="amino_3_{{bodypart}}" class="ui-block-c">
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">U</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
+                </div>
+            </div>
+            {% else %}{% if bodypart == bodyparts.1 %}
+                <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Jorganine</div></div>
+                <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Kruzosine</div></div>
+                <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Lonkidine</div></div>
+            </div>
+
+            <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">C</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
+                </div>
+                <div id="amino_2_{{bodypart}}" class="ui-block-b">
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">G</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">U</a>
+                </div>
+                <div id="amino_3_{{bodypart}}" class="ui-block-c">
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">G</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">C</a>
+                    <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">A</a>
+                </div>
+            </div>
+                {% else %}{% if bodypart == bodyparts.2 %}
+                    <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Mewsamine</div></div>
+                    <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Niffagine</div></div>
+                    <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Orzine</div></div>
+                </div>
+                <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">C</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">A</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
+                    </div>
+                    <div id="amino_2_{{bodypart}}" class="ui-block-b">
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">C</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">A</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">A</a>
+                    </div>
+                    <div id="amino_3_{{bodypart}}" class="ui-block-c">
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">A</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">A</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
+                    </div>
+                </div>
+                {% else %}{% if bodypart == bodyparts.3 %}
+                    <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Elpine</div></div>
+                    <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Higgonine</div></div>
+                    <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" style="float: left; font-size: 20px;font-weight: bold">Ixanine</div></div>
+                </div>
+                <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
+                    <div class="ui-block-a" id="amino_1_{{bodypart}}" style="cell-spacing: 0; margin: 0; cell-padding: 0;padding: 0;">
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_1_{{bodypart}}">A</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_2_{{bodypart}}">U</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_3_{{bodypart}}">U</a>
+                    </div>
+                    <div id="amino_2_{{bodypart}}" class="ui-block-b">
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_4_{{bodypart}}">U</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_5_{{bodypart}}">C</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_6_{{bodypart}}">U</a>
+                    </div>
+                    <div id="amino_3_{{bodypart}}" class="ui-block-c">
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_7_{{bodypart}}">C</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_8_{{bodypart}}">C</a>
+                        <a class="ui-btn ui-btn-up-b ui-shadow" style="width: 20%; height: 25px; padding: 0; float: left; font-size: 18px; position: relative;" id ="codon_9_{{bodypart}}">U</a>
+                    </div>
+                </div>
+            {% endif %}{% endif %}{% endif %}{% endif %}
 		    {% endif %}
                     
                 <!--
