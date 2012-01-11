@@ -22,18 +22,14 @@
 
 <div data-role="page" id="fight"><!--FIGHT-->
 	<div data-role="header">
-		<span style="font-size: xx-large; text-align: left;"> The Fight</span>
-		<div id='graveyard' style="text-align: right; display: inline; float: right;"><a href="/beasties/graveyard/" rel="external" data-role="button" data-theme="a">Choose another enemy</a></div>
+		<span class="heading"> The Fight</span>
+		<div id='graveyard'><a href="/beasties/graveyard/" rel="external" data-role="button" data-theme="a">Choose another enemy</a></div>
 	</div>
 
 	<div data-role="content">
-		<div class='ui-grid-a' id='loss_descr' style="text-align: center;">
+		<div class='ui-grid-a' id='loss_descr'>
 			<div class='ui-block-a' width=66%>
-				{% if user_is_mobile %}
-				<span style="font-size: 48px;">YOU LOST</span>
-				{% else %}
-				<span style="font-size: 72px;">YOU LOST</span>
-				{% endif %}
+				<span id="outcome">YOU LOST</span>
 				<p> {{fight_outcome}} </p>
 			</div>
 			<div class='ui-block-b' width=33%>

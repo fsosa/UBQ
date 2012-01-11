@@ -22,23 +22,23 @@
 
 <div data-role="page" id="levelup"><!--LEVEL UP-->
 	<div data-role="header">
-		<span style="font-size: xx-large; text-align: left;"> Congradulations</span>
-		<div id='graveyard' style="text-align: right; display: inline; float: right;">
+		<span class="heading"> Congratulations</span>
+		<div id='graveyard'>
         <a href="/beasties/graveyard/" rel="external" data-role="button" data-theme="a">Choose another enemy</a>
         </div>
 	</div>
 
 	<div data-role="content">
-		<div class='ui-grid-a' id='win_descr' style="text-align: center;">
+		<div class='ui-grid-a' id='win_descr'>
 			<div class='ui-block-a' width=33%>
 				<img id="beasty_pic" src="/static/images/enemies/yourmonster.png" />
 			</div>
 			<div class='ui-block-b' width=66%>
-				<span style="font-size: 72px;">Congratulations</span>
+				<span id="outcome">Congratulations</span>
                 <p>
-                {% if user_wins == 9 %}<!-- PASS ONTO LEVEL 2 -->
+                {% if user_wins == 10 %}<!-- PASS ONTO LEVEL 2 -->
                 You've defeated enough enemies to pass onto Level 2!  In level 2, you will choose the codons in each of the amino acids.
-                {% else %}{% if user_wins == 18 %}<!-- PASS ONTO LEVEL 3 -->
+                {% else %}{% if user_wins == 20 %}<!-- PASS ONTO LEVEL 3 -->
                 You've defeated enough enemies to pass onto Level 3!  In level 3, some of the codon choices are locked in.
                 {% endif %}{% endif %}
                 </p>

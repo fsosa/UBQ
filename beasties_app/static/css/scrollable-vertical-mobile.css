@@ -121,4 +121,8 @@ a.down:active  	{ background-position:-60px -30px; }
 	color:#000;	
 }
 
+#selected_phenotype	{font-size: 24px; font-weight:bold;}
 
+table#code tr	{font-size:10px;}
+
+#outcome	{font-size: 48px;}
