@@ -34,8 +34,9 @@ def graveyard(request):
     DISPLAYABLE_ENEMIES_NUM = 4
     displayable_enemies = []
     for enemy in all_enemies:
-        if (enemy.id not in defeated_enemies) and (enemy.group_number <= userlevel):
-            displayable_enemies.append(enemy)
+        if (enemy.id not in defeated_enemies):
+            if(userlevel == 3) or (enemy.group_number <= userlevel):
+                displayable_enemies.append(enemy)
 
     while len(displayable_enemies) > DISPLAYABLE_ENEMIES_NUM:
         displayable_enemies.remove(choice(displayable_enemies))
@@ -342,7 +343,7 @@ def levelup(request):
         return render_to_response('beasties/index.html', vars, context_instance=RequestContext(request))
             
 # TODO Smarter level metric?
-# 1 <= User Level <= 3
+# 1 <= User Level <= 4
 def user_level(request):
     
     return min(1 + request.user.get_profile().win_count / 9, 3)

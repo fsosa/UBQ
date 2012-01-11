@@ -54,7 +54,8 @@ class Enemy_Admin(admin.ModelAdmin):
     ('Locked Nucleotides', {'fields': ['locked_nucleotide_1', 'locked_nucleotide_2', 'locked_nucleotide_3']}),
     ('Messages', {'fields': ['description','win_message','lose_message']}),
     ]
-    list_display = ('name','description')
+    list_display = ('name','description','group_number') #CHANGED
+    list_filter = ['group_number'] #CHANGED
     search_fields = ['name']
 admin.site.register(Enemy, Enemy_Admin)
 
