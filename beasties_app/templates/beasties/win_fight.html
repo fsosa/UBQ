@@ -11,7 +11,13 @@
     <script src="/static/javascript/jquery.mobile-1.0.min.js"></script>
     <script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
     <!-- Unique CSS -->
-	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
+<!-- 	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" /> -->
+	{% if user_is_mobile %}
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-mobile.css" />
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-desktop.css" />
+    {% endif %}
+	<style>
 	<style>
     .ui-btn-text {
     white-space: normal;
@@ -24,7 +30,7 @@
 	<div data-role="header">
 		<span class="heading"> The Fight</span>
 		<div id='graveyard'>
-        {% if user_wins == 10 or user_wins == 20 %}
+        {% if user_wins == 9 or user_wins == 18 %}
         <a href="/beasties/levelup/" rel="external" data-role="button" data-theme="a">Choose another enemy</a>
         {% else %}
         <a href="/beasties/graveyard/" rel="external" data-role="button" data-theme="a">Choose another enemy</a>
@@ -35,9 +41,7 @@
 	<div data-role="content">
 		<div class='ui-grid-a' id='win_descr'>
 			<div class='ui-block-a' width=66%>
-
 				<span id="outcome">YOU WON</span>
-
 				<p> {{fight_outcome}} </p>
 			</div>
 			<div class='ui-block-b' width=33%>

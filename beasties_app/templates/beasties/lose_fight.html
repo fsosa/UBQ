@@ -11,7 +11,13 @@
     <script src="/static/javascript/jquery.mobile-1.0.min.js"></script>
     <script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
     <!-- Unique CSS -->
-	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" />
+<!-- 	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" /> -->
+	{% if user_is_mobile %}
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-mobile.css" />
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-desktop.css" />
+    {% endif %}
+	<style>
 	<style>
     .ui-btn-text {
     white-space: normal;
@@ -27,7 +33,7 @@
 	</div>
 
 	<div data-role="content">
-		<div class='ui-grid-a' id='loss_descr'>
+		<div class='ui-grid-a' id='loss_descr' style="text-align: center;">
 			<div class='ui-block-a' width=66%>
 				<span id="outcome">YOU LOST</span>
 				<p> {{fight_outcome}} </p>
