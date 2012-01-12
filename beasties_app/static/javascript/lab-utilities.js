@@ -25,13 +25,17 @@ function FightClick() {
 		}
 	}
 }
+
 function amino_select_mouseover(event, select_id, type){
+	// Grab the underlying api for scrollable and grab index of current item
 	var scroll = "#" + select_id;
 	var api = $(scroll).data("scrollable")
 	var index = api.getIndex();
-	var amino_acid = api.getItems()[index].childNodes[1].childNodes[0].nodeValue;//options[amino_acid_seq];
-	console.log(amino_acid);
+	// The amino acid is the text of the current item
+	var amino_acid = api.getItems()[index].childNodes[1].childNodes[0].nodeValue;
+	// Set the sequence for the amino acid
 	var sequence = amino_sequences[amino_acid];
+	// Find the scrollable we are on, set the text below it to the sequence, and call sync function
 	var amino_id = select_id
 	if (amino_id == 'amino_select_1_' + current_phenotype) {
 		$("#amino_1_" + current_phenotype +' >h1').text(sequence);
@@ -45,9 +49,7 @@ function amino_select_mouseover(event, select_id, type){
 		$('#amino_3_'+current_phenotype+ ' >h1').text(sequence);
 		sync(current_phenotype);
 	}
-	//$('amino_' + amino_id > h1)
 }
-
 
 function sync(body_part) {
 	// Boolean to determine whether or not a phenotype pic was found
@@ -60,20 +62,8 @@ function sync(body_part) {
 	var seq_3 = text.substring(6,9);
 	var phenotype_seq = "";
 	// If each sequence matches one of our amino_acids, add the abbreviation of the amino_acid to the phenotype_seq
-	for (var i in amino_sequences) {
-	if (amino_sequences[i] == seq_1)
-	    phenotype_seq += (i.substring(0,3));
-	}
-	for (var i in amino_sequences) {
-        if (amino_sequences[i] == seq_2)
-             phenotype_seq += (i.substring(0,3));
-	}
-	for (var i in amino_sequences) {
-        if (amino_sequences[i] == seq_3)
-             phenotype_seq += (i.substring(0,3));
-	}
-	console.log(phenotype_seq);
-
+    phenotype_seq = genetic_code[seq_1].substring(0,3) + genetic_code[seq_2].substring(0,3) + genetic_code[seq_3].substring(0,3)
+    
 	for (var i in pheno_pics) {
 		//If the sequence matches a phenotype sequence that we have in a dictionary
 		if (pheno_seq[i] == phenotype_seq){
@@ -82,8 +72,7 @@ function sync(body_part) {
 			// we check to see if we are in the right body part by looking at image filename (each one contains either "hands," "horns," etc.)
 			if (regexp.test(pheno_pics[i]) != false) {
 				UpdatePic(pheno_pics[i],i,body_part);
-
-
+                
 				// If we update pic, we have found a phenotype pic, so set bool to true
 				changeBool = true;
 			}
@@ -105,6 +94,7 @@ function sync(body_part) {
 }
 
 function UpdatePic(phenotype, descr,body_part){
+	// depending on the body part, change the image src to the new phenotype, and set the text underneath to the new descr.
 	if (body_part == 'hands') {
 		$('#pheno_img_hands').attr('src', phenotype);
 		console.log($('#current_Hands > img').attr('src'));
@@ -122,41 +112,47 @@ function UpdatePic(phenotype, descr,body_part){
 		$('#pheno_img_tail').attr('src', phenotype);
 		$('#pheno_text_tail').text(descr);
 	}
-    //TODO Use for updating form values
+
     $('#fight_'+body_part).val(descr);
 }
 
+// clicked is the new body part image_id
 function imageOnClick(clicked) {
+	// Current body part image id
 	var img_id = "#pheno_img_" + current_phenotype;
+	// Current body part text
 	var current_text = "#pheno_text_" + current_phenotype;
+	// Current body part div id
 	var current_div = "#lab_" + current_phenotype;
+	// new body part text
 	var new_text = "#pheno_text_" + clicked.substr(11);
+	// new body part div id
 	var show_div = "#lab_" + clicked.substr(11);
-	
-    console.log("img_id "+img_id)
-    console.log("current_text "+current_text);
-    console.log("current_div "+current_div);
-    console.log("new_text "+new_text);
-    console.log("show_div "+show_div);
-    
+	// Hide and show the new div
+
 	$(current_div).hide();
 	$(show_div).show();
+	//Hide the current text
 	$(current_text).text('');
 	console.log(img_id);
+	// Let the current image id shrink
 	$(img_id).animate({
 	width: '50',
 	height: '50',
 	opacity: 1,	
 	}, {duration: 1000, queue: false});
 
+	// Grow the new image id
 	$(clicked).animate({
 	width: '100',
 	height: '100',
 	opacity: 1,	
 	}, {duration: 1000, queue: false});
 
+	// Set the new current_phenotype
 	current_phenotype = clicked.substr(11);
-    console.log("current_phenotype "+current_phenotype);
+	// Find the text of the new body part by looking up a matching image filename
+
 	for (var i in pheno_pics){
 		if (pheno_pics[i] == $(clicked).attr('src'))
 			$(new_text).text(i)

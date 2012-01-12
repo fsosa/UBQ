@@ -118,120 +118,6 @@ def lab(request):
         return render_to_response('beasties/level'+str(userlevel)+'.html', vars, context_instance=RequestContext(request))
         # return render_to_response('beasties/lab.html', vars, context_instance=RequestContext(request))
 
-"""
-@login_required    
-# https://docs.djangoproject.com/en/1.3/intro/tutorial04/
-def level1(request):
-    # Try to create dictionary of variables to pass to site
-    vars = {}
-    try:
-        user = request.user 
-        enemy = Enemy.objects.get(pk=request.POST.get('enemy_id'))
-
-        vars['amino_acid_names'] = Amino_Acid_Name.objects.all()[:]
-        vars['amino_acids'] = []
-        #Get only unique amino acids
-        for amino_acid_name in vars['amino_acid_names']:
-            vars['amino_acids'].append(Amino_Acid.objects.filter(name=amino_acid_name.id)[0])
-        
-        vars['phenotypes'] = Phenotype.objects.all()[:]
-        vars['bodyparts'] = Bodypart.objects.all()[:] # ['hands', 'horns', 'mouth', 'tail']
-        vars['enemy'] = enemy
-        
-        enemy_weaknesses = [enemy.weakness_1, enemy.weakness_2, enemy.weakness_3, enemy.weakness_4]
-        enemy_weaknesses = filter (lambda weakness: weakness != None, enemy_weaknesses)
-        weakness_count = {}
-        for weakness in set(enemy_weaknesses):
-            weakness_count[weakness] = enemy_weaknesses.count(weakness)
-            
-        vars['weakness_count'] = weakness_count
-        vars['template_mapping'] = [[1,'a'],[2,'b'],[3,'c']]
-        
-    except (KeyError, Enemy.DoesNotExist):
-        vars['error_message'] = "Beast not found.  Going home."
-        # vars['enemy_id'] = pk=request.POST['enemy_id']
-        return render_to_response('beasties/index.html', vars, context_instance=RequestContext(request))
-    else:
-        # TODO Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        
-        vars['user_is_mobile'] = user_is_mobile(request)
-        return render_to_response('beasties/level1.html', vars, context_instance=RequestContext(request))
-
-@login_required    
-# https://docs.djangoproject.com/en/1.3/intro/tutorial04/
-def level2(request):
-    # Try to create dictionary of variables to pass to site
-    vars = {}
-    try:
-        enemy = Enemy.objects.get(pk=request.POST['enemy_id'])
-
-        vars['amino_acid_names'] = Amino_Acid_Name.objects.all()[:]
-        vars['amino_acids'] = Amino_Acid.objects.all()[:]
-        vars['phenotypes'] = Phenotype.objects.all()[:]
-        vars['bodyparts'] = Bodypart.objects.all()[:] # ['hands', 'horns', 'mouth', 'tail']
-        vars['enemy'] = enemy
-        
-        enemy_weaknesses = [enemy.weakness_1, enemy.weakness_2, enemy.weakness_3, enemy.weakness_4]
-        enemy_weaknesses = filter (lambda weakness: weakness != None, enemy_weaknesses)
-        weakness_count = {}
-        for weakness in set(enemy_weaknesses):
-            weakness_count[weakness] = enemy_weaknesses.count(weakness)
-            
-        vars['weakness_count'] = weakness_count
-        vars['template_mapping'] = [[1,'a'],[2,'b'],[3,'c']]
-        
-    except (KeyError, Enemy.DoesNotExist):
-        # Redisplay the poll voting form.
-        return render_to_response('beasties/index.html', {
-            'error_message': "Beast not found.  Going home.",
-        }, context_instance=RequestContext(request))
-    else:
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-
-        vars['user_is_mobile'] = user_is_mobile(request)
-        return render_to_response('beasties/level2.html', vars, context_instance=RequestContext(request))
-
-@login_required    
-# https://docs.djangoproject.com/en/1.3/intro/tutorial04/
-def level3(request):
-    # Try to create dictionary of variables to pass to site
-    vars = {}
-    try:
-        enemy = Enemy.objects.get(pk=request.POST['enemy_id'])
-
-        vars['amino_acid_names'] = Amino_Acid_Name.objects.all()[:]
-        vars['amino_acids'] = Amino_Acid.objects.all()[:]
-        vars['phenotypes'] = Phenotype.objects.all()[:]
-        vars['bodyparts'] = Bodypart.objects.all()[:] # ['hands', 'horns', 'mouth', 'tail']
-        vars['enemy'] = enemy
-        
-        enemy_weaknesses = [enemy.weakness_1, enemy.weakness_2, enemy.weakness_3, enemy.weakness_4]
-        enemy_weaknesses = filter (lambda weakness: weakness != None, enemy_weaknesses)
-        weakness_count = {}
-        for weakness in set(enemy_weaknesses):
-            weakness_count[weakness] = enemy_weaknesses.count(weakness)
-            
-        vars['weakness_count'] = weakness_count
-        vars['template_mapping'] = [[1,'a'],[2,'b'],[3,'c']]
-        
-    except (KeyError, Enemy.DoesNotExist):
-        # Redisplay the poll voting form.
-        return render_to_response('beasties/index.html', {
-            'error_message': "Beast not found.  Going home.",
-        }, context_instance=RequestContext(request))
-    else:
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-
-        vars['user_is_mobile'] = user_is_mobile(request)
-        return render_to_response('beasties/level3.html', vars, context_instance=RequestContext(request))
-"""
-
 @login_required
 def fight(request):
     # Get current user and create the new zombie
@@ -325,7 +211,6 @@ def fight(request):
             vars['user_is_mobile'] = user_is_mobile(request)
             return render_to_response('beasties/lose_fight.html', vars, context_instance=RequestContext(request))
 
-            
 @login_required
 def levelup(request):
     # Get current user and create the new zombie
