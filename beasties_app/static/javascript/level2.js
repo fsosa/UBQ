@@ -75,7 +75,6 @@ $('#lab').live('pageinit',function(event){
 function AdjustCodon(codon)
 {
 	short_sequence = $(codon).parent().text().replace(/\s+/gm,'');
-	console.log(short_sequence);
 	for (var i in genetic_code) {
 		// if the sequence of 3 is in the dictionary
 		if (i == short_sequence) {
@@ -96,10 +95,8 @@ function CodonClick(codon) {
 		return;
 	// Grab the letter on the button
 	current_codon = $(codon).text()[0];
-	console.log(current_codon);
 	// find index in dictionary
 	current_index = codon_dict.indexOf(current_codon);
-	console.log(current_index);
 	// shift to the next letter in the sequence
 	if (current_index == 3)
 		$(codon).text(codon_dict[0]);

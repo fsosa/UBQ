@@ -1,0 +1,34 @@
+#amino_select_1_hands,#amino_select_2_hands,#amino_select_3_hands,
+#amino_select_1_horns,#amino_select_2_horns,#amino_select_3_horns,
+#amino_select_1_mouth,#amino_select_2_mouth,#amino_select_3_mouth,
+#amino_select_1_tail,#amino_select_2_tail,#amino_select_3_tail
+{
+    float: left; font-size: 20px; font-weight: bold;
+}
+
+#amino_sequences_hands,#amino_sequences_horns,
+#amino_sequences_mouth,#amino_sequences_tail
+{
+    font-size: 28px;
+}
+
+#codon_1_hands,#codon_3_hands,#codon_4_hands,
+#codon_6_hands,#codon_7_hands,#codon_9_hands,
+#codon_1_horns,#codon_3_horns,#codon_4_horns,
+#codon_6_horns,#codon_7_horns,#codon_9_horns,
+#codon_1_mouth,#codon_3_mouth,#codon_4_mouth,
+#codon_6_mouth,#codon_7_mouth,#codon_9_mouth,
+#codon_1_tail,#codon_3_tail,#codon_4_tail,
+#codon_6_tail,#codon_7_tail,#codon_9_tail
+{
+    width: 32px; height: 35px; padding: 4px; font-size: 15px;float: left;
+}
+
+#codon_2_hands,#codon_5_hands,#codon_8_hands,
+#codon_2_horns,#codon_5_horns,#codon_8_horns,
+#codon_2_mouth,#codon_5_mouth,#codon_8_mouth,
+#codon_2_tail,#codon_5_tail,#codon_8_tail
+{
+    width: 31px; height: 35px; padding: 4px; font-size: 15px;float: left;
+}
+
