@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from beasties_app.models import Enemy, Amino_Acid_Name, Amino_Acid, Bodypart, Phenotype
+import time
 from random import choice
 import re
 import csv
@@ -73,8 +74,21 @@ def lab(request):
     try:
         user = request.user 
         userlevel = user_level(request)
-        
+
         enemy = Enemy.objects.get(pk=request.POST.get('enemy_id'))
+        defeated_enemies = eval('['+user.get_profile().defeated_enemies+']')
+
+        # Set session var to prevent back-button resubmission
+        if ('prev_key' not in request.session):
+            request.session['current_key'] = time.time()
+            request.session['prev_key'] = 0
+        else:
+            if request.session['prev_key'] == 0:
+                request.session['current_key'] = time.time()
+            elif enemy.id not in defeated_enemies:
+                request.session['current_key'] = time.time()
+            else:
+                return HttpResponseRedirect('/beasties/win_fight')
 
         vars['amino_acid_names'] = Amino_Acid_Name.objects.all()[:]
         vars['amino_acids'] = []
@@ -118,6 +132,7 @@ def lab(request):
         return render_to_response('beasties/level'+str(userlevel)+'.html', vars, context_instance=RequestContext(request))
         # return render_to_response('beasties/lab.html', vars, context_instance=RequestContext(request))
 
+
 @login_required
 def fight(request):
     # Get current user and create the new zombie
@@ -125,6 +140,16 @@ def fight(request):
     vars = {}
     fight_outcome = ""
     
+    # Check if form is being resubmitted using back-button
+    prev_key = request.session['prev_key']
+    if (prev_key == 0) or (request.POST['current_key'] > prev_key):
+        request.session['prev_key'] = request.POST['current_key']
+    else:
+        if ("lost" in user.get_profile().fight_message):
+            request.session['prev_key'] = request.POST['current_key']
+        else:
+            return HttpResponseRedirect('/beasties/win_fight')
+
     try:
         # Get chosen phenotypes from lab page
         hands = Phenotype.objects.get(name=request.POST['fight_hands'])
@@ -135,6 +160,9 @@ def fight(request):
         # Get current enemy 
         #TODO: this should be an instance of User_Enemy, not Enemy
         enemy = Enemy.objects.get(pk=request.POST['enemy_id'])
+        user.get_profile().current_enemy = enemy
+        user.get_profile().save()
+        
     except (KeyError, Phenotype.DoesNotExist):
         return render_to_response('beasties/index.html', {
             'error_message': "Phenotype not found.  Going home.",
@@ -144,9 +172,7 @@ def fight(request):
         return render_to_response('beasties/index.html', {
             'error_message': "Beast not found.  Going home.",
         }, context_instance=RequestContext(request))
-    else:    
-        vars['enemy'] = enemy
-        
+    else:            
         # Construct list of enemy's weaknesses
         enemy_weaknesses = [enemy.weakness_1, enemy.weakness_2, enemy.weakness_3, enemy.weakness_4]
         enemy_weaknesses = filter (lambda weakness: weakness != None, enemy_weaknesses)
@@ -180,18 +206,14 @@ def fight(request):
             user.get_profile().save()
             
             fight_outcome = "Way to go!  " + enemy.win_message
-            
-            vars['fight_outcome'] = fight_outcome
+            user.get_profile().fight_message = fight_outcome
+            user.get_profile().save()
 
-            vars['user_wins'] = user.get_profile().win_count
-            vars['user_losses'] = user.get_profile().loss_count
-            vars['user_is_mobile'] = user_is_mobile(request)
-            return render_to_response('beasties/win_fight.html', vars, context_instance=RequestContext(request))
+            return HttpResponseRedirect('/beasties/win_fight/')
         else:
             # User loses
             user.get_profile().loss_count += 1
-            user.get_profile().save()
-            
+            user.get_profile().save()           
             
             fight_outcome = "You lost the fight!  You needed another "
             
@@ -201,16 +223,30 @@ def fight(request):
             
             for key in weakness_count:
                 fight_outcome += str(weakness_count[key]) + " phenotype(s) against " + key
-            vars['fight_outcome'] = fight_outcome
-            
-            # # Finalize changes to zombie
-            # # Create context for template rendering
-            
-            vars['user_wins'] = user.get_profile().win_count
-            vars['user_losses'] = user.get_profile().loss_count
-            vars['user_is_mobile'] = user_is_mobile(request)
-            return render_to_response('beasties/lose_fight.html', vars, context_instance=RequestContext(request))
+            user.get_profile().fight_message = fight_outcome
+            user.get_profile().save()
+            return HttpResponseRedirect('/beasties/lose_fight/')
 
+def win_fight(request):
+    user = request.user
+    vars = {}
+    vars['user_wins'] = user.get_profile().win_count
+    vars['user_losses'] = user.get_profile().loss_count
+    vars['user_is_mobile'] = user_is_mobile(request)
+    vars['fight_outcome'] = user.get_profile().fight_message
+    vars['enemy'] = user.get_profile().current_enemy
+    return render_to_response('beasties/win_fight.html', vars, context_instance=RequestContext(request))
+
+def lose_fight(request):
+    user = request.user
+    vars = {}
+    vars['user_wins'] = user.get_profile().win_count
+    vars['user_losses'] = user.get_profile().loss_count
+    vars['user_is_mobile'] = user_is_mobile(request)
+    vars['fight_outcome'] = user.get_profile().fight_message
+    vars['enemy'] = user.get_profile().current_enemy
+    return render_to_response('beasties/lose_fight.html', vars, context_instance=RequestContext(request))
+            
 @login_required
 def levelup(request):
     # Get current user and create the new zombie

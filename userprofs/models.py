@@ -37,6 +37,8 @@ class UserProfile(models.Model):
     win_count = models.IntegerField()
     loss_count = models.IntegerField()
     defeated_enemies = models.CharField(max_length=MAX_LENGTH, blank=True)
+    current_enemy = models.ForeignKey(Enemy)
+    fight_message = models.CharField(max_length=MAX_LENGTH, blank=True)
     
     # TODO: Add user-activity related fields (e.g. last-login, etc.)
     
