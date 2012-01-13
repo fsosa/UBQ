@@ -15,6 +15,7 @@
     {% block unique_scripts %}{% endblock %}
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/static/css/genetic_code_table.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
     <!-- Unique CSS -->
     {% block unique_css %}{% endblock %}
 
@@ -55,7 +56,7 @@
 		</table>
 	</div><!-- /header -->
 
-	<div data-role="content" data-theme="d">	
+	<div data-role="content" data-theme="a">	
         <div class="body_parts">
             <!-- Carosel of Body Parts -->
             <table cellspacing=0 id="body_parts">
@@ -97,7 +98,7 @@
         </div>
 	</div>
 
-	<div data-role='content'>
+	<div data-role='content' data-theme="a">
 		<div class='ui-grid-a'>
 			<div class='ui-block-a'>
 				<h2>You</h2>
@@ -398,8 +399,8 @@
         </span>
 	</div><!-- /header -->
 
-	<div data-role="content" data-theme="d">	
-		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search for phenotype...">
+	<div data-role="content" data-theme="a">	
+		<ul data-role="listview" data-theme="a" data-filter="true" data-filter-placeholder="Search for phenotype...">
             {% for bodypart in bodyparts %}
                 <li data-role="list-divider" class="bodypart">
                     {{bodypart}}

@@ -10,12 +10,14 @@
     <script src="/static/javascript/jquery-1.6.4.min.js"></script>
     <script src="/static/javascript/jquery.mobile-1.0.min.js"></script>
     <script type="text/javascript" src="/static/javascript/jquery.tools.min.js"></script>
-    <!-- Unique CSS -->
+    
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<!-- Unique CSS -->
 <!-- 	<link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-m.css" /> -->
 	{% if user_is_mobile %}
-    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-mobile.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mobile-style.css" />
     {% else %}
-    <link rel="stylesheet" type="text/css" href="/static/css/scrollable-vertical-desktop.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/desktop-style.css" />
     {% endif %}
 	<style>
 	<style>
@@ -38,7 +40,7 @@
         </div>
 	</div>
 
-	<div data-role="content">
+	<div data-role="content" data-theme="a">
 		<div class='ui-grid-a' id='win_descr'>
 			<div class='ui-block-a' width=66%>
 				<span id="outcome">YOU WON</span>

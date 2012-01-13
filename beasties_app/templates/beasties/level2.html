@@ -19,100 +19,98 @@
     <div id="lab_{{bodypart}}"><!-- {{bodypart}} -->  
         <div class="ui-grid-b">
             
-        {% if bodypart == bodyparts.0 %}
-            <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}">Bwycine</div></div>
-            <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}">Dentine</div></div>
-            <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}">Elphine</div></div>
-        </div>
+		{% if bodypart == bodyparts.0 %}
+			<div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" class="amino">Bwycine</div></div>
+			<div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" class="amino">Dentine</div></div>
+			<div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" class="amino">Elphine</div></div>
+
+			<div id="amino_sequences_{{bodypart}}">
+			<div class="ui-block-a" id="amino_1_{{bodypart}}">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_1_{{bodypart}}">U</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_2_{{bodypart}}">U</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_3_{{bodypart}}">U</a>
+
+			</div>
+			<div id="amino_2_{{bodypart}}" class="ui-block-b">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_4_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_5_{{bodypart}}">U</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_6_{{bodypart}}">A</a>
+			</div>
+			<div id="amino_3_{{bodypart}}" class="ui-block-c">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_7_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_8_{{bodypart}}">U</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_9_{{bodypart}}">U</a>
+			</div>
+			</div>
+		{% else %}{% if bodypart == bodyparts.1 %}
+			<div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" class="amino">Jorganine</div></div>
+			<div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" class="amino">Kruzosine</div></div>
+			<div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" class="amino">Lonkidine</div></div>
+		   
+			<div id="amino_sequences_{{bodypart}}">
+			<div class="ui-block-a" id="amino_1_{{bodypart}}">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_1_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_2_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_3_{{bodypart}}">U</a>
+			</div>
+			<div id="amino_2_{{bodypart}}" class="ui-block-b">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_4_{{bodypart}}">G</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_5_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_6_{{bodypart}}">U</a>
+			</div>
+			<div id="amino_3_{{bodypart}}" class="ui-block-c">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_7_{{bodypart}}">G</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_8_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_9_{{bodypart}}">A</a>
+			</div>
+			</div>
+		{% else %}{% if bodypart == bodyparts.2 %}
+			<div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" class="amino">Mewsamine</div></div>
+			<div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" class="amino">Niffagine</div></div>
+			<div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" class="amino">Orzine</div></div>
+			
+			<div id="amino_sequences_{{bodypart}}">
+			<div class="ui-block-a" id="amino_1_{{bodypart}}">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_1_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_2_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_3_{{bodypart}}">U</a>
+			</div>
+			<div id="amino_2_{{bodypart}}" class="ui-block-b">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_4_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_5_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_6_{{bodypart}}">A</a>
+			</div>
+			<div id="amino_3_{{bodypart}}" class="ui-block-c">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_7_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_8_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_9_{{bodypart}}">U</a>
+			</div>
+			</div>
+		{% else %}{% if bodypart == bodyparts.3 %}
+			<div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}" class="amino">Elpine</div></div>
+			<div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}" class="amino">Higgonine</div></div>
+			<div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}" class="amino">Ixanine</div></div>
+			
+			<div id="amino_sequences_{{bodypart}}">
+			<div class="ui-block-a" id="amino_1_{{bodypart}}">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_1_{{bodypart}}">A</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_2_{{bodypart}}">U</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_3_{{bodypart}}">U</a>
+			</div>
+			<div id="amino_2_{{bodypart}}" class="ui-block-b">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_4_{{bodypart}}">U</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_5_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_6_{{bodypart}}">U</a>
+			</div>
+			<div id="amino_3_{{bodypart}}" class="ui-block-c">
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_7_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_8_{{bodypart}}">C</a>
+				<a class="ui-btn ui-btn-up-b ui-shadow nucleotide" id ="codon_9_{{bodypart}}">U</a>
+			</div>
+			</div>
+		{% endif %}{% endif %}{% endif %}{% endif %}
         
-        <div id="amino_sequences_{{bodypart}}">
-            <div class="ui-block-a" id="amino_1_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_1_{{bodypart}}">U</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_2_{{bodypart}}">U</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_3_{{bodypart}}">U</a>
-            </div>
-            <div class="ui-block-b" id="amino_2_{{bodypart}}" >
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_4_{{bodypart}}">C</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_5_{{bodypart}}">U</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_6_{{bodypart}}">A</a>
-            </div>
-            <div class="ui-block-c" id="amino_3_{{bodypart}}" >
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_7_{{bodypart}}">A</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_8_{{bodypart}}">U</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_9_{{bodypart}}">U</a>
-            </div>
-        </div>
-        {% else %}{% if bodypart == bodyparts.1 %}
-            <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}">Jorganine</div></div>
-            <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}">Kruzosine</div></div>
-            <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}">Lonkidine</div></div>
-        </div>
-        
-        <div id="amino_sequences_{{bodypart}}">
-            <div class="ui-block-a" id="amino_1_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_1_{{bodypart}}">A</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_2_{{bodypart}}">C</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_3_{{bodypart}}">U</a>
-            </div>
-            <div class="ui-block-b" id="amino_2_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_4_{{bodypart}}">G</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_5_{{bodypart}}">C</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_6_{{bodypart}}">U</a>
-            </div>
-            <div class="ui-block-c" id="amino_3_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_7_{{bodypart}}">G</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_8_{{bodypart}}">C</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_9_{{bodypart}}">A</a>
-            </div>
-        </div>
-        {% else %}{% if bodypart == bodyparts.2 %}
-            <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}">Mewsamine</div></div>
-            <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}">Niffagine</div></div>
-            <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}">Orzine</div></div>
-        </div>
-        
-        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-            <div class="ui-block-a" id="amino_1_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_1_{{bodypart}}">C</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_2_{{bodypart}}">A</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_3_{{bodypart}}">U</a>
-            </div>
-            <div class="ui-block-b" id="amino_2_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_4_{{bodypart}}">C</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_5_{{bodypart}}">A</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_6_{{bodypart}}">A</a>
-            </div>
-            <div class="ui-block-c" id="amino_3_{{bodypart}}">
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_7_{{bodypart}}">A</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_8_{{bodypart}}">A</a>
-                <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_9_{{bodypart}}">U</a>
-            </div>
-        </div>
-        {% else %}{% if bodypart == bodyparts.3 %}
-            <div class="ui-block-a"> <div id="amino_select_1_{{bodypart}}">Elpine</div></div>
-            <div class="ui-block-b"> <div id="amino_select_2_{{bodypart}}">Higgonine</div></div>
-            <div class="ui-block-c"> <div id="amino_select_3_{{bodypart}}">Ixanine</div></div>
-        </div>
-        
-        <div id="amino_sequences_{{bodypart}}"  style="font-size: 28px;">
-        <div class="ui-block-a" id="amino_1_{{bodypart}}">
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_1_{{bodypart}}">A</a>
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_2_{{bodypart}}">U</a>
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_3_{{bodypart}}">U</a>
-        </div>
-        <div class="ui-block-b" id="amino_2_{{bodypart}}">
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_4_{{bodypart}}">U</a>
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_5_{{bodypart}}">C</a>
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_6_{{bodypart}}">U</a>
-        </div>
-        <div class="ui-block-c" id="amino_3_{{bodypart}}">
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_7_{{bodypart}}">C</a>
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_8_{{bodypart}}">C</a>
-            <a class="ui-btn ui-btn-up-b ui-shadow" id ="codon_9_{{bodypart}}">U</a>
-        </div>
-        </div>
-        {% endif %}{% endif %}{% endif %}{% endif %}
-        
+		</div>
     </div><!--/{{bodypart}}-->
     {% endfor %}
 {% endblock %}

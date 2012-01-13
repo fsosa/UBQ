@@ -101,66 +101,7 @@ a.down:active  	{ background-position:-60px -30px; }
 	float:right;
 }
 
-.heading	{font-size: xx-large; font-weight: bold;}
-#weakness	{text-align: right; font-size:20px; width:50%;}
-#ready	{margin-left:80px;margin-right:80px;text-align:center}
-
-#lab_monster	{margin: 0px 5px;width:60px;height:80px}
-
-#pheno_img_hands	{height:100px; width:100px;}
-#pheno_img_horns, #pheno_img_mouth, #pheno_img_tail {
-	height:50px; width:50px;
-}
-#pheno_text_hands, #pheno_text_horns, #pheno_text_mouth, #pheno_text_tail{
-	font-size: 26px; font-weight:bold; width:50px;
-}
-
-.ui-block-a, .ui-block-b, .ui-block-c , .ui-grid-a, .ui-grid-b {
-	text-align:center;
-}
-
-.right	{text-align: right;}
-
-#selected_image	{width:40px; height:40px}
 #selected_phenotype	{font-size: 24px; font-weight:bold;}
-#selected_amino_1	{color: #FF6666; font-weight:bold;}
-#selected_amino_2	{color: #FFFF66; font-weight:bold;}
-#selected_amino_3	{color: #99CCFF; font-weight:bold;}
 
-div#body_parts	{
-	text-align:center;
-}
+#outcome	{font-size: 72px;}
 
-table#body_parts{
-	margin-left: auto; 
-	margin-right: auto;
-	border:0px;
-}
-
-li.bodypart	{
-	text-transform: uppercase;
-}
-
-img.phenotype	{
-	height:80px;
-	width:80px;
-}
-
-p.aminoseq	{
-	font-size:18px;
-}
-
-table#code {
-	width:90%;
-	text-align: center;
-	background: white;
-}
-
-table.header	{font-size: 20px; font-weight: bold;}
-
-#outcome	{
-	font-size: 72px;
-}
-
-div#graveyard	{text-align: right; display: inline; float: right;}
-/* "choose another enemy" button div */
